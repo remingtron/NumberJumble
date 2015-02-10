@@ -1,430 +1,1100 @@
-// !$*UTF8*$!
-{
-	archiveVersion = 1;
-	classes = {
-	};
-	objectVersion = 46;
-	objects = {
-
-/* Begin PBXBuildFile section */
-		C06EA4661A8A8DB000977F03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA4651A8A8DB000977F03 /* AppDelegate.swift */; };
-		C06EA4681A8A8DB000977F03 /* GameScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4671A8A8DB000977F03 /* GameScene.sks */; };
-		C06EA46A1A8A8DB000977F03 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA4691A8A8DB000977F03 /* GameScene.swift */; };
-		C06EA46C1A8A8DB000977F03 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA46B1A8A8DB000977F03 /* GameViewController.swift */; };
-		C06EA46F1A8A8DB000977F03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06EA46D1A8A8DB000977F03 /* Main.storyboard */; };
-		C06EA4711A8A8DB000977F03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4701A8A8DB000977F03 /* Images.xcassets */; };
-		C06EA4741A8A8DB000977F03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4721A8A8DB000977F03 /* LaunchScreen.xib */; };
-		C06EA4801A8A8DB000977F03 /* NumberJumbleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA47F1A8A8DB000977F03 /* NumberJumbleTests.swift */; };
-/* End PBXBuildFile section */
-
-/* Begin PBXContainerItemProxy section */
-		C06EA47A1A8A8DB000977F03 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C06EA4581A8A8DB000977F03 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C06EA45F1A8A8DB000977F03;
-			remoteInfo = NumberJumble;
-		};
-/* End PBXContainerItemProxy section */
-
-/* Begin PBXFileReference section */
-		C06EA4601A8A8DB000977F03 /* NumberJumble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberJumble.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		C06EA4641A8A8DB000977F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C06EA4651A8A8DB000977F03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C06EA4671A8A8DB000977F03 /* GameScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = GameScene.sks; sourceTree = "<group>"; };
-		C06EA4691A8A8DB000977F03 /* GameScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameScene.swift; sourceTree = "<group>"; };
-		C06EA46B1A8A8DB000977F03 /* GameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameViewController.swift; sourceTree = "<group>"; };
-		C06EA46E1A8A8DB000977F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		C06EA4701A8A8DB000977F03 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		C06EA4731A8A8DB000977F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		C06EA4791A8A8DB000977F03 /* NumberJumbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberJumbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		C06EA47E1A8A8DB000977F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C06EA47F1A8A8DB000977F03 /* NumberJumbleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberJumbleTests.swift; sourceTree = "<group>"; };
-/* End PBXFileReference section */
-
-/* Begin PBXFrameworksBuildPhase section */
-		C06EA45D1A8A8DB000977F03 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C06EA4761A8A8DB000977F03 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXFrameworksBuildPhase section */
-
-/* Begin PBXGroup section */
-		C06EA4571A8A8DB000977F03 = {
-			isa = PBXGroup;
-			children = (
-				C06EA4621A8A8DB000977F03 /* NumberJumble */,
-				C06EA47C1A8A8DB000977F03 /* NumberJumbleTests */,
-				C06EA4611A8A8DB000977F03 /* Products */,
-			);
-			sourceTree = "<group>";
-		};
-		C06EA4611A8A8DB000977F03 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				C06EA4601A8A8DB000977F03 /* NumberJumble.app */,
-				C06EA4791A8A8DB000977F03 /* NumberJumbleTests.xctest */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		C06EA4621A8A8DB000977F03 /* NumberJumble */ = {
-			isa = PBXGroup;
-			children = (
-				C06EA4651A8A8DB000977F03 /* AppDelegate.swift */,
-				C06EA4671A8A8DB000977F03 /* GameScene.sks */,
-				C06EA4691A8A8DB000977F03 /* GameScene.swift */,
-				C06EA46B1A8A8DB000977F03 /* GameViewController.swift */,
-				C06EA46D1A8A8DB000977F03 /* Main.storyboard */,
-				C06EA4701A8A8DB000977F03 /* Images.xcassets */,
-				C06EA4721A8A8DB000977F03 /* LaunchScreen.xib */,
-				C06EA4631A8A8DB000977F03 /* Supporting Files */,
-			);
-			path = NumberJumble;
-			sourceTree = "<group>";
-		};
-		C06EA4631A8A8DB000977F03 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C06EA4641A8A8DB000977F03 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-		C06EA47C1A8A8DB000977F03 /* NumberJumbleTests */ = {
-			isa = PBXGroup;
-			children = (
-				C06EA47F1A8A8DB000977F03 /* NumberJumbleTests.swift */,
-				C06EA47D1A8A8DB000977F03 /* Supporting Files */,
-			);
-			path = NumberJumbleTests;
-			sourceTree = "<group>";
-		};
-		C06EA47D1A8A8DB000977F03 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				C06EA47E1A8A8DB000977F03 /* Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
-/* End PBXGroup section */
-
-/* Begin PBXNativeTarget section */
-		C06EA45F1A8A8DB000977F03 /* NumberJumble */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C06EA4831A8A8DB000977F03 /* Build configuration list for PBXNativeTarget "NumberJumble" */;
-			buildPhases = (
-				C06EA45C1A8A8DB000977F03 /* Sources */,
-				C06EA45D1A8A8DB000977F03 /* Frameworks */,
-				C06EA45E1A8A8DB000977F03 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = NumberJumble;
-			productName = NumberJumble;
-			productReference = C06EA4601A8A8DB000977F03 /* NumberJumble.app */;
-			productType = "com.apple.product-type.application";
-		};
-		C06EA4781A8A8DB000977F03 /* NumberJumbleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = C06EA4861A8A8DB000977F03 /* Build configuration list for PBXNativeTarget "NumberJumbleTests" */;
-			buildPhases = (
-				C06EA4751A8A8DB000977F03 /* Sources */,
-				C06EA4761A8A8DB000977F03 /* Frameworks */,
-				C06EA4771A8A8DB000977F03 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				C06EA47B1A8A8DB000977F03 /* PBXTargetDependency */,
-			);
-			name = NumberJumbleTests;
-			productName = NumberJumbleTests;
-			productReference = C06EA4791A8A8DB000977F03 /* NumberJumbleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-/* End PBXNativeTarget section */
-
-/* Begin PBXProject section */
-		C06EA4581A8A8DB000977F03 /* Project object */ = {
-			isa = PBXProject;
-			attributes = {
-				LastUpgradeCheck = 0610;
-				ORGANIZATIONNAME = "Remington Davenport";
-				TargetAttributes = {
-					C06EA45F1A8A8DB000977F03 = {
-						CreatedOnToolsVersion = 6.1.1;
-					};
-					C06EA4781A8A8DB000977F03 = {
-						CreatedOnToolsVersion = 6.1.1;
-						TestTargetID = C06EA45F1A8A8DB000977F03;
-					};
-				};
-			};
-			buildConfigurationList = C06EA45B1A8A8DB000977F03 /* Build configuration list for PBXProject "NumberJumble" */;
-			compatibilityVersion = "Xcode 3.2";
-			developmentRegion = English;
-			hasScannedForEncodings = 0;
-			knownRegions = (
-				en,
-				Base,
-			);
-			mainGroup = C06EA4571A8A8DB000977F03;
-			productRefGroup = C06EA4611A8A8DB000977F03 /* Products */;
-			projectDirPath = "";
-			projectRoot = "";
-			targets = (
-				C06EA45F1A8A8DB000977F03 /* NumberJumble */,
-				C06EA4781A8A8DB000977F03 /* NumberJumbleTests */,
-			);
-		};
-/* End PBXProject section */
-
-/* Begin PBXResourcesBuildPhase section */
-		C06EA45E1A8A8DB000977F03 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C06EA4741A8A8DB000977F03 /* LaunchScreen.xib in Resources */,
-				C06EA4711A8A8DB000977F03 /* Images.xcassets in Resources */,
-				C06EA4681A8A8DB000977F03 /* GameScene.sks in Resources */,
-				C06EA46F1A8A8DB000977F03 /* Main.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C06EA4771A8A8DB000977F03 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXResourcesBuildPhase section */
-
-/* Begin PBXSourcesBuildPhase section */
-		C06EA45C1A8A8DB000977F03 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C06EA46A1A8A8DB000977F03 /* GameScene.swift in Sources */,
-				C06EA46C1A8A8DB000977F03 /* GameViewController.swift in Sources */,
-				C06EA4661A8A8DB000977F03 /* AppDelegate.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		C06EA4751A8A8DB000977F03 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				C06EA4801A8A8DB000977F03 /* NumberJumbleTests.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-/* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		C06EA47B1A8A8DB000977F03 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = C06EA45F1A8A8DB000977F03 /* NumberJumble */;
-			targetProxy = C06EA47A1A8A8DB000977F03 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
-
-/* Begin PBXVariantGroup section */
-		C06EA46D1A8A8DB000977F03 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C06EA46E1A8A8DB000977F03 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
-		C06EA4721A8A8DB000977F03 /* LaunchScreen.xib */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C06EA4731A8A8DB000977F03 /* Base */,
-			);
-			name = LaunchScreen.xib;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
-/* Begin XCBuildConfiguration section */
-		C06EA4811A8A8DB000977F03 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_DYNAMIC_NO_PIC = NO;
-				GCC_OPTIMIZATION_LEVEL = 0;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = YES;
-				ONLY_ACTIVE_ARCH = YES;
-				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = 2;
-			};
-			name = Debug;
-		};
-		C06EA4821A8A8DB000977F03 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.1;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = 2;
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
-		};
-		C06EA4841A8A8DB000977F03 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = NumberJumble/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Debug;
-		};
-		C06EA4851A8A8DB000977F03 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				INFOPLIST_FILE = NumberJumble/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-			};
-			name = Release;
-		};
-		C06EA4871A8A8DB000977F03 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NumberJumbleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NumberJumble.app/NumberJumble";
-			};
-			name = Debug;
-		};
-		C06EA4881A8A8DB000977F03 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = NumberJumbleTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NumberJumble.app/NumberJumble";
-			};
-			name = Release;
-		};
-/* End XCBuildConfiguration section */
-
-/* Begin XCConfigurationList section */
-		C06EA45B1A8A8DB000977F03 /* Build configuration list for PBXProject "NumberJumble" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C06EA4811A8A8DB000977F03 /* Debug */,
-				C06EA4821A8A8DB000977F03 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		C06EA4831A8A8DB000977F03 /* Build configuration list for PBXNativeTarget "NumberJumble" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C06EA4841A8A8DB000977F03 /* Debug */,
-				C06EA4851A8A8DB000977F03 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-		C06EA4861A8A8DB000977F03 /* Build configuration list for PBXNativeTarget "NumberJumbleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				C06EA4871A8A8DB000977F03 /* Debug */,
-				C06EA4881A8A8DB000977F03 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-		};
-/* End XCConfigurationList section */
-	};
-	rootObject = C06EA4581A8A8DB000977F03 /* Project object */;
-}
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>archiveVersion</key>
+	<string>1</string>
+	<key>classes</key>
+	<dict/>
+	<key>objectVersion</key>
+	<string>46</string>
+	<key>objects</key>
+	<dict>
+		<key>00520348CB9331D8CEE316D7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-NumberJumbleTests.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-NumberJumbleTests/Pods-NumberJumbleTests.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>2B4A970E61E006F305AF70E5</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>695DA6DCE39F779F0635ECC1</string>
+				<string>E092579E01B623F46DFAC72F</string>
+				<string>00520348CB9331D8CEE316D7</string>
+				<string>8E7D0B664FB90D2BE8E672E7</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Pods</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>30D5F1615FD6A6EA3217802E</key>
+		<dict>
+			<key>fileRef</key>
+			<string>78D112BCE61D621939F71B5E</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+			<key>settings</key>
+			<dict>
+				<key>ATTRIBUTES</key>
+				<array>
+					<string>Weak</string>
+				</array>
+			</dict>
+		</dict>
+		<key>3A1159A979EC2891E9E83EE3</key>
+		<dict>
+			<key>fileRef</key>
+			<string>A47F2E6134179BD3E0A3F523</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>50EA185FFC700D17976C8E5A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-NumberJumble/Pods-NumberJumble-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>695DA6DCE39F779F0635ECC1</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-NumberJumble.debug.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-NumberJumble/Pods-NumberJumble.debug.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>78D112BCE61D621939F71B5E</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.framework</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>Pods_NumberJumbleTests.framework</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>8E7D0B664FB90D2BE8E672E7</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-NumberJumbleTests.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-NumberJumbleTests/Pods-NumberJumbleTests.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>A47F2E6134179BD3E0A3F523</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>archive.ar</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>libPods-NumberJumble.a</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>A88614CF1C370700486EFA4A</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Copy Pods Resources</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-NumberJumbleTests/Pods-NumberJumbleTests-resources.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>AA6488AE46325A8221FBDD69</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>A47F2E6134179BD3E0A3F523</string>
+				<string>78D112BCE61D621939F71B5E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Frameworks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>BC5EBE44F2EB0042E8D0E6AF</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>C06EA4571A8A8DB000977F03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C06EA4621A8A8DB000977F03</string>
+				<string>C06EA47C1A8A8DB000977F03</string>
+				<string>C06EA4611A8A8DB000977F03</string>
+				<string>2B4A970E61E006F305AF70E5</string>
+				<string>AA6488AE46325A8221FBDD69</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4581A8A8DB000977F03</key>
+		<dict>
+			<key>attributes</key>
+			<dict>
+				<key>LastUpgradeCheck</key>
+				<string>0610</string>
+				<key>ORGANIZATIONNAME</key>
+				<string>Remington Davenport</string>
+				<key>TargetAttributes</key>
+				<dict>
+					<key>C06EA45F1A8A8DB000977F03</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.1.1</string>
+					</dict>
+					<key>C06EA4781A8A8DB000977F03</key>
+					<dict>
+						<key>CreatedOnToolsVersion</key>
+						<string>6.1.1</string>
+						<key>TestTargetID</key>
+						<string>C06EA45F1A8A8DB000977F03</string>
+					</dict>
+				</dict>
+			</dict>
+			<key>buildConfigurationList</key>
+			<string>C06EA45B1A8A8DB000977F03</string>
+			<key>compatibilityVersion</key>
+			<string>Xcode 3.2</string>
+			<key>developmentRegion</key>
+			<string>English</string>
+			<key>hasScannedForEncodings</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXProject</string>
+			<key>knownRegions</key>
+			<array>
+				<string>en</string>
+				<string>Base</string>
+			</array>
+			<key>mainGroup</key>
+			<string>C06EA4571A8A8DB000977F03</string>
+			<key>productRefGroup</key>
+			<string>C06EA4611A8A8DB000977F03</string>
+			<key>projectDirPath</key>
+			<string></string>
+			<key>projectReferences</key>
+			<array/>
+			<key>projectRoot</key>
+			<string></string>
+			<key>targets</key>
+			<array>
+				<string>C06EA45F1A8A8DB000977F03</string>
+				<string>C06EA4781A8A8DB000977F03</string>
+			</array>
+		</dict>
+		<key>C06EA45B1A8A8DB000977F03</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C06EA4811A8A8DB000977F03</string>
+				<string>C06EA4821A8A8DB000977F03</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>defaultConfigurationName</key>
+			<string>Release</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C06EA45C1A8A8DB000977F03</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C06EA46A1A8A8DB000977F03</string>
+				<string>C06EA46C1A8A8DB000977F03</string>
+				<string>C06EA4661A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C06EA45D1A8A8DB000977F03</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>3A1159A979EC2891E9E83EE3</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C06EA45E1A8A8DB000977F03</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C06EA4741A8A8DB000977F03</string>
+				<string>C06EA4711A8A8DB000977F03</string>
+				<string>C06EA4681A8A8DB000977F03</string>
+				<string>C06EA46F1A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C06EA45F1A8A8DB000977F03</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>C06EA4831A8A8DB000977F03</string>
+			<key>buildPhases</key>
+			<array>
+				<string>BC5EBE44F2EB0042E8D0E6AF</string>
+				<string>C06EA45C1A8A8DB000977F03</string>
+				<string>C06EA45D1A8A8DB000977F03</string>
+				<string>C06EA45E1A8A8DB000977F03</string>
+				<string>50EA185FFC700D17976C8E5A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>NumberJumble</string>
+			<key>productName</key>
+			<string>NumberJumble</string>
+			<key>productReference</key>
+			<string>C06EA4601A8A8DB000977F03</string>
+			<key>productType</key>
+			<string>com.apple.product-type.application</string>
+		</dict>
+		<key>C06EA4601A8A8DB000977F03</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.application</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>NumberJumble.app</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>C06EA4611A8A8DB000977F03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C06EA4601A8A8DB000977F03</string>
+				<string>C06EA4791A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Products</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4621A8A8DB000977F03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C06EA4651A8A8DB000977F03</string>
+				<string>C06EA4671A8A8DB000977F03</string>
+				<string>C06EA4691A8A8DB000977F03</string>
+				<string>C06EA46B1A8A8DB000977F03</string>
+				<string>C06EA46D1A8A8DB000977F03</string>
+				<string>C06EA4701A8A8DB000977F03</string>
+				<string>C06EA4721A8A8DB000977F03</string>
+				<string>C06EA4631A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>NumberJumble</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4631A8A8DB000977F03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C06EA4641A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4641A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4651A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>AppDelegate.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4661A8A8DB000977F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C06EA4651A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C06EA4671A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.sks</string>
+			<key>path</key>
+			<string>GameScene.sks</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4681A8A8DB000977F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C06EA4671A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C06EA4691A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GameScene.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA46A1A8A8DB000977F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C06EA4691A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C06EA46B1A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>GameViewController.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA46C1A8A8DB000977F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C06EA46B1A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C06EA46D1A8A8DB000977F03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C06EA46E1A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA46E1A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.storyboard</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/Main.storyboard</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA46F1A8A8DB000977F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C06EA46D1A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C06EA4701A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>folder.assetcatalog</string>
+			<key>path</key>
+			<string>Images.xcassets</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4711A8A8DB000977F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C06EA4701A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C06EA4721A8A8DB000977F03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C06EA4731A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXVariantGroup</string>
+			<key>name</key>
+			<string>LaunchScreen.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4731A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>file.xib</string>
+			<key>name</key>
+			<string>Base</string>
+			<key>path</key>
+			<string>Base.lproj/LaunchScreen.xib</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4741A8A8DB000977F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C06EA4721A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C06EA4751A8A8DB000977F03</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>C06EA4801A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXSourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C06EA4761A8A8DB000977F03</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array>
+				<string>30D5F1615FD6A6EA3217802E</string>
+			</array>
+			<key>isa</key>
+			<string>PBXFrameworksBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C06EA4771A8A8DB000977F03</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXResourcesBuildPhase</string>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+		</dict>
+		<key>C06EA4781A8A8DB000977F03</key>
+		<dict>
+			<key>buildConfigurationList</key>
+			<string>C06EA4861A8A8DB000977F03</string>
+			<key>buildPhases</key>
+			<array>
+				<string>D41E263E6FBE8A06F455503D</string>
+				<string>C06EA4751A8A8DB000977F03</string>
+				<string>C06EA4761A8A8DB000977F03</string>
+				<string>C06EA4771A8A8DB000977F03</string>
+				<string>CB60B904B1AFF8114692A284</string>
+				<string>A88614CF1C370700486EFA4A</string>
+			</array>
+			<key>buildRules</key>
+			<array/>
+			<key>dependencies</key>
+			<array>
+				<string>C06EA47B1A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXNativeTarget</string>
+			<key>name</key>
+			<string>NumberJumbleTests</string>
+			<key>productName</key>
+			<string>NumberJumbleTests</string>
+			<key>productReference</key>
+			<string>C06EA4791A8A8DB000977F03</string>
+			<key>productType</key>
+			<string>com.apple.product-type.bundle.unit-test</string>
+		</dict>
+		<key>C06EA4791A8A8DB000977F03</key>
+		<dict>
+			<key>explicitFileType</key>
+			<string>wrapper.cfbundle</string>
+			<key>includeInIndex</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>path</key>
+			<string>NumberJumbleTests.xctest</string>
+			<key>sourceTree</key>
+			<string>BUILT_PRODUCTS_DIR</string>
+		</dict>
+		<key>C06EA47A1A8A8DB000977F03</key>
+		<dict>
+			<key>containerPortal</key>
+			<string>C06EA4581A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXContainerItemProxy</string>
+			<key>proxyType</key>
+			<string>1</string>
+			<key>remoteGlobalIDString</key>
+			<string>C06EA45F1A8A8DB000977F03</string>
+			<key>remoteInfo</key>
+			<string>NumberJumble</string>
+		</dict>
+		<key>C06EA47B1A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXTargetDependency</string>
+			<key>target</key>
+			<string>C06EA45F1A8A8DB000977F03</string>
+			<key>targetProxy</key>
+			<string>C06EA47A1A8A8DB000977F03</string>
+		</dict>
+		<key>C06EA47C1A8A8DB000977F03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C06EA47F1A8A8DB000977F03</string>
+				<string>C06EA47D1A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>path</key>
+			<string>NumberJumbleTests</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA47D1A8A8DB000977F03</key>
+		<dict>
+			<key>children</key>
+			<array>
+				<string>C06EA47E1A8A8DB000977F03</string>
+			</array>
+			<key>isa</key>
+			<string>PBXGroup</string>
+			<key>name</key>
+			<string>Supporting Files</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA47E1A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.plist.xml</string>
+			<key>path</key>
+			<string>Info.plist</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA47F1A8A8DB000977F03</key>
+		<dict>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>sourcecode.swift</string>
+			<key>path</key>
+			<string>NumberJumbleTests.swift</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+		<key>C06EA4801A8A8DB000977F03</key>
+		<dict>
+			<key>fileRef</key>
+			<string>C06EA47F1A8A8DB000977F03</string>
+			<key>isa</key>
+			<string>PBXBuildFile</string>
+		</dict>
+		<key>C06EA4811A8A8DB000977F03</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_DYNAMIC_NO_PIC</key>
+				<string>NO</string>
+				<key>GCC_OPTIMIZATION_LEVEL</key>
+				<string>0</string>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_SYMBOLS_PRIVATE_EXTERN</key>
+				<string>NO</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>YES</string>
+				<key>ONLY_ACTIVE_ARCH</key>
+				<string>YES</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>SWIFT_OPTIMIZATION_LEVEL</key>
+				<string>-Onone</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>2</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C06EA4821A8A8DB000977F03</key>
+		<dict>
+			<key>buildSettings</key>
+			<dict>
+				<key>ALWAYS_SEARCH_USER_PATHS</key>
+				<string>NO</string>
+				<key>CLANG_CXX_LANGUAGE_STANDARD</key>
+				<string>gnu++0x</string>
+				<key>CLANG_CXX_LIBRARY</key>
+				<string>libc++</string>
+				<key>CLANG_ENABLE_MODULES</key>
+				<string>YES</string>
+				<key>CLANG_ENABLE_OBJC_ARC</key>
+				<string>YES</string>
+				<key>CLANG_WARN_BOOL_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_CONSTANT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_DIRECT_OBJC_ISA_USAGE</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_EMPTY_BODY</key>
+				<string>YES</string>
+				<key>CLANG_WARN_ENUM_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_INT_CONVERSION</key>
+				<string>YES</string>
+				<key>CLANG_WARN_OBJC_ROOT_CLASS</key>
+				<string>YES_ERROR</string>
+				<key>CLANG_WARN_UNREACHABLE_CODE</key>
+				<string>YES</string>
+				<key>CLANG_WARN__DUPLICATE_METHOD_MATCH</key>
+				<string>YES</string>
+				<key>CODE_SIGN_IDENTITY[sdk=iphoneos*]</key>
+				<string>iPhone Developer</string>
+				<key>COPY_PHASE_STRIP</key>
+				<string>YES</string>
+				<key>ENABLE_NS_ASSERTIONS</key>
+				<string>NO</string>
+				<key>ENABLE_STRICT_OBJC_MSGSEND</key>
+				<string>YES</string>
+				<key>GCC_C_LANGUAGE_STANDARD</key>
+				<string>gnu99</string>
+				<key>GCC_WARN_64_TO_32_BIT_CONVERSION</key>
+				<string>YES</string>
+				<key>GCC_WARN_ABOUT_RETURN_TYPE</key>
+				<string>YES_ERROR</string>
+				<key>GCC_WARN_UNDECLARED_SELECTOR</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNINITIALIZED_AUTOS</key>
+				<string>YES_AGGRESSIVE</string>
+				<key>GCC_WARN_UNUSED_FUNCTION</key>
+				<string>YES</string>
+				<key>GCC_WARN_UNUSED_VARIABLE</key>
+				<string>YES</string>
+				<key>IPHONEOS_DEPLOYMENT_TARGET</key>
+				<string>8.1</string>
+				<key>MTL_ENABLE_DEBUG_INFO</key>
+				<string>NO</string>
+				<key>SDKROOT</key>
+				<string>iphoneos</string>
+				<key>TARGETED_DEVICE_FAMILY</key>
+				<string>2</string>
+				<key>VALIDATE_PRODUCT</key>
+				<string>YES</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>C06EA4831A8A8DB000977F03</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C06EA4841A8A8DB000977F03</string>
+				<string>C06EA4851A8A8DB000977F03</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C06EA4841A8A8DB000977F03</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>695DA6DCE39F779F0635ECC1</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>NumberJumble/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C06EA4851A8A8DB000977F03</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>E092579E01B623F46DFAC72F</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>ASSETCATALOG_COMPILER_APPICON_NAME</key>
+				<string>AppIcon</string>
+				<key>INFOPLIST_FILE</key>
+				<string>NumberJumble/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>C06EA4861A8A8DB000977F03</key>
+		<dict>
+			<key>buildConfigurations</key>
+			<array>
+				<string>C06EA4871A8A8DB000977F03</string>
+				<string>C06EA4881A8A8DB000977F03</string>
+			</array>
+			<key>defaultConfigurationIsVisible</key>
+			<string>0</string>
+			<key>isa</key>
+			<string>XCConfigurationList</string>
+		</dict>
+		<key>C06EA4871A8A8DB000977F03</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>00520348CB9331D8CEE316D7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>GCC_PREPROCESSOR_DEFINITIONS</key>
+				<array>
+					<string>DEBUG=1</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>NumberJumbleTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/NumberJumble.app/NumberJumble</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Debug</string>
+		</dict>
+		<key>C06EA4881A8A8DB000977F03</key>
+		<dict>
+			<key>baseConfigurationReference</key>
+			<string>8E7D0B664FB90D2BE8E672E7</string>
+			<key>buildSettings</key>
+			<dict>
+				<key>BUNDLE_LOADER</key>
+				<string>$(TEST_HOST)</string>
+				<key>FRAMEWORK_SEARCH_PATHS</key>
+				<array>
+					<string>$(SDKROOT)/Developer/Library/Frameworks</string>
+					<string>$(inherited)</string>
+				</array>
+				<key>INFOPLIST_FILE</key>
+				<string>NumberJumbleTests/Info.plist</string>
+				<key>LD_RUNPATH_SEARCH_PATHS</key>
+				<string>$(inherited) @executable_path/Frameworks @loader_path/Frameworks</string>
+				<key>PRODUCT_NAME</key>
+				<string>$(TARGET_NAME)</string>
+				<key>TEST_HOST</key>
+				<string>$(BUILT_PRODUCTS_DIR)/NumberJumble.app/NumberJumble</string>
+			</dict>
+			<key>isa</key>
+			<string>XCBuildConfiguration</string>
+			<key>name</key>
+			<string>Release</string>
+		</dict>
+		<key>CB60B904B1AFF8114692A284</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Embed Pods Frameworks</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>"${SRCROOT}/Pods/Target Support Files/Pods-NumberJumbleTests/Pods-NumberJumbleTests-frameworks.sh"
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>D41E263E6FBE8A06F455503D</key>
+		<dict>
+			<key>buildActionMask</key>
+			<string>2147483647</string>
+			<key>files</key>
+			<array/>
+			<key>inputPaths</key>
+			<array/>
+			<key>isa</key>
+			<string>PBXShellScriptBuildPhase</string>
+			<key>name</key>
+			<string>Check Pods Manifest.lock</string>
+			<key>outputPaths</key>
+			<array/>
+			<key>runOnlyForDeploymentPostprocessing</key>
+			<string>0</string>
+			<key>shellPath</key>
+			<string>/bin/sh</string>
+			<key>shellScript</key>
+			<string>diff "${PODS_ROOT}/../Podfile.lock" "${PODS_ROOT}/Manifest.lock" &gt; /dev/null
+if [[ $? != 0 ]] ; then
+    cat &lt;&lt; EOM
+error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.
+EOM
+    exit 1
+fi
+</string>
+			<key>showEnvVarsInLog</key>
+			<string>0</string>
+		</dict>
+		<key>E092579E01B623F46DFAC72F</key>
+		<dict>
+			<key>includeInIndex</key>
+			<string>1</string>
+			<key>isa</key>
+			<string>PBXFileReference</string>
+			<key>lastKnownFileType</key>
+			<string>text.xcconfig</string>
+			<key>name</key>
+			<string>Pods-NumberJumble.release.xcconfig</string>
+			<key>path</key>
+			<string>Pods/Target Support Files/Pods-NumberJumble/Pods-NumberJumble.release.xcconfig</string>
+			<key>sourceTree</key>
+			<string>&lt;group&gt;</string>
+		</dict>
+	</dict>
+	<key>rootObject</key>
+	<string>C06EA4581A8A8DB000977F03</string>
+</dict>
+</plist>
