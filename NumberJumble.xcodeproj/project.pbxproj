@@ -15,6 +15,7 @@
 		C06EA46F1A8A8DB000977F03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06EA46D1A8A8DB000977F03 /* Main.storyboard */; };
 		C06EA4711A8A8DB000977F03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4701A8A8DB000977F03 /* Images.xcassets */; };
 		C06EA4741A8A8DB000977F03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4721A8A8DB000977F03 /* LaunchScreen.xib */; };
+		C0AF7E9C1A8AE89D00E21313 /* GameSceneSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +44,7 @@
 		C06EA4731A8A8DB000977F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C06EA4791A8A8DB000977F03 /* NumberJumbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberJumbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06EA47E1A8A8DB000977F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneSpec.swift; sourceTree = "<group>"; };
 		E092579E01B623F46DFAC72F /* Pods-NumberJumble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberJumble.release.xcconfig"; path = "Pods/Target Support Files/Pods-NumberJumble/Pods-NumberJumble.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -132,6 +134,7 @@
 			isa = PBXGroup;
 			children = (
 				C06EA47D1A8A8DB000977F03 /* Supporting Files */,
+				C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */,
 			);
 			path = NumberJumbleTests;
 			sourceTree = "<group>";
@@ -337,6 +340,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0AF7E9C1A8AE89D00E21313 /* GameSceneSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -476,6 +480,7 @@
 			baseConfigurationReference = 00520348CB9331D8CEE316D7 /* Pods-NumberJumbleTests.debug.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
@@ -487,6 +492,7 @@
 				INFOPLIST_FILE = NumberJumbleTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/NumberJumble.app/NumberJumble";
 			};
 			name = Debug;
@@ -496,6 +502,7 @@
 			baseConfigurationReference = 8E7D0B664FB90D2BE8E672E7 /* Pods-NumberJumbleTests.release.xcconfig */;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_MODULES = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
