@@ -20,7 +20,7 @@ class GameViewController: UIViewController {
     }
     
     override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.LandscapeLeft.rawValue)
+        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
 
     override func viewDidLoad() {
