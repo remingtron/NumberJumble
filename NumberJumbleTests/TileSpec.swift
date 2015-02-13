@@ -16,20 +16,22 @@ class TileSpec: QuickSpec {
     override func spec() {
         describe("a tile") {
             
-            let underTest = Tile(value: 3)
+            let underTest = Tile(value: 3, size: 100)
             
             it("has a value") {
                 expect(underTest.value).to(equal(3))
             }
             
             context("sprite") {
+                
+                let sprite = underTest.sprite
             
                 it("has the tile image") {
-                    expect(underTest.sprite.texture?.description).to(contain("'Tile'"))
+                    expect(sprite.texture?.description).to(contain("'Tile'"))
                 }
                 
-                it("has the correct size") {
-                    expect(underTest.sprite.size).to(equal(CGSize(width: 125, height: 125)))
+                it("has the specified size") {
+                    expect(sprite.size).to(equal(CGSize(width: 100, height: 100)))
                 }
                 
                 context("value label") {
@@ -50,6 +52,10 @@ class TileSpec: QuickSpec {
                     
                     it("has vertically centered text") {
                         expect(valueLabel!.verticalAlignmentMode.rawValue).to(equal(SKLabelVerticalAlignmentMode.Center.rawValue))
+                    }
+                    
+                    it("has font size that's a percentage of the surrounding sprite") {
+                        expect(valueLabel!.fontSize).to(equal(sprite.size.height*0.75))
                     }
                     
                 }

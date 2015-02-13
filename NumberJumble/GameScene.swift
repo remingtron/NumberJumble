@@ -21,7 +21,7 @@ public class GameScene: SKScene {
         
         backgroundColor = colorForBackground
         
-        let tile = Tile(value: 3)
+        let tile = Tile(value: 3, size: 100)
         addChild(tile.sprite)
         
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
