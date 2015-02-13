@@ -20,10 +20,18 @@ public class GameScene: SKScene {
         super.init(size: size)
         
         backgroundColor = colorForBackground
-        
-        let tile = Tile(value: 3, size: 100)
-        addChild(tile.sprite)
-        
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
+        
+        // spike code below here
+//        let gridLayer = SKNode()
+//        addChild(gridLayer)
+//        
+//        for row in 0..<5 {
+//            for column in 0..<5 {
+//                let tile = Tile(value: row*5+column, size: 100)
+//                tile.sprite.position = CGPoint(x: CGFloat(100.0*(CGFloat(row)-2)), y: CGFloat(100.0*(CGFloat(column)-2)))
+//                gridLayer.addChild(tile.sprite)
+//            }
+//        }
     }
 }
