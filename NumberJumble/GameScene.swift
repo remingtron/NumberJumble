@@ -28,9 +28,9 @@ public class GameScene: SKScene {
 //        
 //        for row in 0..<5 {
 //            for column in 0..<5 {
-//                let tile = Tile(value: row*5+column, size: 100)
-//                tile.sprite.position = CGPoint(x: CGFloat(100.0*(CGFloat(row)-2)), y: CGFloat(100.0*(CGFloat(column)-2)))
-//                gridLayer.addChild(tile.sprite)
+//                let tile = TileSprite(value: row*5+column, size: 100)
+//                tile.position = CGPoint(x: CGFloat(100.0*(CGFloat(row)-2)), y: CGFloat(100.0*(CGFloat(column)-2)))
+//                gridLayer.addChild(tile)
 //            }
 //        }
     }
