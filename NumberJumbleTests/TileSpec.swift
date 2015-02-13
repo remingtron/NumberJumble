@@ -22,44 +22,6 @@ class TileSpec: QuickSpec {
                 expect(underTest.value).to(equal(3))
             }
             
-            context("sprite") {
-                
-                let sprite = underTest.sprite
-            
-                it("has the tile image") {
-                    expect(sprite.texture?.description).to(contain("'Tile'"))
-                }
-                
-                it("has the specified size") {
-                    expect(sprite.size).to(equal(CGSize(width: 100, height: 100)))
-                }
-                
-                context("value label") {
-                
-                    let valueLabel = underTest.sprite.childNodeWithName("valueLabel") as? SKLabelNode
-                    
-                    it("has text equaling the value of the tile") {
-                        expect(valueLabel!.text).to(equal("3"))
-                    }
-                    
-                    it("has the correct font") {
-                        expect(valueLabel!.fontName).to(equal("GillSans-Bold"))
-                    }
-                    
-                    it("has the correct font color") {
-                        expect(valueLabel!.fontColor).to(beSameUIColor(UIColor.blackColor()))
-                    }
-                    
-                    it("has vertically centered text") {
-                        expect(valueLabel!.verticalAlignmentMode.rawValue).to(equal(SKLabelVerticalAlignmentMode.Center.rawValue))
-                    }
-                    
-                    it("has font size that's a percentage of the surrounding sprite") {
-                        expect(valueLabel!.fontSize).to(equal(sprite.size.height*0.75))
-                    }
-                    
-                }
-            }
         }
     }
     

@@ -16,6 +16,8 @@
 		C055E3A91A8C51570081BC63 /* Array2DSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3A81A8C51570081BC63 /* Array2DSpec.swift */; };
 		C055E3AB1A8C55E00081BC63 /* TileSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3AA1A8C55E00081BC63 /* TileSpec.swift */; };
 		C055E3AD1A8CD9C00081BC63 /* UIColorTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */; };
+		C055E3AF1A8E96650081BC63 /* TileSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3AE1A8E96650081BC63 /* TileSprite.swift */; };
+		C055E3B11A8E977E0081BC63 /* TileSpriteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3B01A8E977E0081BC63 /* TileSpriteSpec.swift */; };
 		C06EA4661A8A8DB000977F03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA4651A8A8DB000977F03 /* AppDelegate.swift */; };
 		C06EA46A1A8A8DB000977F03 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA4691A8A8DB000977F03 /* GameScene.swift */; };
 		C06EA46C1A8A8DB000977F03 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA46B1A8A8DB000977F03 /* GameViewController.swift */; };
@@ -48,6 +50,8 @@
 		C055E3A81A8C51570081BC63 /* Array2DSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Array2DSpec.swift; sourceTree = "<group>"; };
 		C055E3AA1A8C55E00081BC63 /* TileSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSpec.swift; sourceTree = "<group>"; };
 		C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTestHelpers.swift; sourceTree = "<group>"; };
+		C055E3AE1A8E96650081BC63 /* TileSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSprite.swift; sourceTree = "<group>"; };
+		C055E3B01A8E977E0081BC63 /* TileSpriteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSpriteSpec.swift; sourceTree = "<group>"; };
 		C06EA4601A8A8DB000977F03 /* NumberJumble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberJumble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06EA4641A8A8DB000977F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C06EA4651A8A8DB000977F03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -135,6 +139,7 @@
 				C06EA4631A8A8DB000977F03 /* Supporting Files */,
 				C02F71DB1A8C4A3400798A56 /* Level.swift */,
 				C055E3A41A8C4BB00081BC63 /* Tile.swift */,
+				C055E3AE1A8E96650081BC63 /* TileSprite.swift */,
 			);
 			path = NumberJumble;
 			sourceTree = "<group>";
@@ -156,6 +161,7 @@
 				C055E3A81A8C51570081BC63 /* Array2DSpec.swift */,
 				C055E3AA1A8C55E00081BC63 /* TileSpec.swift */,
 				C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */,
+				C055E3B01A8E977E0081BC63 /* TileSpriteSpec.swift */,
 			);
 			path = NumberJumbleTests;
 			sourceTree = "<group>";
@@ -351,6 +357,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C055E3AF1A8E96650081BC63 /* TileSprite.swift in Sources */,
 				C06EA46A1A8A8DB000977F03 /* GameScene.swift in Sources */,
 				C055E3A71A8C4FF50081BC63 /* Array2D.swift in Sources */,
 				C06EA46C1A8A8DB000977F03 /* GameViewController.swift in Sources */,
@@ -369,6 +376,7 @@
 				C055E3AD1A8CD9C00081BC63 /* UIColorTestHelpers.swift in Sources */,
 				C055E3AB1A8C55E00081BC63 /* TileSpec.swift in Sources */,
 				C02F71D71A8C497600798A56 /* LevelSpec.swift in Sources */,
+				C055E3B11A8E977E0081BC63 /* TileSpriteSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
