@@ -30,6 +30,10 @@ class GameSceneSpec: QuickSpec {
                 expect(underTest!.backgroundColor).to(beSameUIColor(underTest!.colorForBackground))
             }
             
+            it("has an anchor point in the middle") {
+                expect(underTest!.anchorPoint).to(equal(CGPoint(x: 0.5, y: 0.5)))
+            }
+            
         }
     }
 }

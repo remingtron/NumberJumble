@@ -24,5 +24,6 @@ public class GameScene: SKScene {
         let tile = Tile(value: 3)
         addChild(tile.sprite)
         
+        anchorPoint = CGPoint(x: 0.5, y: 0.5)
     }
 }

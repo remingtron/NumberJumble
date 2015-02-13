@@ -47,6 +47,11 @@ class TileSpec: QuickSpec {
                     it("has the correct font color") {
                         expect(valueLabel!.fontColor).to(beSameUIColor(UIColor.blackColor()))
                     }
+                    
+                    it("has vertically centered text") {
+                        expect(valueLabel!.verticalAlignmentMode.rawValue).to(equal(SKLabelVerticalAlignmentMode.Center.rawValue))
+                    }
+                    
                 }
             }
         }

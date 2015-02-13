@@ -21,6 +21,7 @@ public class Tile {
         valueLabel.name = "valueLabel"
         valueLabel.fontName = "GillSans-Bold"
         valueLabel.fontColor = UIColor.blackColor()
+        valueLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
         sprite.addChild(valueLabel)
     }
 }
