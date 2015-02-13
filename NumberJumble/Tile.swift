@@ -6,8 +6,21 @@
 //  Copyright (c) 2015 Remington Davenport. All rights reserved.
 //
 
-import Foundation
+import SpriteKit
 
 public class Tile {
     
+    public let value: Int
+    public let sprite: SKSpriteNode
+    
+    public init(value: Int) {
+        self.value = value
+        self.sprite = SKSpriteNode(imageNamed: "Tile")
+        
+        let valueLabel = SKLabelNode(text: String(value))
+        valueLabel.name = "valueLabel"
+        valueLabel.fontName = "GillSans-Bold"
+        valueLabel.fontColor = UIColor.blackColor()
+        sprite.addChild(valueLabel)
+    }
 }

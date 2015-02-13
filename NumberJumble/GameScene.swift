@@ -21,21 +21,8 @@ public class GameScene: SKScene {
         
         backgroundColor = colorForBackground
         
-//        let tile = SKSpriteNode(imageNamed: "Tile")
-//        tile.position = CGPoint(x: 300, y: 200)
-//        tile.anchorPoint = CGPoint(x: 0.5, y: 0.25)
-//        tile.size = CGSize(width: 100, height: 100)
-//        
-//        // on click, colorize the sprite?
-//        tile.color = UIColor.brownColor()
-//        tile.colorBlendFactor = 0.5
-//        
-//        let text = SKLabelNode()
-//        text.fontColor = UIColor.blackColor()
-//        text.fontSize = 200
-//        text.fontName = "GillSans-Bold"
-//        tile.addChild(text)
-//        
-//        addChild(tile)
+        let tile = Tile(value: 3)
+        addChild(tile.sprite)
+        
     }
 }
