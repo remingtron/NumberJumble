@@ -16,7 +16,7 @@ class TileSpec: QuickSpec {
     override func spec() {
         describe("a tile") {
             
-            let underTest = Tile(value: 3, size: 100)
+            let underTest = Tile(value: 3)
             
             it("has a value") {
                 expect(underTest.value).to(equal(3))

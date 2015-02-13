@@ -10,7 +10,7 @@ public class Tile {
     
     public let value: Int
     
-    public init(value: Int, size: Int) {
+    public init(value: Int) {
         self.value = value
     }
 }
