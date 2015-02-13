@@ -14,10 +14,20 @@ class LevelSpec: QuickSpec {
     
     override func spec() {
         describe("level") {
+
+            let underTest = Level(gridSize: 5)
+            
             it("has a grid of tiles") {
-                let underTest = Level(gridSize: 5)
                 expect(underTest.tiles?.columns).to(equal(5))
                 expect(underTest.tiles?.rows).to(equal(5))
+            }
+            
+            it("is populated with tiles") {
+                for column in 0..<5 {
+                    for row in 0..<5 {
+                        expect(underTest.tiles[column, row]).notTo(beNil())
+                    }
+                }
             }
         }
     }

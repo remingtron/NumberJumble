@@ -12,5 +12,10 @@ public class Level {
     
     public init(gridSize: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
+        for column in 0..<gridSize {
+            for row in 0..<gridSize {
+                tiles[column, row] = Tile(value: 2)
+            }
+        }
     }
 }
