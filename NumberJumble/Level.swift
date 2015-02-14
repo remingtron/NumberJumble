@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Remington Davenport. All rights reserved.
 //
 
+import Foundation
+
 public class Level {
     
     public var tiles: Array2D<Tile>!
@@ -14,7 +16,7 @@ public class Level {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
         for column in 0..<gridSize {
             for row in 0..<gridSize {
-                tiles[column, row] = Tile(value: 2)
+                tiles[column, row] = Tile(value: Int(arc4random_uniform(9)+1))
             }
         }
     }

@@ -22,16 +22,16 @@ public class GameScene: SKScene {
         backgroundColor = colorForBackground
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
-        // spike code below here
-//        let gridLayer = SKNode()
-//        addChild(gridLayer)
-//        
-//        for row in 0..<5 {
-//            for column in 0..<5 {
-//                let tile = TileSprite(value: row*5+column, size: 100)
-//                tile.position = CGPoint(x: CGFloat(100.0*(CGFloat(row)-2)), y: CGFloat(100.0*(CGFloat(column)-2)))
-//                gridLayer.addChild(tile)
-//            }
-//        }
+        let gridLayer = SKNode()
+        gridLayer.name = "gridLayer"
+        addChild(gridLayer)
+        
+        for row in 0..<5 {
+            for column in 0..<5 {
+                let tile = TileSprite(value: Int(arc4random_uniform(9)+1), size: 100)
+                tile.position = CGPoint(x: CGFloat(100.0*(CGFloat(row)-2)), y: CGFloat(100.0*(CGFloat(column)-2)))
+                gridLayer.addChild(tile)
+            }
+        }
     }
 }

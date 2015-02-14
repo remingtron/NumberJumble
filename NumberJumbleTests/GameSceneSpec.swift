@@ -34,6 +34,14 @@ class GameSceneSpec: QuickSpec {
                 expect(underTest!.anchorPoint).to(equal(CGPoint(x: 0.5, y: 0.5)))
             }
             
+            it("has a grid layer") {
+                expect(underTest?.childNodeWithName("gridLayer")).notTo(beNil())
+            }
+            
+            it("has tiles in the grid layer") {
+                expect(underTest!.childNodeWithName("gridLayer")!.children.count).to(equal(25))
+            }
+            
         }
     }
 }
