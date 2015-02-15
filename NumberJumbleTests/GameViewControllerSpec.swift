@@ -16,13 +16,20 @@ class GameViewControllerSpec: QuickSpec {
     override func spec() {
         describe("game view controller") {
             
-            it("updates the current total text when a tile is touched") {
-                let underTest = GameViewController()
+            let underTest = GameViewController()
+            
+            beforeEach {
                 underTest.initialize(SKView())
                 underTest.tileTouched(2, row: 3)
-                
+            }
+            
+            it("updates the current total text when a tile is touched") {
                 let valueOfTouchedTile = underTest.level.tiles[2, 3]!.value
-                expect(underTest.scene.getCurrentTotal()).to(equal(String(valueOfTouchedTile)))
+                expect(underTest.scene.currentTotalLabel.text).to(equal(String(valueOfTouchedTile)))
+            }
+            
+            it("marks the node as touched in the scene") {
+                expect(underTest.scene.gridLayer.tileSprites[2, 3]!.color).to(beSameUIColor(TileSprite.TouchedSpriteColor))
             }
             
         }

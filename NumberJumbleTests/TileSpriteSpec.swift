@@ -25,6 +25,16 @@ class TileSpriteSpec: QuickSpec {
                 expect(sprite.size).to(equal(CGSize(width: 100, height: 100)))
             }
             
+            it("has an initial color of white") {
+                expect(sprite.color).to(beSameUIColor(UIColor.whiteColor()))
+            }
+            
+            it("has a color blend factor of 1") {
+                expect(sprite.colorBlendFactor).to(equal(1))
+            }
+            
+            //UIColor(red: 1, green: 0.81, blue: 0.31, alpha: 1)
+            
             context("value label") {
                 
                 let valueLabel = sprite.childNodeWithName("valueLabel") as? SKLabelNode

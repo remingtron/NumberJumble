@@ -12,8 +12,8 @@ public class GameScene: SKScene {
     
     public let colorForBackground = UIColor(red: 0.19, green: 0.58, blue: 0.83, alpha:1.0)
     
-    private var gridLayer: GridLayer!
-    private var currentTotalLabel: SKLabelNode!
+    public var gridLayer: GridLayer!
+    public var currentTotalLabel: SKLabelNode!
     
     public var tileTouchedHandler: ((column: Int, row: Int) -> ())?
     
@@ -62,7 +62,7 @@ public class GameScene: SKScene {
         currentTotalLabel.text = String(total)
     }
     
-    public func getCurrentTotal() -> String {
-        return currentTotalLabel.text
+    public func markSpriteTouched(column: Int, row: Int) {
+        gridLayer.tileSprites[column, row]!.markTouched()
     }
 }

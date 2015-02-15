@@ -10,6 +10,10 @@ import SpriteKit
 
 public class TileSprite: SKSpriteNode {
     
+    public class var TouchedSpriteColor : UIColor {
+        return UIColor(red: 1, green: 0.816, blue: 0.31, alpha: 1)
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
     }
@@ -17,6 +21,10 @@ public class TileSprite: SKSpriteNode {
     public init(value: Int, size: CGFloat) {
         let texture = SKTexture(imageNamed: "Tile")
         super.init(texture: texture, color: UIColor.clearColor(), size: CGSize(width: size, height: size))
+
+        color = UIColor.whiteColor()
+        colorBlendFactor = 1
+        
         addChild(createValueLabel(value))
     }
     
@@ -28,5 +36,9 @@ public class TileSprite: SKSpriteNode {
         valueLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
         valueLabel.fontSize = size.height*0.75
         return valueLabel
+    }
+    
+    public func markTouched() {
+        color = self.dynamicType.TouchedSpriteColor
     }
 }
