@@ -23,6 +23,10 @@ public class Level {
     }
     
     public func tryTouchTileAt(column: Int, row: Int) {
-        currentTotal += tiles[column, row]!.value
+        var targetTile = tiles[column, row]!
+        if !targetTile.isSelected {
+            currentTotal += tiles[column, row]!.value
+            tiles[column, row]!.isSelected = true
+        }
     }
 }

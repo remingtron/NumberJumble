@@ -9,6 +9,7 @@
 public class Tile {
     
     public let value: Int
+    public var isSelected = false
     
     public init(value: Int) {
         self.value = value
