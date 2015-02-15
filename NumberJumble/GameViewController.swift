@@ -27,22 +27,26 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         let skView = configureView()
-        
         let level = Level(gridSize: 6)
         let scene = createGameScene(skView, level: level)
         
         skView.presentScene(scene)
     }
     
-    func configureView() -> SKView {
+    private func configureView() -> SKView {
         let skView = view as SKView
         skView.multipleTouchEnabled = false
         return skView
     }
     
-    func createGameScene(view: SKView, level: Level) -> GameScene {
+    private func createGameScene(view: SKView, level: Level) -> GameScene {
         var scene = GameScene(size: view.bounds.size, level: level)
         scene.scaleMode = .AspectFill
+        scene.tileTouchedHandler = tileTouched
         return scene
+    }
+    
+    func tileTouched(column: Int, row: Int) {
+        println("Tile touched at column: \(column), row: \(row)")
     }
 }

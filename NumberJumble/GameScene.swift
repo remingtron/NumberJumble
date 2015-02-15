@@ -15,6 +15,8 @@ public class GameScene: SKScene {
     private var gridLayer: GridLayer!
     private var currentTotalLabel: SKLabelNode!
     
+    public var tileTouchedHandler: ((column: Int, row: Int) -> ())?
+    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
     }
@@ -42,5 +44,17 @@ public class GameScene: SKScene {
         gridLayer = GridLayer(tiles: level.tiles)
         gridLayer.name = "gridLayer"
         addChild(gridLayer)
+    }
+    
+    public override func touchesBegan(touches: NSSet, withEvent event: UIEvent) {
+        let touch = touches.anyObject() as UITouch
+        touchHandler(touch.locationInNode(gridLayer))
+    }
+    
+    public func touchHandler(location: CGPoint) {
+        let (tileFound, column, row) = gridLayer.tileAtPoint(location)
+        if tileFound {
+            tileTouchedHandler!(column: column, row: row)
+        }
     }
 }

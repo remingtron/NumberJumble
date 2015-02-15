@@ -35,4 +35,15 @@ public class GridLayer: SKNode {
         let tilesOnEachSideOfMiddle = (CGFloat(total)-1.0)/2.0
         return CGFloat(TileSize)*(CGFloat(index)-tilesOnEachSideOfMiddle)
     }
+    
+    public func tileAtPoint(location: CGPoint) -> (tileFound: Bool, column: Int, row: Int) {
+        for row in 0..<tileSprites.rows {
+            for column in 0..<tileSprites.columns {
+                if tileSprites[column, row]!.containsPoint(location) {
+                    return (true, column, row)
+                }
+            }
+        }
+        return (false, -1, -1)
+    }
 }

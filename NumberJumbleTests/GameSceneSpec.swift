@@ -64,6 +64,36 @@ class GameSceneSpec: QuickSpec {
                     expect(currentTotalLabel.position).to(equal(CGPoint(x: 0, y: 400)))
                 }
             }
+            
+            it("calls tileTouchedHandler with sprite coordinates if sprite is touched") {
+                
+                var capturedColumn: Int?
+                var capturedRow: Int?
+                
+                underTest.tileTouchedHandler = { (column: Int, row: Int) in
+                    capturedColumn = column
+                    capturedRow = row
+                }
+                
+                underTest.touchHandler(CGPoint(x: 50, y: -150))
+                expect(capturedColumn?).to(equal(3))
+                expect(capturedRow?).to(equal(1))
+            }
+            
+            it("does not call tileTouchHandler if area outside sprites in touched") {
+                
+                var capturedColumn: Int?
+                var capturedRow: Int?
+                
+                underTest.tileTouchedHandler = { (column: Int, row: Int) in
+                    capturedColumn = column
+                    capturedRow = row
+                }
+                
+                underTest.touchHandler(CGPoint(x: -500, y: 300))
+                expect(capturedColumn?).to(beNil())
+                expect(capturedRow?).to(beNil())
+            }
         }
     }
 }
