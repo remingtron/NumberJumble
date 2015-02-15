@@ -12,6 +12,9 @@ public class GameScene: SKScene {
     
     public let colorForBackground = UIColor(red: 0.19, green: 0.58, blue: 0.83, alpha:1.0)
     
+    private var gridLayer: SKNode!
+    private var currentTotalLabel: SKLabelNode!
+    
     public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder) is not used in this app")
     }
@@ -23,8 +26,11 @@ public class GameScene: SKScene {
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
         buildGridLayer()
-        
-        let currentTotalLabel = SKLabelNode(text: "0")
+        buildCurrentTotalLabel()
+    }
+    
+    func buildCurrentTotalLabel() {
+        currentTotalLabel = SKLabelNode(text: "0")
         currentTotalLabel.name = "currentTotal"
         currentTotalLabel.fontName = "GillSans-Bold"
         currentTotalLabel.fontSize = 100
@@ -33,7 +39,7 @@ public class GameScene: SKScene {
     }
     
     func buildGridLayer() {
-        let gridLayer = SKNode()
+        gridLayer = SKNode()
         gridLayer.name = "gridLayer"
         addChild(gridLayer)
         
