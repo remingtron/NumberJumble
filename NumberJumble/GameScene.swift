@@ -22,6 +22,17 @@ public class GameScene: SKScene {
         backgroundColor = colorForBackground
         anchorPoint = CGPoint(x: 0.5, y: 0.5)
         
+        buildGridLayer()
+        
+        let currentTotalLabel = SKLabelNode(text: "0")
+        currentTotalLabel.name = "currentTotal"
+        currentTotalLabel.fontName = "GillSans-Bold"
+        currentTotalLabel.fontSize = 100
+        currentTotalLabel.position = CGPoint(x: 0, y: 400)
+        addChild(currentTotalLabel)
+    }
+    
+    func buildGridLayer() {
         let gridLayer = SKNode()
         gridLayer.name = "gridLayer"
         addChild(gridLayer)
