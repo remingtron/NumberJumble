@@ -9,28 +9,36 @@
 import UIKit
 import SpriteKit
 
-class GameViewController: UIViewController {
+public class GameViewController: UIViewController {
     
-    override func prefersStatusBarHidden() -> Bool {
+    public var level: Level!
+    public var scene: GameScene!
+    
+    public override func prefersStatusBarHidden() -> Bool {
         return true
     }
     
-    override func shouldAutorotate() -> Bool {
+    public override func shouldAutorotate() -> Bool {
         return true
     }
     
-    override func supportedInterfaceOrientations() -> Int {
+    public override func supportedInterfaceOrientations() -> Int {
         return Int(UIInterfaceOrientationMask.Portrait.rawValue)
     }
 
-    override func viewDidLoad() {
+    public override func viewDidLoad() {
         super.viewDidLoad()
 
         let skView = configureView()
-        let level = Level(gridSize: 6)
-        let scene = createGameScene(skView, level: level)
+        initialize(skView)
         
         skView.presentScene(scene)
+    }
+    
+    // TODO: had to peel this out separately for testing.  should this really happen in an init anyway?
+    public func initialize(view: SKView) {
+        self.level = Level(gridSize: 6)
+        self.scene = createGameScene(view, level: level)
     }
     
     private func configureView() -> SKView {
@@ -46,7 +54,8 @@ class GameViewController: UIViewController {
         return scene
     }
     
-    func tileTouched(column: Int, row: Int) {
-        println("Tile touched at column: \(column), row: \(row)")
+    public func tileTouched(column: Int, row: Int) {
+        level.tryTouchTileAt(column, row: row)
+        scene.updateCurrentTotal(level.currentTotal)
     }
 }

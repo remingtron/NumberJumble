@@ -11,6 +11,7 @@ import Foundation
 public class Level {
     
     public var tiles: Array2D<Tile>!
+    public var currentTotal = 0
     
     public init(gridSize: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
@@ -19,5 +20,9 @@ public class Level {
                 tiles[column, row] = Tile(value: Int(arc4random_uniform(9)+1))
             }
         }
+    }
+    
+    public func tryTouchTileAt(column: Int, row: Int) {
+        currentTotal += tiles[column, row]!.value
     }
 }

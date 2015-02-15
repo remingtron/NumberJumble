@@ -57,4 +57,12 @@ public class GameScene: SKScene {
             tileTouchedHandler!(column: column, row: row)
         }
     }
+    
+    public func updateCurrentTotal(total: Int) {
+        currentTotalLabel.text = String(total)
+    }
+    
+    public func getCurrentTotal() -> String {
+        return currentTotalLabel.text
+    }
 }
