@@ -17,7 +17,7 @@ class GameSceneSpec: QuickSpec {
         describe("game scene") {
             
             let expectedSize = CGSize(width: 200, height: 300)
-            let underTest = GameScene(size: expectedSize)
+            let underTest = GameScene(size: expectedSize, level: Level(gridSize: 6))
             
             it("has the correct size") {
                 expect(underTest.size).to(equal(expectedSize))
@@ -33,16 +33,17 @@ class GameSceneSpec: QuickSpec {
             
             context("grid layer") {
                 
-                let gridLayer = underTest.childNodeWithName("gridLayer")
-                
-                it("is an SKNode") {
-                    expect(gridLayer).to(beAnInstanceOf(SKNode))
-                }
+                let gridLayer = underTest.childNodeWithName("gridLayer") as GridLayer
                 
                 it("has tiles in the grid layer") {
-                    expect(gridLayer!.children.count).to(equal(25))
+                    expect(gridLayer.children.count).to(equal(36))
                 }
-
+                
+                it("positions the tile sprites correctly") {
+                    expect(gridLayer.tileSprites![0, 0]!.position).to(equal(CGPoint(x: -250, y: -250)))
+                    expect(gridLayer.tileSprites![2, 3]!.position).to(equal(CGPoint(x: -50, y: 50)))
+                    expect(gridLayer.tileSprites![5, 5]!.position).to(equal(CGPoint(x: 250, y: 250)))
+                }
             }
             
             context("current total label") {

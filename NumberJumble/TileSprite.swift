@@ -14,7 +14,7 @@ public class TileSprite: SKSpriteNode {
         fatalError("init(coder) is not used in this app")
     }
     
-    public init(value: Int, size: Int) {
+    public init(value: Int, size: CGFloat) {
         let texture = SKTexture(imageNamed: "Tile")
         super.init(texture: texture, color: UIColor.clearColor(), size: CGSize(width: size, height: size))
         addChild(createValueLabel(value))

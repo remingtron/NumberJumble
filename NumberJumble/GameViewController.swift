@@ -27,7 +27,9 @@ class GameViewController: UIViewController {
         super.viewDidLoad()
 
         let skView = configureView()
-        let scene = createGameScene(skView)
+        
+        let level = Level(gridSize: 6)
+        let scene = createGameScene(skView, level: level)
         
         skView.presentScene(scene)
     }
@@ -38,8 +40,8 @@ class GameViewController: UIViewController {
         return skView
     }
     
-    func createGameScene(view: SKView) -> GameScene {
-        var scene = GameScene(size: view.bounds.size)
+    func createGameScene(view: SKView, level: Level) -> GameScene {
+        var scene = GameScene(size: view.bounds.size, level: level)
         scene.scaleMode = .AspectFill
         return scene
     }

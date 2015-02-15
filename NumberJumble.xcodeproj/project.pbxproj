@@ -18,6 +18,7 @@
 		C055E3AD1A8CD9C00081BC63 /* UIColorTestHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */; };
 		C055E3AF1A8E96650081BC63 /* TileSprite.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3AE1A8E96650081BC63 /* TileSprite.swift */; };
 		C055E3B11A8E977E0081BC63 /* TileSpriteSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3B01A8E977E0081BC63 /* TileSpriteSpec.swift */; };
+		C055E3B31A910EB20081BC63 /* GridLayer.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3B21A910EB20081BC63 /* GridLayer.swift */; };
 		C06EA4661A8A8DB000977F03 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA4651A8A8DB000977F03 /* AppDelegate.swift */; };
 		C06EA46A1A8A8DB000977F03 /* GameScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA4691A8A8DB000977F03 /* GameScene.swift */; };
 		C06EA46C1A8A8DB000977F03 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EA46B1A8A8DB000977F03 /* GameViewController.swift */; };
@@ -52,6 +53,8 @@
 		C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorTestHelpers.swift; sourceTree = "<group>"; };
 		C055E3AE1A8E96650081BC63 /* TileSprite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSprite.swift; sourceTree = "<group>"; };
 		C055E3B01A8E977E0081BC63 /* TileSpriteSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TileSpriteSpec.swift; sourceTree = "<group>"; };
+		C055E3B21A910EB20081BC63 /* GridLayer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridLayer.swift; sourceTree = "<group>"; };
+		C055E3B41A9115D50081BC63 /* Playground.playground */ = {isa = PBXFileReference; lastKnownFileType = file.playground; name = Playground.playground; path = NumberJumble/Playground.playground; sourceTree = "<group>"; };
 		C06EA4601A8A8DB000977F03 /* NumberJumble.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NumberJumble.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06EA4641A8A8DB000977F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C06EA4651A8A8DB000977F03 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +112,7 @@
 		C06EA4571A8A8DB000977F03 = {
 			isa = PBXGroup;
 			children = (
+				C055E3B41A9115D50081BC63 /* Playground.playground */,
 				C06EA4621A8A8DB000977F03 /* NumberJumble */,
 				C06EA47C1A8A8DB000977F03 /* NumberJumbleTests */,
 				C06EA4611A8A8DB000977F03 /* Products */,
@@ -129,15 +133,16 @@
 		C06EA4621A8A8DB000977F03 /* NumberJumble */ = {
 			isa = PBXGroup;
 			children = (
-				C055E3A61A8C4FF50081BC63 /* Array2D.swift */,
 				C06EA4651A8A8DB000977F03 /* AppDelegate.swift */,
+				C055E3A61A8C4FF50081BC63 /* Array2D.swift */,
 				C06EA4691A8A8DB000977F03 /* GameScene.swift */,
 				C06EA46B1A8A8DB000977F03 /* GameViewController.swift */,
-				C06EA46D1A8A8DB000977F03 /* Main.storyboard */,
+				C055E3B21A910EB20081BC63 /* GridLayer.swift */,
 				C06EA4701A8A8DB000977F03 /* Images.xcassets */,
 				C06EA4721A8A8DB000977F03 /* LaunchScreen.xib */,
-				C06EA4631A8A8DB000977F03 /* Supporting Files */,
 				C02F71DB1A8C4A3400798A56 /* Level.swift */,
+				C06EA46D1A8A8DB000977F03 /* Main.storyboard */,
+				C06EA4631A8A8DB000977F03 /* Supporting Files */,
 				C055E3A41A8C4BB00081BC63 /* Tile.swift */,
 				C055E3AE1A8E96650081BC63 /* TileSprite.swift */,
 			);
@@ -155,13 +160,13 @@
 		C06EA47C1A8A8DB000977F03 /* NumberJumbleTests */ = {
 			isa = PBXGroup;
 			children = (
-				C06EA47D1A8A8DB000977F03 /* Supporting Files */,
+				C055E3A81A8C51570081BC63 /* Array2DSpec.swift */,
 				C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */,
 				C02F71D61A8C497600798A56 /* LevelSpec.swift */,
-				C055E3A81A8C51570081BC63 /* Array2DSpec.swift */,
+				C06EA47D1A8A8DB000977F03 /* Supporting Files */,
 				C055E3AA1A8C55E00081BC63 /* TileSpec.swift */,
-				C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */,
 				C055E3B01A8E977E0081BC63 /* TileSpriteSpec.swift */,
+				C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */,
 			);
 			path = NumberJumbleTests;
 			sourceTree = "<group>";
@@ -362,6 +367,7 @@
 				C055E3A71A8C4FF50081BC63 /* Array2D.swift in Sources */,
 				C06EA46C1A8A8DB000977F03 /* GameViewController.swift in Sources */,
 				C055E3A51A8C4BB00081BC63 /* Tile.swift in Sources */,
+				C055E3B31A910EB20081BC63 /* GridLayer.swift in Sources */,
 				C02F71DC1A8C4A3400798A56 /* Level.swift in Sources */,
 				C06EA4661A8A8DB000977F03 /* AppDelegate.swift in Sources */,
 			);
