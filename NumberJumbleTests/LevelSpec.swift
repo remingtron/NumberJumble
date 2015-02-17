@@ -43,10 +43,46 @@ class LevelSpec: QuickSpec {
                 expect(underTest!.currentTotal).to(equal(underTest!.tiles[2,1]!.value))
             }
             
-            it("does not increment the current total if the sprite is already selected") {
+            it("is unable to touch tile and does not increment the current total if the sprite is already selected") {
                 underTest!.tryTouchTileAt(2, row: 1)
-                underTest!.tryTouchTileAt(2, row: 1)
+                let result = underTest!.tryTouchTileAt(2, row: 1)
+                expect(result).to(beFalse())
                 expect(underTest!.currentTotal).to(equal(underTest!.tiles[2,1]!.value))
+            }
+            
+            it("is able to touch a tile if no tiles have been touched") {
+                let result = underTest!.tryTouchTileAt(2, row: 1)
+                expect(result).to(beTrue())
+            }
+            
+            it("is unable to touch a tile if at least one tile has been touched and none are adjacent") {
+                underTest!.tryTouchTileAt(3, row:3)
+                let result = underTest!.tryTouchTileAt(2, row:2)
+                expect(result).to(beFalse())
+            }
+            
+            it("is able to touch a tile if tile to the right is selected") {
+                underTest!.tryTouchTileAt(3, row:3)
+                let result = underTest!.tryTouchTileAt(2, row:3)
+                expect(result).to(beTrue())
+            }
+            
+            it("is able to touch a tile if tile to the left is selected") {
+                underTest!.tryTouchTileAt(3, row:3)
+                let result = underTest!.tryTouchTileAt(4, row:3)
+                expect(result).to(beTrue())
+            }
+            
+            it("is able to touch a tile if tile below is selected") {
+                underTest!.tryTouchTileAt(3, row:3)
+                let result = underTest!.tryTouchTileAt(3, row:4)
+                expect(result).to(beTrue())
+            }
+            
+            it("is able to touch a tile if tile above is selected") {
+                underTest!.tryTouchTileAt(3, row:3)
+                let result = underTest!.tryTouchTileAt(3, row:2)
+                expect(result).to(beTrue())
             }
         }
     }

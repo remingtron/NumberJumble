@@ -19,8 +19,9 @@ public struct Array2D<T> {
     
     public subscript(column: Int, row: Int) -> T? {
         get {
-            assert(column >= 0 && column < columns)
-            assert(row >= 0 && row < rows)
+            if column < 0 || column >= columns || row < 0 || row >= rows {
+                return nil
+            }
             return array[row*columns + column]
         }
         set {

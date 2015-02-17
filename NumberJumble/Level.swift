@@ -22,11 +22,31 @@ public class Level {
         }
     }
     
-    public func tryTouchTileAt(column: Int, row: Int) {
+    public func tryTouchTileAt(column: Int, row: Int) -> Bool {
         var targetTile = tiles[column, row]!
-        if !targetTile.isSelected {
-            currentTotal += tiles[column, row]!.value
-            tiles[column, row]!.isSelected = true
+        if noTilesAreSelected() || (!tiles[column, row]!.isSelected && adjacentTileIsSelected(column, row: row)) {
+            currentTotal += targetTile.value
+            targetTile.isSelected = true
+            return true
         }
+        return false
+    }
+    
+    private func adjacentTileIsSelected(column: Int, row: Int) -> Bool {
+        return (tiles[column-1, row]?.isSelected ?? false) ||
+                (tiles[column+1, row]?.isSelected ?? false) ||
+                (tiles[column, row-1]?.isSelected ?? false) ||
+                (tiles[column, row+1]?.isSelected ?? false)
+    }
+    
+    private func noTilesAreSelected() -> Bool {
+        for column in 0..<tiles.columns {
+            for row in 0..<tiles.rows {
+                if tiles[column, row]!.isSelected {
+                    return false
+                }
+            }
+        }
+        return true
     }
 }

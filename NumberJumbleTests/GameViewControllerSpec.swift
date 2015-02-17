@@ -28,8 +28,13 @@ class GameViewControllerSpec: QuickSpec {
                 expect(underTest.scene.currentTotalLabel.text).to(equal(String(valueOfTouchedTile)))
             }
             
-            it("marks the node as touched in the scene") {
+            it("marks the node as touched in the scene if touched successfully") {
                 expect(underTest.scene.gridLayer.tileSprites[2, 3]!.color).to(beSameUIColor(TileSprite.TouchedSpriteColor))
+            }
+            
+            it("does not mark the node as touched in the scene if touched unsuccessfully") {
+                underTest.tileTouched(0, row: 0)
+                expect(underTest.scene.gridLayer.tileSprites[0, 0]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
             }
             
         }
