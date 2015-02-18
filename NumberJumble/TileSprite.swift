@@ -10,6 +10,10 @@ import SpriteKit
 
 public class TileSprite: SKSpriteNode {
     
+    public class var LastTouchedSpriteColor : UIColor {
+        return UIColor.yellowColor()
+    }
+    
     public class var TouchedSpriteColor : UIColor {
         return UIColor(red: 1, green: 0.816, blue: 0.31, alpha: 1)
     }
@@ -44,5 +48,9 @@ public class TileSprite: SKSpriteNode {
     
     public func markTouched() {
         color = TileSprite.TouchedSpriteColor
+    }
+    
+    public func markLastTouched() {
+        color = TileSprite.LastTouchedSpriteColor
     }
 }

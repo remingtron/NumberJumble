@@ -16,10 +16,18 @@ class TileSpec: QuickSpec {
     override func spec() {
         describe("a tile") {
             
-            let underTest = Tile(value: 3)
+            let underTest = Tile(column: 1, row: 2, value: 3)
             
             it("has a value") {
                 expect(underTest.value).to(equal(3))
+            }
+            
+            it("has a column") {
+                expect(underTest.column).to(equal(1))
+            }
+            
+            it("has a row") {
+                expect(underTest.row).to(equal(2))
             }
             
         }

@@ -57,8 +57,8 @@ public class GameViewController: UIViewController {
     public func tileTouched(column: Int, row: Int) {
         let touchSuccess = level.tryTouchTileAt(column, row: row)
         if touchSuccess {
-            scene.updateCurrentTotal(level.currentTotal)
-            scene.markSpriteTouched(column, row: row)
+            scene.updateCurrentTotal(level.getCurrentTotal())
+            scene.markSpritesTouched(level.getCurrentlySelectedTiles())
         }
     }
 }

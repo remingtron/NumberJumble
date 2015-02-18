@@ -11,14 +11,14 @@ import Foundation
 public class Level {
     
     public var tiles: Array2D<Tile>!
-    public var currentTotal = 0
-    private var mostRecentlySelected: (column: Int, row: Int)?
+    private var currentTotal = 0
+    private var selectedTiles = Array<Tile>()
     
     public init(gridSize: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
         for column in 0..<gridSize {
             for row in 0..<gridSize {
-                tiles[column, row] = Tile(value: Int(arc4random_uniform(9)+1))
+                tiles[column, row] = Tile(column: column, row: row, value: Int(arc4random_uniform(9)+1))
             }
         }
     }
@@ -28,27 +28,29 @@ public class Level {
         if noTilesAreSelected() || (!tiles[column, row]!.isSelected && adjacentToMostRecentlySelectedTile(column, row: row)) {
             currentTotal += targetTile.value
             targetTile.isSelected = true
-            mostRecentlySelected = (column, row)
+            selectedTiles.append(tiles[column, row]!)
             return true
         }
         return false
     }
     
     private func adjacentToMostRecentlySelectedTile(column: Int, row: Int) -> Bool {
-        return (mostRecentlySelected!.column == column-1 && mostRecentlySelected!.row == row) ||
-                (mostRecentlySelected!.column == column+1 && mostRecentlySelected!.row == row) ||
-                (mostRecentlySelected!.column == column && mostRecentlySelected!.row == row-1) ||
-                (mostRecentlySelected!.column == column && mostRecentlySelected!.row == row+1)
+        let mostRecentlySelected = selectedTiles[selectedTiles.count-1]
+        return (mostRecentlySelected.column == column-1 && mostRecentlySelected.row == row) ||
+                (mostRecentlySelected.column == column+1 && mostRecentlySelected.row == row) ||
+                (mostRecentlySelected.column == column && mostRecentlySelected.row == row-1) ||
+                (mostRecentlySelected.column == column && mostRecentlySelected.row == row+1)
     }
     
     private func noTilesAreSelected() -> Bool {
-        for column in 0..<tiles.columns {
-            for row in 0..<tiles.rows {
-                if tiles[column, row]!.isSelected {
-                    return false
-                }
-            }
-        }
-        return true
+        return selectedTiles.count == 0
+    }
+    
+    public func getCurrentTotal() -> Int {
+        return currentTotal
+    }
+    
+    public func getCurrentlySelectedTiles() -> Array<Tile> {
+        return selectedTiles
     }
 }

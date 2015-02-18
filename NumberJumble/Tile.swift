@@ -9,9 +9,13 @@
 public class Tile {
     
     public let value: Int
+    public var column: Int
+    public var row: Int
     public var isSelected = false
     
-    public init(value: Int) {
+    public init(column: Int, row: Int, value: Int) {
+        self.column = column
+        self.row = row
         self.value = value
     }
 }

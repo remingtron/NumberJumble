@@ -62,7 +62,11 @@ public class GameScene: SKScene {
         currentTotalLabel.text = String(total)
     }
     
-    public func markSpriteTouched(column: Int, row: Int) {
-        gridLayer.tileSprites[column, row]!.markTouched()
+    public func markSpritesTouched(tiles: Array<Tile>) {
+        for tile in tiles {
+            gridLayer.tileSprites[tile.column, tile.row]!.markTouched()
+        }
+        gridLayer.tileSprites[tiles.last!.column, tiles.last!.row]!.markLastTouched()
     }
+    
 }

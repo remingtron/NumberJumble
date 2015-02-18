@@ -35,19 +35,19 @@ class LevelSpec: QuickSpec {
             }
             
             it("has an initial current total of zero") {
-                expect(underTest!.currentTotal).to(equal(0))
+                expect(underTest!.getCurrentTotal()).to(equal(0))
             }
             
             it("increments the current total if the sprite is not selected") {
                 underTest!.tryTouchTileAt(2, row: 1)
-                expect(underTest!.currentTotal).to(equal(underTest!.tiles[2,1]!.value))
+                expect(underTest!.getCurrentTotal()).to(equal(underTest!.tiles[2,1]!.value))
             }
             
             it("is unable to touch tile and does not increment the current total if the sprite is already selected") {
                 underTest!.tryTouchTileAt(2, row: 1)
                 let result = underTest!.tryTouchTileAt(2, row: 1)
                 expect(result).to(beFalse())
-                expect(underTest!.currentTotal).to(equal(underTest!.tiles[2,1]!.value))
+                expect(underTest!.getCurrentTotal()).to(equal(underTest!.tiles[2,1]!.value))
             }
             
             it("is able to touch a tile if no tiles have been touched") {
