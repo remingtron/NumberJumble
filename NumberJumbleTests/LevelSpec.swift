@@ -30,6 +30,10 @@ class LevelSpec: QuickSpec {
                 expect(underTest!.targetValue).to(equal(20))
             }
             
+            it("has a score that defaults to zero") {
+                expect(underTest!.getScore()).to(equal(0))
+            }
+            
             it("has a grid of tiles") {
                 expect(underTest!.tiles?.columns).to(equal(5))
                 expect(underTest!.tiles?.rows).to(equal(5))

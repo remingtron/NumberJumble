@@ -84,7 +84,26 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 it("has the correct position") {
-                    expect(targetTotal.position).to(equal(CGPoint(x: 0, y: -410)))
+                    expect(targetTotal.position).to(equal(CGPoint(x: 0, y: -390)))
+                }
+            }
+            
+            context("score label") {
+                
+                let scoreLabel = underTest.childNodeWithName("score") as SKLabelNode
+                
+                it("has the correct text") {
+                    expect(scoreLabel.text).to(equal("Score: 0"))
+                }
+                
+                it("has the correct font settings") {
+                    expect(scoreLabel.fontName).to(equal("GillSans-Bold"))
+                    expect(scoreLabel.fontColor).to(beSameUIColor(UIColor.whiteColor()))
+                    expect(scoreLabel.fontSize).to(equal(80))
+                }
+                
+                it("has the correct position") {
+                    expect(scoreLabel.position).to(equal(CGPoint(x: 0, y: -475)))
                 }
             }
             

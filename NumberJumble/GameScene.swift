@@ -13,8 +13,11 @@ public class GameScene: SKScene {
     public let colorForBackground = UIColor(red: 0.19, green: 0.58, blue: 0.83, alpha:1.0)
     
     public var gridLayer: GridLayer!
+    
+    // exposing these as public for integration tests in GameViewControllerSpec
     public var currentTotalLabel: SKLabelNode!
     public var targetTotalLabel: SKLabelNode!
+    public var scoreTotalLabel: SKLabelNode!
     
     public var tileTouchedHandler: ((column: Int, row: Int) -> ())?
     
@@ -31,6 +34,7 @@ public class GameScene: SKScene {
         buildGridLayer(level)
         buildCurrentTotalLabel()
         buildTargetTotalLabel(level)
+        buildScoreLabel(level)
     }
     
     func buildCurrentTotalLabel() {
@@ -47,8 +51,17 @@ public class GameScene: SKScene {
         targetTotalLabel.name = "targetTotal"
         targetTotalLabel.fontName = "GillSans-Bold"
         targetTotalLabel.fontSize = 80
-        targetTotalLabel.position = CGPoint(x: 0, y: -410)
+        targetTotalLabel.position = CGPoint(x: 0, y: -390)
         addChild(targetTotalLabel)
+    }
+    
+    func buildScoreLabel(level: Level) {
+        scoreTotalLabel = SKLabelNode(text: "Score: \(String(level.getScore()))")
+        scoreTotalLabel.name = "score"
+        scoreTotalLabel.fontName = "GillSans-Bold"
+        scoreTotalLabel.fontSize = 80
+        scoreTotalLabel.position = CGPoint(x: 0, y: -475)
+        addChild(scoreTotalLabel)
     }
     
     func buildGridLayer(level: Level) {

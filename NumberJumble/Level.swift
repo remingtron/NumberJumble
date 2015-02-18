@@ -14,6 +14,7 @@ public class Level {
     public var tiles: Array2D<Tile>!
     private var currentTotal = 0
     private var selectedTiles = Array<Tile>()
+    private var score = 0
     
     public init(gridSize: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
@@ -45,6 +46,10 @@ public class Level {
     
     private func noTilesAreSelected() -> Bool {
         return selectedTiles.count == 0
+    }
+    
+    public func getScore() -> Int {
+        return score
     }
     
     public func getCurrentTotal() -> Int {
