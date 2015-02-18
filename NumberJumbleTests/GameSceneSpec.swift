@@ -17,7 +17,11 @@ class GameSceneSpec: QuickSpec {
         describe("game scene") {
             
             let expectedSize = CGSize(width: 200, height: 300)
-            let underTest = GameScene(size: expectedSize, level: Level(gridSize: 6))
+            
+            let level = Level(gridSize: 6)
+            level.targetValue = 18
+            
+            let underTest = GameScene(size: expectedSize, level: level)
             
             it("has the correct size") {
                 expect(underTest.size).to(equal(expectedSize))
@@ -61,7 +65,26 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 it("has the correct position") {
-                    expect(currentTotalLabel.position).to(equal(CGPoint(x: 0, y: 400)))
+                    expect(currentTotalLabel.position).to(equal(CGPoint(x: 0, y: 375)))
+                }
+            }
+            
+            context("target total label") {
+                
+                let targetTotal = underTest.childNodeWithName("targetTotal") as SKLabelNode
+                
+                it("has the correct text") {
+                    expect(targetTotal.text).to(equal("Target: 18"))
+                }
+                
+                it("has the correct font settings") {
+                    expect(targetTotal.fontName).to(equal("GillSans-Bold"))
+                    expect(targetTotal.fontColor).to(beSameUIColor(UIColor.whiteColor()))
+                    expect(targetTotal.fontSize).to(equal(80))
+                }
+                
+                it("has the correct position") {
+                    expect(targetTotal.position).to(equal(CGPoint(x: 0, y: -410)))
                 }
             }
             

@@ -10,6 +10,7 @@ import Foundation
 
 public class Level {
     
+    public var targetValue = 15
     public var tiles: Array2D<Tile>!
     private var currentTotal = 0
     private var selectedTiles = Array<Tile>()

@@ -21,6 +21,15 @@ class LevelSpec: QuickSpec {
                 underTest = Level(gridSize: 5)
             }
             
+            it("has a target value that defaults to 15") {
+                expect(underTest!.targetValue).to(equal(15))
+            }
+            
+            it("has a target value that can be set") {
+                underTest!.targetValue = 20
+                expect(underTest!.targetValue).to(equal(20))
+            }
+            
             it("has a grid of tiles") {
                 expect(underTest!.tiles?.columns).to(equal(5))
                 expect(underTest!.tiles?.rows).to(equal(5))

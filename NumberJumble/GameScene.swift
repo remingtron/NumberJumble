@@ -14,6 +14,7 @@ public class GameScene: SKScene {
     
     public var gridLayer: GridLayer!
     public var currentTotalLabel: SKLabelNode!
+    public var targetTotalLabel: SKLabelNode!
     
     public var tileTouchedHandler: ((column: Int, row: Int) -> ())?
     
@@ -29,6 +30,7 @@ public class GameScene: SKScene {
         
         buildGridLayer(level)
         buildCurrentTotalLabel()
+        buildTargetTotalLabel(level)
     }
     
     func buildCurrentTotalLabel() {
@@ -36,8 +38,17 @@ public class GameScene: SKScene {
         currentTotalLabel.name = "currentTotal"
         currentTotalLabel.fontName = "GillSans-Bold"
         currentTotalLabel.fontSize = 100
-        currentTotalLabel.position = CGPoint(x: 0, y: 400)
+        currentTotalLabel.position = CGPoint(x: 0, y: 375)
         addChild(currentTotalLabel)
+    }
+    
+    func buildTargetTotalLabel(level: Level) {
+        targetTotalLabel = SKLabelNode(text: "Target: \(String(level.targetValue))")
+        targetTotalLabel.name = "targetTotal"
+        targetTotalLabel.fontName = "GillSans-Bold"
+        targetTotalLabel.fontSize = 80
+        targetTotalLabel.position = CGPoint(x: 0, y: -410)
+        addChild(targetTotalLabel)
     }
     
     func buildGridLayer(level: Level) {
