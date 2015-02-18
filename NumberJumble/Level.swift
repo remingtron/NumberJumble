@@ -12,6 +12,7 @@ public class Level {
     
     public var tiles: Array2D<Tile>!
     public var currentTotal = 0
+    private var mostRecentlySelected: (column: Int, row: Int)?
     
     public init(gridSize: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
@@ -24,19 +25,20 @@ public class Level {
     
     public func tryTouchTileAt(column: Int, row: Int) -> Bool {
         var targetTile = tiles[column, row]!
-        if noTilesAreSelected() || (!tiles[column, row]!.isSelected && adjacentTileIsSelected(column, row: row)) {
+        if noTilesAreSelected() || (!tiles[column, row]!.isSelected && adjacentToMostRecentlySelectedTile(column, row: row)) {
             currentTotal += targetTile.value
             targetTile.isSelected = true
+            mostRecentlySelected = (column, row)
             return true
         }
         return false
     }
     
-    private func adjacentTileIsSelected(column: Int, row: Int) -> Bool {
-        return (tiles[column-1, row]?.isSelected ?? false) ||
-                (tiles[column+1, row]?.isSelected ?? false) ||
-                (tiles[column, row-1]?.isSelected ?? false) ||
-                (tiles[column, row+1]?.isSelected ?? false)
+    private func adjacentToMostRecentlySelectedTile(column: Int, row: Int) -> Bool {
+        return (mostRecentlySelected!.column == column-1 && mostRecentlySelected!.row == row) ||
+                (mostRecentlySelected!.column == column+1 && mostRecentlySelected!.row == row) ||
+                (mostRecentlySelected!.column == column && mostRecentlySelected!.row == row-1) ||
+                (mostRecentlySelected!.column == column && mostRecentlySelected!.row == row+1)
     }
     
     private func noTilesAreSelected() -> Bool {

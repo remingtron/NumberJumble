@@ -56,33 +56,40 @@ class LevelSpec: QuickSpec {
             }
             
             it("is unable to touch a tile if at least one tile has been touched and none are adjacent") {
-                underTest!.tryTouchTileAt(3, row:3)
-                let result = underTest!.tryTouchTileAt(2, row:2)
+                underTest!.tryTouchTileAt(3, row: 3)
+                let result = underTest!.tryTouchTileAt(2, row: 2)
                 expect(result).to(beFalse())
             }
             
             it("is able to touch a tile if tile to the right is selected") {
-                underTest!.tryTouchTileAt(3, row:3)
-                let result = underTest!.tryTouchTileAt(2, row:3)
+                underTest!.tryTouchTileAt(3, row: 3)
+                let result = underTest!.tryTouchTileAt(2, row: 3)
                 expect(result).to(beTrue())
             }
             
             it("is able to touch a tile if tile to the left is selected") {
-                underTest!.tryTouchTileAt(3, row:3)
-                let result = underTest!.tryTouchTileAt(4, row:3)
+                underTest!.tryTouchTileAt(3, row: 3)
+                let result = underTest!.tryTouchTileAt(4, row: 3)
                 expect(result).to(beTrue())
             }
             
             it("is able to touch a tile if tile below is selected") {
-                underTest!.tryTouchTileAt(3, row:3)
-                let result = underTest!.tryTouchTileAt(3, row:4)
+                underTest!.tryTouchTileAt(3, row: 3)
+                let result = underTest!.tryTouchTileAt(3, row: 4)
                 expect(result).to(beTrue())
             }
             
             it("is able to touch a tile if tile above is selected") {
-                underTest!.tryTouchTileAt(3, row:3)
-                let result = underTest!.tryTouchTileAt(3, row:2)
+                underTest!.tryTouchTileAt(3, row: 3)
+                let result = underTest!.tryTouchTileAt(3, row: 2)
                 expect(result).to(beTrue())
+            }
+            
+            it("is unable to touch a tile if the last touched tile is not adjacent, even if an adjacent tile is selected") {
+                underTest!.tryTouchTileAt(3, row: 3)
+                underTest!.tryTouchTileAt(3, row: 4)
+                let result = underTest!.tryTouchTileAt(3, row: 2)
+                expect(result).to(beFalse())
             }
         }
     }
