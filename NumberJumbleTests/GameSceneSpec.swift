@@ -21,7 +21,11 @@ class GameSceneSpec: QuickSpec {
             let level = Level(gridSize: 6)
             level.targetValue = 18
             
-            let underTest = GameScene(size: expectedSize, level: level)
+            var underTest: GameScene!
+            
+            beforeEach {
+                underTest = GameScene(size: expectedSize, level: level)
+            }
             
             it("has the correct size") {
                 expect(underTest.size).to(equal(expectedSize))
@@ -37,7 +41,11 @@ class GameSceneSpec: QuickSpec {
             
             context("grid layer") {
                 
-                let gridLayer = underTest.childNodeWithName("gridLayer") as GridLayer
+                var gridLayer: GridLayer!
+                
+                beforeEach {
+                    gridLayer = underTest.childNodeWithName("gridLayer") as GridLayer
+                }
                 
                 it("has tiles in the grid layer") {
                     expect(gridLayer.children.count).to(equal(36))
@@ -52,7 +60,11 @@ class GameSceneSpec: QuickSpec {
             
             context("current total label") {
                 
-                let currentTotalLabel = underTest.childNodeWithName("currentTotal") as SKLabelNode
+                var currentTotalLabel: SKLabelNode!
+                
+                beforeEach {
+                    currentTotalLabel = underTest.childNodeWithName("currentTotal") as SKLabelNode
+                }
                 
                 it("has an initial value of 0") {
                     expect(currentTotalLabel.text).to(equal("0"))
@@ -71,7 +83,11 @@ class GameSceneSpec: QuickSpec {
             
             context("target total label") {
                 
-                let targetTotal = underTest.childNodeWithName("targetTotal") as SKLabelNode
+                var targetTotal: SKLabelNode!
+                
+                beforeEach {
+                    targetTotal = underTest.childNodeWithName("targetTotal") as SKLabelNode
+                }
                 
                 it("has the correct text") {
                     expect(targetTotal.text).to(equal("Target: 18"))
@@ -90,7 +106,11 @@ class GameSceneSpec: QuickSpec {
             
             context("score label") {
                 
-                let scoreLabel = underTest.childNodeWithName("score") as SKLabelNode
+                var scoreLabel: SKLabelNode!
+                
+                beforeEach {
+                    scoreLabel = underTest.childNodeWithName("score") as SKLabelNode
+                }
                 
                 it("has the correct text") {
                     expect(scoreLabel.text).to(equal("Score: 0"))
@@ -135,6 +155,29 @@ class GameSceneSpec: QuickSpec {
                 underTest.touchHandler(CGPoint(x: -500, y: 300))
                 expect(capturedColumn?).to(beNil())
                 expect(capturedRow?).to(beNil())
+            }
+            
+            it("does not mark any sprites if selected sprites are empty") {
+                underTest.markSpritesTouched(Array<Tile>())
+                let tiles = underTest.gridLayer.tileSprites
+                for column in 0..<tiles.columns {
+                    for row in 0..<tiles.rows {
+                        expect(tiles[column, row]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
+                    }
+                }
+            }
+            
+            it("updates score label text") {
+                underTest.updateScore(20)
+                expect(underTest.scoreLabel.text).to(equal("Score: 20"))
+            }
+            
+            it("resets all tiles back to untouched state") {
+                let selectedTiles = [Tile(column: 0, row: 0, value: 4), Tile(column: 1, row: 3, value: 3)]
+                underTest.markSpritesTouched(selectedTiles)
+                underTest.clearSelectedTiles()
+                expect(underTest.gridLayer.tileSprites[0, 0]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
+                expect(underTest.gridLayer.tileSprites[1, 3]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
             }
         }
     }

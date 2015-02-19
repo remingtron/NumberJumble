@@ -53,4 +53,8 @@ public class TileSprite: SKSpriteNode {
     public func markLastTouched() {
         color = TileSprite.LastTouchedSpriteColor
     }
+    
+    public func markUntouched() {
+        color = TileSprite.UntouchedSpriteColor
+    }
 }

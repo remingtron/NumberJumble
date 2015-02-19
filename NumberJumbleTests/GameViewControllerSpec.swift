@@ -42,6 +42,22 @@ class GameViewControllerSpec: QuickSpec {
                 expect(underTest.scene.gridLayer.tileSprites[2, 3]!.color).to(beSameUIColor(TileSprite.TouchedSpriteColor))
             }
             
+            context("target value is hit") {
+                
+                beforeEach {
+                    underTest.level.targetValue = underTest.level.tiles[2, 3]!.value + underTest.level.tiles[3, 3]!.value
+                    underTest.tileTouched(3, row: 3)
+                }
+                
+                it("updates the score") {
+                    expect(underTest.scene.scoreLabel.text).to(equal("Score: 1"))
+                }
+                
+                it("clears selected tiles from view") {
+                    expect(underTest.scene.gridLayer.tileSprites[2, 3]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
+                    expect(underTest.scene.gridLayer.tileSprites[3, 3]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
+                }
+            }            
         }
     }
     

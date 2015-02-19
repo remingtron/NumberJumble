@@ -17,7 +17,7 @@ public class GameScene: SKScene {
     // exposing these as public for integration tests in GameViewControllerSpec
     public var currentTotalLabel: SKLabelNode!
     public var targetTotalLabel: SKLabelNode!
-    public var scoreTotalLabel: SKLabelNode!
+    public var scoreLabel: SKLabelNode!
     
     public var tileTouchedHandler: ((column: Int, row: Int) -> ())?
     
@@ -56,12 +56,12 @@ public class GameScene: SKScene {
     }
     
     func buildScoreLabel(level: Level) {
-        scoreTotalLabel = SKLabelNode(text: "Score: \(String(level.getScore()))")
-        scoreTotalLabel.name = "score"
-        scoreTotalLabel.fontName = "GillSans-Bold"
-        scoreTotalLabel.fontSize = 80
-        scoreTotalLabel.position = CGPoint(x: 0, y: -475)
-        addChild(scoreTotalLabel)
+        scoreLabel = SKLabelNode(text: "Score: \(String(level.getScore()))")
+        scoreLabel.name = "score"
+        scoreLabel.fontName = "GillSans-Bold"
+        scoreLabel.fontSize = 80
+        scoreLabel.position = CGPoint(x: 0, y: -475)
+        addChild(scoreLabel)
     }
     
     func buildGridLayer(level: Level) {
@@ -90,7 +90,22 @@ public class GameScene: SKScene {
         for tile in tiles {
             gridLayer.tileSprites[tile.column, tile.row]!.markTouched()
         }
-        gridLayer.tileSprites[tiles.last!.column, tiles.last!.row]!.markLastTouched()
+        if let lastTile = tiles.last {
+            gridLayer.tileSprites[lastTile.column, lastTile.row]!.markLastTouched()
+        }
+    }
+    
+    public func updateScore(score: Int) {
+        scoreLabel.text = "Score: \(score)"
+    }
+    
+    public func clearSelectedTiles() {
+        let tileSprites = gridLayer.tileSprites
+        for column in 0..<tileSprites.columns {
+            for row in 0..<tileSprites.rows {
+                tileSprites[column, row]!.markUntouched()
+            }
+        }
     }
     
 }

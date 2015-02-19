@@ -11,6 +11,7 @@ import SpriteKit
 
 public class GameViewController: UIViewController {
     
+    // probably shouldn't be exposing these as public, but rather injecting them, but not sure how with the way this is initialized
     public var level: Level!
     public var scene: GameScene!
     
@@ -55,10 +56,12 @@ public class GameViewController: UIViewController {
     }
     
     public func tileTouched(column: Int, row: Int) {
-        let touchSuccess = level.tryTouchTileAt(column, row: row)
-        if touchSuccess {
+        let result = level.tryTouchTileAt(column, row: row)
+        if result.touchSuccess {
+            scene.clearSelectedTiles()
             scene.updateCurrentTotal(level.getCurrentTotal())
             scene.markSpritesTouched(level.getCurrentlySelectedTiles())
+            scene.updateScore(level.getScore())
         }
     }
 }

@@ -25,15 +25,25 @@ public class Level {
         }
     }
     
-    public func tryTouchTileAt(column: Int, row: Int) -> Bool {
+    public func tryTouchTileAt(column: Int, row: Int) -> (touchSuccess: Bool, targetHit: Bool) {
         var targetTile = tiles[column, row]!
         if noTilesAreSelected() || (!tiles[column, row]!.isSelected && adjacentToMostRecentlySelectedTile(column, row: row)) {
             currentTotal += targetTile.value
             targetTile.isSelected = true
             selectedTiles.append(tiles[column, row]!)
-            return true
+            return (true, checkForTargetValue())
         }
-        return false
+        return (false, false)
+    }
+    
+    private func checkForTargetValue() -> Bool {
+        let targetHit = (currentTotal == targetValue)
+        if targetHit {
+            score++
+            selectedTiles.removeAll()
+            currentTotal = 0
+        }
+        return targetHit
     }
     
     private func adjacentToMostRecentlySelectedTile(column: Int, row: Int) -> Bool {

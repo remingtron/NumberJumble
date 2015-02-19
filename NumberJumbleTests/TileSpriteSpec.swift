@@ -33,8 +33,6 @@ class TileSpriteSpec: QuickSpec {
                 expect(sprite.colorBlendFactor).to(equal(1))
             }
             
-            //UIColor(red: 1, green: 0.81, blue: 0.31, alpha: 1)
-            
             context("value label") {
                 
                 let valueLabel = sprite.childNodeWithName("valueLabel") as? SKLabelNode
