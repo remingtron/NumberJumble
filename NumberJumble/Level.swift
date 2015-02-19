@@ -40,10 +40,17 @@ public class Level {
         let targetHit = (currentTotal == targetValue)
         if targetHit {
             score++
-            selectedTiles.removeAll()
+            resetSelectedTiles()
             currentTotal = 0
         }
         return targetHit
+    }
+    
+    private func resetSelectedTiles() {
+        for tile in selectedTiles {
+            tile.isSelected = false
+        }
+        selectedTiles.removeAll()
     }
     
     private func adjacentToMostRecentlySelectedTile(column: Int, row: Int) -> Bool {

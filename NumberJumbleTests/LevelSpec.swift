@@ -130,6 +130,11 @@ class LevelSpec: QuickSpec {
                 it("resets current total to zero") {
                     expect(underTest.getCurrentTotal()).to(equal(0))
                 }
+                
+                it("resets tiles to unselected state") {
+                    expect(underTest.tiles[0, 0]!.isSelected).to(beFalse())
+                    expect(underTest.tiles[0, 1]!.isSelected).to(beFalse())
+                }
             }
         }
     }
