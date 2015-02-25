@@ -6,6 +6,8 @@
 //  Copyright (c) 2015 Remington Davenport. All rights reserved.
 //
 
+import Foundation
+
 public class Tile {
     
     public let value: Int
@@ -17,5 +19,9 @@ public class Tile {
         self.column = column
         self.row = row
         self.value = value
+    }
+    
+    public convenience init(column: Int, row: Int) {
+        self.init(column: column, row: row, value: Int(arc4random_uniform(9)+1))
     }
 }

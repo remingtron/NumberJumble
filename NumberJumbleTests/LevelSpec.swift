@@ -108,8 +108,11 @@ class LevelSpec: QuickSpec {
             context("when target value is reached") {
                 
                 var result = (touchSuccess: false, targetHit: false)
+                var firstTile, secondTile: Tile!
                 
                 beforeEach {
+                    firstTile = underTest.tiles[0, 0]!
+                    secondTile = underTest.tiles[0, 1]!
                     underTest.targetValue = underTest.tiles[0, 0]!.value + underTest.tiles[0, 1]!.value
                     underTest.tryTouchTileAt(0, row: 0)
                     result = underTest.tryTouchTileAt(0, row: 1)
@@ -131,9 +134,25 @@ class LevelSpec: QuickSpec {
                     expect(underTest.getCurrentTotal()).to(equal(0))
                 }
                 
-                it("resets tiles to unselected state") {
-                    expect(underTest.tiles[0, 0]!.isSelected).to(beFalse())
-                    expect(underTest.tiles[0, 1]!.isSelected).to(beFalse())
+                it("knows which tiles were part of the last target set") {
+                    // TODO: convert this to a custom matcher
+                    expect(underTest.getLastTargetTiles().count).to(equal(2))
+                    expect(underTest.getLastTargetTiles()[0]).to(beIdenticalTo(firstTile))
+                    expect(underTest.getLastTargetTiles()[1]).to(beIdenticalTo(secondTile))
+                }
+                
+                it("replaces the selected tiles with new unselected tiles") {
+                    let firstNewTile = underTest.tiles[0, 0]!
+                    expect(firstNewTile.isSelected).to(beFalse())
+                    expect(firstNewTile).notTo(beIdenticalTo(firstTile))
+                    expect(firstNewTile.column).to(equal(firstTile.column))
+                    expect(firstNewTile.row).to(equal(firstTile.row))
+                    
+                    let secondNewTile = underTest.tiles[0, 1]!
+                    expect(secondNewTile.isSelected).to(beFalse())
+                    expect(secondNewTile).notTo(beIdenticalTo(secondTile))
+                    expect(secondNewTile.column).to(equal(secondTile.column))
+                    expect(secondNewTile.row).to(equal(secondTile.row))
                 }
             }
         }

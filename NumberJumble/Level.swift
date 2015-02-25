@@ -14,13 +14,14 @@ public class Level {
     public var tiles: Array2D<Tile>!
     private var currentTotal = 0
     private var selectedTiles = Array<Tile>()
+    private var lastTargetTiles = Array<Tile>()
     private var score = 0
     
     public init(gridSize: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
         for column in 0..<gridSize {
             for row in 0..<gridSize {
-                tiles[column, row] = Tile(column: column, row: row, value: Int(arc4random_uniform(9)+1))
+                tiles[column, row] = Tile(column: column, row: row)
             }
         }
     }
@@ -48,7 +49,8 @@ public class Level {
     
     private func resetSelectedTiles() {
         for tile in selectedTiles {
-            tile.isSelected = false
+            tiles[tile.column, tile.row] = Tile(column: tile.column, row: tile.row)
+            lastTargetTiles.append(tile)
         }
         selectedTiles.removeAll()
     }
@@ -75,5 +77,9 @@ public class Level {
     
     public func getCurrentlySelectedTiles() -> Array<Tile> {
         return selectedTiles
+    }
+    
+    public func getLastTargetTiles() -> Array<Tile> {
+        return lastTargetTiles
     }
 }
