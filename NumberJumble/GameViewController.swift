@@ -59,12 +59,11 @@ public class GameViewController: UIViewController {
         let result = level.tryTouchTileAt(column, row: row)
         if result.targetHit {
             scene.replaceSelectedTiles(level.getLastTargetTiles(), newGrid: level.tiles)
+            scene.updateScore(level.getScore())
         }
         if result.touchSuccess {
-            scene.clearSelectedTiles()
             scene.updateCurrentTotal(level.getCurrentTotal())
             scene.markSpritesTouched(level.getCurrentlySelectedTiles())
-            scene.updateScore(level.getScore())
         }
     }
 }

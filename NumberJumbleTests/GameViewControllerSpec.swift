@@ -57,6 +57,10 @@ class GameViewControllerSpec: QuickSpec {
                     expect(underTest.scene.scoreLabel.text).to(equal("Score: 1"))
                 }
                 
+                it("resets the current total to 0") {
+                    expect(underTest.scene.currentTotalLabel.text).to(equal("0"))
+                }
+                
                 it("replaces tile sprites from selected set") {
                     expect(underTest.scene.gridLayer.tileSprites[2, 3]).notTo(beIdenticalTo(firstTile))
                     expect(underTest.scene.gridLayer.tileSprites[3, 3]).notTo(beIdenticalTo(secondTile))
