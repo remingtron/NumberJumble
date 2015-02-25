@@ -10,7 +10,7 @@ import Foundation
 
 public class Tile {
     
-    public let value: Int
+    public var value: Int
     public var column: Int
     public var row: Int
     public var isSelected = false

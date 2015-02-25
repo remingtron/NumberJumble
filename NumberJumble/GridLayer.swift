@@ -46,4 +46,13 @@ public class GridLayer: SKNode {
         }
         return (false, -1, -1)
     }
+    
+    public func replaceSprite(column: Int, row: Int, newValue: Int) {
+        let originalSprite = tileSprites[column, row]!
+        let newSprite = TileSprite(value: newValue, size: TileSize)
+        originalSprite.removeFromParent()
+        newSprite.position = originalSprite.position
+        tileSprites[column, row] = newSprite
+        addChild(newSprite)
+    }
 }

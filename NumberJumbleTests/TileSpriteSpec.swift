@@ -35,7 +35,11 @@ class TileSpriteSpec: QuickSpec {
             
             context("value label") {
                 
-                let valueLabel = sprite.childNodeWithName("valueLabel") as? SKLabelNode
+                it("is a child of the main sprite") {
+                    expect(sprite.childNodeWithName("valueLabel")).notTo(beNil())
+                }
+                
+                let valueLabel = sprite.valueLabel
                 
                 it("has text equaling the value of the tile") {
                     expect(valueLabel!.text).to(equal("3"))

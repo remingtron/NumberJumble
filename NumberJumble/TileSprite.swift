@@ -10,6 +10,8 @@ import SpriteKit
 
 public class TileSprite: SKSpriteNode {
     
+    public var valueLabel: SKLabelNode!
+    
     public class var LastTouchedSpriteColor : UIColor {
         return UIColor.yellowColor()
     }
@@ -33,17 +35,17 @@ public class TileSprite: SKSpriteNode {
         color = TileSprite.UntouchedSpriteColor
         colorBlendFactor = 1
         
-        addChild(createValueLabel(value))
+        createValueLabel(value)
     }
     
-    func createValueLabel(value: Int) -> SKLabelNode {
-        let valueLabel = SKLabelNode(text: String(value))
+    func createValueLabel(value: Int) {
+        valueLabel = SKLabelNode(text: String(value))
         valueLabel.name = "valueLabel"
         valueLabel.fontName = "GillSans-Bold"
         valueLabel.fontColor = UIColor.blackColor()
         valueLabel.verticalAlignmentMode = SKLabelVerticalAlignmentMode.Center
         valueLabel.fontSize = size.height*0.75
-        return valueLabel
+        addChild(valueLabel)
     }
     
     public func markTouched() {

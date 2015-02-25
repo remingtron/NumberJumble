@@ -41,17 +41,20 @@ public class Level {
         let targetHit = (currentTotal == targetValue)
         if targetHit {
             score++
-            resetSelectedTiles()
+            moveSelectedTilesToLastTargetTiles()
             currentTotal = 0
         }
         return targetHit
     }
     
-    private func resetSelectedTiles() {
+    private func moveSelectedTilesToLastTargetTiles() {
+        lastTargetTiles.removeAll()
+        
         for tile in selectedTiles {
             tiles[tile.column, tile.row] = Tile(column: tile.column, row: tile.row)
             lastTargetTiles.append(tile)
         }
+        
         selectedTiles.removeAll()
     }
     

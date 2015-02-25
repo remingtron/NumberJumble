@@ -108,4 +108,10 @@ public class GameScene: SKScene {
         }
     }
     
+    public func replaceSelectedTiles(selectedTiles: Array<Tile>, newGrid: Array2D<Tile>) {
+        for tile in selectedTiles {
+            gridLayer.replaceSprite(tile.column, row: tile.row, newValue: newGrid[tile.column, tile.row]!.value)
+        }
+    }
+    
 }

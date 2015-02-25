@@ -57,6 +57,9 @@ public class GameViewController: UIViewController {
     
     public func tileTouched(column: Int, row: Int) {
         let result = level.tryTouchTileAt(column, row: row)
+        if result.targetHit {
+            scene.replaceSelectedTiles(level.getLastTargetTiles(), newGrid: level.tiles)
+        }
         if result.touchSuccess {
             scene.clearSelectedTiles()
             scene.updateCurrentTotal(level.getCurrentTotal())

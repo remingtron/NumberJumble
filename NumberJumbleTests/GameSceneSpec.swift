@@ -18,7 +18,7 @@ class GameSceneSpec: QuickSpec {
             
             let expectedSize = CGSize(width: 200, height: 300)
             
-            let level = Level(gridSize: 6)
+            var level = Level(gridSize: 6)
             level.targetValue = 18
             
             var underTest: GameScene!
@@ -173,11 +173,36 @@ class GameSceneSpec: QuickSpec {
             }
             
             it("resets all tiles back to untouched state") {
-                let selectedTiles = [Tile(column: 0, row: 0, value: 4), Tile(column: 1, row: 3, value: 3)]
+                let selectedTiles = [Tile(column: 0, row: 0), Tile(column: 1, row: 3)]
                 underTest.markSpritesTouched(selectedTiles)
                 underTest.clearSelectedTiles()
                 expect(underTest.gridLayer.tileSprites[0, 0]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
                 expect(underTest.gridLayer.tileSprites[1, 3]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
+            }
+            
+            it("replaces selected tiles with new sprites in same position but new values") {
+                
+                let selectedTiles = [Tile(column: 0, row: 0), Tile(column: 1, row: 3)]
+                
+                let firstOriginalSprite = underTest.gridLayer.tileSprites[0, 0]!
+                let secondOriginalSprite = underTest.gridLayer.tileSprites[1, 3]!
+                
+                level.tiles[0, 0]!.value = 20
+                level.tiles[1, 3]!.value = 21
+                
+                underTest.replaceSelectedTiles(selectedTiles, newGrid: level.tiles)
+                
+                let firstNewSprite = underTest.gridLayer.tileSprites[0, 0]!
+                expect(firstNewSprite).notTo(beIdenticalTo(firstOriginalSprite))
+                expect(firstNewSprite.position).to(equal(firstOriginalSprite.position))
+                expect(firstNewSprite.valueLabel.text).to(equal("20"))
+                expect(firstNewSprite.parent).to(beIdenticalTo(underTest.gridLayer))
+
+                let secondNewSprite = underTest.gridLayer.tileSprites[1, 3]!
+                expect(secondNewSprite).notTo(beIdenticalTo(secondOriginalSprite))
+                expect(secondNewSprite.position).to(equal(secondOriginalSprite.position))
+                expect(secondNewSprite.valueLabel.text).to(equal("21"))
+                expect(secondNewSprite.parent).to(beIdenticalTo(underTest.gridLayer))
             }
         }
     }

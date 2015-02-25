@@ -154,6 +154,13 @@ class LevelSpec: QuickSpec {
                     expect(secondNewTile.column).to(equal(secondTile.column))
                     expect(secondNewTile.row).to(equal(secondTile.row))
                 }
+                
+                it("resets last target tiles to only include most recent set") {
+                    underTest.targetValue = underTest.tiles[2, 2]!.value + underTest.tiles[2, 3]!.value
+                    underTest.tryTouchTileAt(2, row: 2)
+                    underTest.tryTouchTileAt(2, row: 3)
+                    expect(underTest.getLastTargetTiles().count).to(equal(2))
+                }
             }
         }
     }
