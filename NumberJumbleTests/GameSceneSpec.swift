@@ -73,11 +73,11 @@ class GameSceneSpec: QuickSpec {
                 it("has the correct font settings") {
                     expect(currentTotalLabel.fontName).to(equal("GillSans-Bold"))
                     expect(currentTotalLabel.fontColor).to(beSameUIColor(UIColor.whiteColor()))
-                    expect(currentTotalLabel.fontSize).to(equal(100))
+                    expect(currentTotalLabel.fontSize).to(equal(120))
                 }
                 
                 it("has the correct position") {
-                    expect(currentTotalLabel.position).to(equal(CGPoint(x: 0, y: 375)))
+                    expect(currentTotalLabel.position).to(equal(CGPoint(x: 250, y: 375)))
                 }
             }
             
@@ -96,11 +96,11 @@ class GameSceneSpec: QuickSpec {
                 it("has the correct font settings") {
                     expect(targetTotal.fontName).to(equal("GillSans-Bold"))
                     expect(targetTotal.fontColor).to(beSameUIColor(UIColor.whiteColor()))
-                    expect(targetTotal.fontSize).to(equal(80))
+                    expect(targetTotal.fontSize).to(equal(70))
                 }
                 
                 it("has the correct position") {
-                    expect(targetTotal.position).to(equal(CGPoint(x: 0, y: -390)))
+                    expect(targetTotal.position).to(equal(CGPoint(x: -300, y: 340)))
                 }
             }
             
@@ -119,11 +119,11 @@ class GameSceneSpec: QuickSpec {
                 it("has the correct font settings") {
                     expect(scoreLabel.fontName).to(equal("GillSans-Bold"))
                     expect(scoreLabel.fontColor).to(beSameUIColor(UIColor.whiteColor()))
-                    expect(scoreLabel.fontSize).to(equal(80))
+                    expect(scoreLabel.fontSize).to(equal(70))
                 }
                 
                 it("has the correct position") {
-                    expect(scoreLabel.position).to(equal(CGPoint(x: 0, y: -475)))
+                    expect(scoreLabel.position).to(equal(CGPoint(x: -300, y: 420)))
                 }
             }
             

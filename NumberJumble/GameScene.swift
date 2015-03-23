@@ -41,8 +41,8 @@ public class GameScene: SKScene {
         currentTotalLabel = SKLabelNode(text: "0")
         currentTotalLabel.name = "currentTotal"
         currentTotalLabel.fontName = "GillSans-Bold"
-        currentTotalLabel.fontSize = 100
-        currentTotalLabel.position = CGPoint(x: 0, y: 375)
+        currentTotalLabel.fontSize = 120
+        currentTotalLabel.position = CGPoint(x: 250, y: 375)
         addChild(currentTotalLabel)
     }
     
@@ -50,8 +50,9 @@ public class GameScene: SKScene {
         targetTotalLabel = SKLabelNode(text: "Target: \(String(level.targetValue))")
         targetTotalLabel.name = "targetTotal"
         targetTotalLabel.fontName = "GillSans-Bold"
-        targetTotalLabel.fontSize = 80
-        targetTotalLabel.position = CGPoint(x: 0, y: -390)
+        targetTotalLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        targetTotalLabel.fontSize = 70
+        targetTotalLabel.position = CGPoint(x: -300, y: 340)
         addChild(targetTotalLabel)
     }
     
@@ -59,8 +60,9 @@ public class GameScene: SKScene {
         scoreLabel = SKLabelNode(text: "Score: \(String(level.getScore()))")
         scoreLabel.name = "score"
         scoreLabel.fontName = "GillSans-Bold"
-        scoreLabel.fontSize = 80
-        scoreLabel.position = CGPoint(x: 0, y: -475)
+        scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
+        scoreLabel.fontSize = 70
+        scoreLabel.position = CGPoint(x: -300, y: 420)
         addChild(scoreLabel)
     }
     
