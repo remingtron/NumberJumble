@@ -44,7 +44,7 @@ class GameSceneSpec: QuickSpec {
                 var gridLayer: GridLayer!
                 
                 beforeEach {
-                    gridLayer = underTest.childNodeWithName("gridLayer") as GridLayer
+                    gridLayer = underTest.childNodeWithName("gridLayer") as! GridLayer
                 }
                 
                 it("has tiles in the grid layer") {
@@ -63,7 +63,7 @@ class GameSceneSpec: QuickSpec {
                 var currentTotalLabel: SKLabelNode!
                 
                 beforeEach {
-                    currentTotalLabel = underTest.childNodeWithName("currentTotal") as SKLabelNode
+                    currentTotalLabel = underTest.childNodeWithName("currentTotal") as! SKLabelNode
                 }
                 
                 it("has an initial value of 0") {
@@ -86,7 +86,7 @@ class GameSceneSpec: QuickSpec {
                 var targetTotal: SKLabelNode!
                 
                 beforeEach {
-                    targetTotal = underTest.childNodeWithName("targetTotal") as SKLabelNode
+                    targetTotal = underTest.childNodeWithName("targetTotal") as! SKLabelNode
                 }
                 
                 it("has the correct text") {
@@ -109,7 +109,7 @@ class GameSceneSpec: QuickSpec {
                 var scoreLabel: SKLabelNode!
                 
                 beforeEach {
-                    scoreLabel = underTest.childNodeWithName("score") as SKLabelNode
+                    scoreLabel = underTest.childNodeWithName("score") as! SKLabelNode
                 }
                 
                 it("has the correct text") {
@@ -138,8 +138,8 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 underTest.touchHandler(CGPoint(x: 50, y: -150))
-                expect(capturedColumn?).to(equal(3))
-                expect(capturedRow?).to(equal(1))
+                expect(capturedColumn).to(equal(3))
+                expect(capturedRow).to(equal(1))
             }
             
             it("does not call tileTouchHandler if area outside sprites in touched") {
@@ -153,8 +153,8 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 underTest.touchHandler(CGPoint(x: -500, y: 300))
-                expect(capturedColumn?).to(beNil())
-                expect(capturedRow?).to(beNil())
+                expect(capturedColumn).to(beNil())
+                expect(capturedRow).to(beNil())
             }
             
             it("does not mark any sprites if selected sprites are empty") {

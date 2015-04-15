@@ -43,7 +43,7 @@ public class GameViewController: UIViewController {
     }
     
     private func configureView() -> SKView {
-        let skView = view as SKView
+        let skView = view as! SKView
         skView.multipleTouchEnabled = false
         return skView
     }
