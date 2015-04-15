@@ -66,4 +66,8 @@ public class GameViewController: UIViewController {
             scene.markSpritesTouched(level.getCurrentlySelectedTiles())
         }
     }
+    
+    @IBAction func clearButtonClicked(sender: UIButton) {
+        println("button clicked!!")
+    }
 }
