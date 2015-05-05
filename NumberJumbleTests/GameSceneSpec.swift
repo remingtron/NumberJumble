@@ -172,14 +172,6 @@ class GameSceneSpec: QuickSpec {
                 expect(underTest.scoreLabel.text).to(equal("Score: 20"))
             }
             
-            it("resets all tiles back to untouched state") {
-                let selectedTiles = [Tile(column: 0, row: 0), Tile(column: 1, row: 3)]
-                underTest.markSpritesTouched(selectedTiles)
-                underTest.clearSelectedTiles()
-                expect(underTest.gridLayer.tileSprites[0, 0]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
-                expect(underTest.gridLayer.tileSprites[1, 3]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
-            }
-            
             it("replaces selected tiles with new sprites in same position but new values") {
                 
                 let selectedTiles = [Tile(column: 0, row: 0), Tile(column: 1, row: 3)]

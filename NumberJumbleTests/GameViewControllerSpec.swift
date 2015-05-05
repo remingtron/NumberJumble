@@ -32,7 +32,7 @@ class GameViewControllerSpec: QuickSpec {
                 expect(underTest.scene.gridLayer.tileSprites[2, 3]!.color).to(beSameUIColor(TileSprite.LastTouchedSpriteColor))
             }
             
-            it("does not mark the node as touched in the scene if touched unsuccessfully") {
+            it("does not mark the node as touched in the scene if touched unsuccessfully because it's not adjacent") {
                 underTest.tileTouched(0, row: 0)
                 expect(underTest.scene.gridLayer.tileSprites[0, 0]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
             }
@@ -65,7 +65,41 @@ class GameViewControllerSpec: QuickSpec {
                     expect(underTest.scene.gridLayer.tileSprites[2, 3]).notTo(beIdenticalTo(firstTile))
                     expect(underTest.scene.gridLayer.tileSprites[3, 3]).notTo(beIdenticalTo(secondTile))
                 }
-            }            
+            }
+            
+            context("clear button is clicked") {
+                
+                beforeEach {
+                    underTest.tileTouched(1, row: 3)
+                    underTest.clearButtonClicked(UIButton())
+                }
+                
+                it("resets all tiles back to untouched state in scene") {
+                    expect(underTest.scene.gridLayer.tileSprites[2, 3]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
+                    expect(underTest.scene.gridLayer.tileSprites[1, 3]!.color).to(beSameUIColor(TileSprite.UntouchedSpriteColor))
+                }
+                
+                it("resets the current total to 0 in the scene") {
+                    expect(underTest.scene.currentTotalLabel.text).to(equal("0"))
+                }
+                
+                it("resets the current total to 0 in the level") {
+                    expect(underTest.level.getCurrentTotal()).to(equal(0))
+                }
+                
+                it("clears selected tiles in level") {
+                    expect(underTest.level.getCurrentlySelectedTiles()).to(beEmpty())
+                }
+                
+                it("the same tiles can be reselected") {
+                    underTest.tileTouched(2, row: 3)
+                    underTest.tileTouched(1, row: 3)
+                    
+                    expect(underTest.scene.gridLayer.tileSprites[2, 3]!.color).to(beSameUIColor(TileSprite.TouchedSpriteColor))
+                    expect(underTest.scene.gridLayer.tileSprites[1, 3]!.color).to(beSameUIColor(TileSprite.LastTouchedSpriteColor))
+                }
+                
+            }
         }
     }
     

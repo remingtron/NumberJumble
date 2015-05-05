@@ -85,4 +85,12 @@ public class Level {
     public func getLastTargetTiles() -> Array<Tile> {
         return lastTargetTiles
     }
+    
+    public func resetSelections() {
+        currentTotal = 0
+        for tile in selectedTiles {
+            tile.isSelected = false
+        }
+        selectedTiles.removeAll()
+    }
 }

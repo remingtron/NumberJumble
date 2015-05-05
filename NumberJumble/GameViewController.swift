@@ -67,7 +67,10 @@ public class GameViewController: UIViewController {
         }
     }
     
-    @IBAction func clearButtonClicked(sender: UIButton) {
-        println("button clicked!!")
+    @IBAction public func clearButtonClicked(sender: UIButton) {
+        level.resetSelections()
+        scene.clearSelectedTiles()
+        scene.updateCurrentTotal(level.getCurrentTotal())
     }
+    
 }
