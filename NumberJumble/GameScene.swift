@@ -47,7 +47,8 @@ public class GameScene: SKScene {
     }
     
     func buildTargetTotalLabel(level: Level) {
-        targetTotalLabel = SKLabelNode(text: "Target: \(String(level.targetValue))")
+        targetTotalLabel = SKLabelNode()
+        updateTarget(level.targetValue)
         targetTotalLabel.name = "targetTotal"
         targetTotalLabel.fontName = "GillSans-Bold"
         targetTotalLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
@@ -57,7 +58,8 @@ public class GameScene: SKScene {
     }
     
     func buildScoreLabel(level: Level) {
-        scoreLabel = SKLabelNode(text: "Score: \(String(level.getScore()))")
+        scoreLabel = SKLabelNode()
+        updateScore(level.getScore())
         scoreLabel.name = "score"
         scoreLabel.fontName = "GillSans-Bold"
         scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
