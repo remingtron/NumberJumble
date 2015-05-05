@@ -101,6 +101,10 @@ public class GameScene: SKScene {
         scoreLabel.text = "Score: \(score)"
     }
     
+    public func updateTarget(target: Int) {
+        targetTotalLabel.text = "Target: \(target)"
+    }
+    
     public func clearSelectedTiles() {
         let tileSprites = gridLayer.tileSprites
         for column in 0..<tileSprites.columns {

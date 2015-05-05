@@ -47,6 +47,10 @@ class GameViewControllerSpec: QuickSpec {
                 var firstTile, secondTile: TileSprite!
                 
                 beforeEach {
+                    let nextTarget = underTest.level.tiles[2, 3]!.value + underTest.level.tiles[3, 3]!.value + 1
+                    underTest.level.newTargetSelector = {
+                        return nextTarget
+                    }
                     firstTile = underTest.scene.gridLayer.tileSprites[2, 3]!
                     secondTile = underTest.scene.gridLayer.tileSprites[3, 3]!
                     underTest.level.targetValue = underTest.level.tiles[2, 3]!.value + underTest.level.tiles[3, 3]!.value
@@ -64,6 +68,10 @@ class GameViewControllerSpec: QuickSpec {
                 it("replaces tile sprites from selected set") {
                     expect(underTest.scene.gridLayer.tileSprites[2, 3]).notTo(beIdenticalTo(firstTile))
                     expect(underTest.scene.gridLayer.tileSprites[3, 3]).notTo(beIdenticalTo(secondTile))
+                }
+                
+                it("updates current target") {
+                    expect(underTest.scene.targetTotalLabel.text).to(equal("Target: \(underTest.level.targetValue)"))
                 }
             }
             

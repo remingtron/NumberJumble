@@ -10,8 +10,13 @@ import Foundation
 
 public class Level {
     
+    // public for testing?
     public var targetValue = 15
     public var tiles: Array2D<Tile>!
+    public var newTargetSelector = {
+        return Int(arc4random_uniform(10)+10)
+    }
+    
     private var currentTotal = 0
     private var selectedTiles = Array<Tile>()
     private var lastTargetTiles = Array<Tile>()
@@ -43,6 +48,7 @@ public class Level {
             score++
             moveSelectedTilesToLastTargetTiles()
             currentTotal = 0
+            targetValue = newTargetSelector()
         }
         return targetHit
     }

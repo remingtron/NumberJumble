@@ -111,6 +111,10 @@ class LevelSpec: QuickSpec {
                 var firstTile, secondTile: Tile!
                 
                 beforeEach {
+                    underTest.newTargetSelector = {
+                        return 17
+                    }
+                    
                     firstTile = underTest.tiles[0, 0]!
                     secondTile = underTest.tiles[0, 1]!
                     underTest.targetValue = underTest.tiles[0, 0]!.value + underTest.tiles[0, 1]!.value
@@ -160,6 +164,10 @@ class LevelSpec: QuickSpec {
                     underTest.tryTouchTileAt(2, row: 2)
                     underTest.tryTouchTileAt(2, row: 3)
                     expect(underTest.getLastTargetTiles().count).to(equal(2))
+                }
+                
+                it("sets target value to new random value") {
+                    expect(underTest.targetValue).to(equal(17))
                 }
             }
         }

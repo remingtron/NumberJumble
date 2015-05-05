@@ -60,6 +60,7 @@ public class GameViewController: UIViewController {
         if result.targetHit {
             scene.replaceSelectedTiles(level.getLastTargetTiles(), newGrid: level.tiles)
             scene.updateScore(level.getScore())
+            scene.updateTarget(level.targetValue)
         }
         if result.touchSuccess {
             scene.updateCurrentTotal(level.getCurrentTotal())
