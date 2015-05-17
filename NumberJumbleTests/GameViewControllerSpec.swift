@@ -19,7 +19,7 @@ class GameViewControllerSpec: QuickSpec {
             let underTest = GameViewController()
             
             beforeEach {
-                underTest.initialize(SKView())
+                underTest.setupGame(SKView())
                 underTest.tileTouched(2, row: 3)
             }
             
@@ -105,6 +105,22 @@ class GameViewControllerSpec: QuickSpec {
                     
                     expect(underTest.scene.gridLayer.tileSprites[2, 3]!.color).to(beSameUIColor(TileSprite.TouchedSpriteColor))
                     expect(underTest.scene.gridLayer.tileSprites[1, 3]!.color).to(beSameUIColor(TileSprite.LastTouchedSpriteColor))
+                }
+                
+            }
+            
+            context("timer fires") {
+                
+                beforeEach {
+                    underTest.timerFire()
+                }
+                
+                it("decrements time reamining by 1") {
+                    expect(underTest.level.getTimeRemaining()).to(equal(59))
+                }
+                
+                it("updates timer label with time remaining") {
+                    expect(underTest.scene.timerLabel.text).to(equal(String(underTest.level.getTimeRemaining())))
                 }
                 
             }

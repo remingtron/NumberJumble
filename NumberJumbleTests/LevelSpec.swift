@@ -34,6 +34,10 @@ class LevelSpec: QuickSpec {
                 expect(underTest.getScore()).to(equal(0))
             }
             
+            it("has a time remaining that defaults to 60") {
+                expect(underTest.getTimeRemaining()).to(equal(60))
+            }
+            
             it("has a grid of tiles") {
                 expect(underTest.tiles?.columns).to(equal(5))
                 expect(underTest.tiles?.rows).to(equal(5))

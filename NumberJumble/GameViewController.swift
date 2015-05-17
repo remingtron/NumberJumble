@@ -14,6 +14,7 @@ public class GameViewController: UIViewController {
     // probably shouldn't be exposing these as public, but rather injecting them, but not sure how with the way this is initialized
     public var level: Level!
     public var scene: GameScene!
+    private var timer: NSTimer!
     
     public override func prefersStatusBarHidden() -> Bool {
         return true
@@ -31,15 +32,26 @@ public class GameViewController: UIViewController {
         super.viewDidLoad()
 
         let skView = configureView()
-        initialize(skView)
+        setupGame(skView)
         
         skView.presentScene(scene)
+        startGame()
     }
     
     // TODO: had to peel this out separately for testing.  should this really happen in an init anyway?
-    public func initialize(view: SKView) {
+    public func setupGame(view: SKView) {
         self.level = Level(gridSize: 6)
         self.scene = createGameScene(view, level: level)
+    }
+    
+    private func startGame() {
+        timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("timerFire"), userInfo: nil, repeats: true)
+    }
+    
+    // must be public for timer to find it (and to test it)
+    public func timerFire() {
+        level.timerFire()
+        scene.updateTimer(level.getTimeRemaining())
     }
     
     private func configureView() -> SKView {

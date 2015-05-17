@@ -11,6 +11,7 @@ import SpriteKit
 public class GameScene: SKScene {
     
     public let colorForBackground = UIColor(red: 0.19, green: 0.58, blue: 0.83, alpha:1.0)
+    private let mainGameFont = "GillSans-Bold"
     
     public var gridLayer: GridLayer!
     
@@ -18,6 +19,7 @@ public class GameScene: SKScene {
     public var currentTotalLabel: SKLabelNode!
     public var targetTotalLabel: SKLabelNode!
     public var scoreLabel: SKLabelNode!
+    public var timerLabel: SKLabelNode!
     
     public var tileTouchedHandler: ((column: Int, row: Int) -> ())?
     
@@ -35,12 +37,22 @@ public class GameScene: SKScene {
         buildCurrentTotalLabel()
         buildTargetTotalLabel(level)
         buildScoreLabel(level)
+        buildTimerLabel()
+    }
+    
+    func buildTimerLabel() {
+        timerLabel = SKLabelNode(text: "60")
+        timerLabel.name = "timer"
+        timerLabel.fontName = mainGameFont
+        timerLabel.fontSize = 120
+        timerLabel.position = CGPoint(x: 210, y: -430)
+        addChild(timerLabel)
     }
     
     func buildCurrentTotalLabel() {
         currentTotalLabel = SKLabelNode(text: "0")
         currentTotalLabel.name = "currentTotal"
-        currentTotalLabel.fontName = "GillSans-Bold"
+        currentTotalLabel.fontName = mainGameFont
         currentTotalLabel.fontSize = 120
         currentTotalLabel.position = CGPoint(x: 250, y: 375)
         addChild(currentTotalLabel)
@@ -50,7 +62,7 @@ public class GameScene: SKScene {
         targetTotalLabel = SKLabelNode()
         updateTarget(level.targetValue)
         targetTotalLabel.name = "targetTotal"
-        targetTotalLabel.fontName = "GillSans-Bold"
+        targetTotalLabel.fontName = mainGameFont
         targetTotalLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         targetTotalLabel.fontSize = 70
         targetTotalLabel.position = CGPoint(x: -300, y: 340)
@@ -61,7 +73,7 @@ public class GameScene: SKScene {
         scoreLabel = SKLabelNode()
         updateScore(level.getScore())
         scoreLabel.name = "score"
-        scoreLabel.fontName = "GillSans-Bold"
+        scoreLabel.fontName = mainGameFont
         scoreLabel.horizontalAlignmentMode = SKLabelHorizontalAlignmentMode.Left
         scoreLabel.fontSize = 70
         scoreLabel.position = CGPoint(x: -300, y: 420)
@@ -105,6 +117,10 @@ public class GameScene: SKScene {
     
     public func updateTarget(target: Int) {
         targetTotalLabel.text = "Target: \(target)"
+    }
+    
+    public func updateTimer(timer: Int) {
+        timerLabel.text = String(timer)
     }
     
     public func clearSelectedTiles() {

@@ -21,6 +21,7 @@ public class Level {
     private var selectedTiles = Array<Tile>()
     private var lastTargetTiles = Array<Tile>()
     private var score = 0
+    private var timeRemaining = 60
     
     public init(gridSize: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
@@ -80,6 +81,10 @@ public class Level {
         return score
     }
     
+    public func getTimeRemaining() -> Int {
+        return timeRemaining
+    }
+    
     public func getCurrentTotal() -> Int {
         return currentTotal
     }
@@ -98,5 +103,9 @@ public class Level {
             tile.isSelected = false
         }
         selectedTiles.removeAll()
+    }
+    
+    public func timerFire() {
+        timeRemaining--
     }
 }

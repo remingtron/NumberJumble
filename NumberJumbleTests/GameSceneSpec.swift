@@ -17,6 +17,8 @@ class GameSceneSpec: QuickSpec {
         describe("game scene") {
             
             let expectedSize = CGSize(width: 200, height: 300)
+            let expectedFont = "GillSans-Bold"
+            let expectedFontColor = UIColor.whiteColor()
             
             var level = Level(gridSize: 6)
             level.targetValue = 18
@@ -71,8 +73,8 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 it("has the correct font settings") {
-                    expect(currentTotalLabel.fontName).to(equal("GillSans-Bold"))
-                    expect(currentTotalLabel.fontColor).to(beSameUIColor(UIColor.whiteColor()))
+                    expect(currentTotalLabel.fontName).to(equal(expectedFont))
+                    expect(currentTotalLabel.fontColor).to(beSameUIColor(expectedFontColor))
                     expect(currentTotalLabel.fontSize).to(equal(120))
                 }
                 
@@ -94,8 +96,8 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 it("has the correct font settings") {
-                    expect(targetTotal.fontName).to(equal("GillSans-Bold"))
-                    expect(targetTotal.fontColor).to(beSameUIColor(UIColor.whiteColor()))
+                    expect(targetTotal.fontName).to(equal(expectedFont))
+                    expect(targetTotal.fontColor).to(beSameUIColor(expectedFontColor))
                     expect(targetTotal.fontSize).to(equal(70))
                 }
                 
@@ -117,13 +119,36 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 it("has the correct font settings") {
-                    expect(scoreLabel.fontName).to(equal("GillSans-Bold"))
-                    expect(scoreLabel.fontColor).to(beSameUIColor(UIColor.whiteColor()))
+                    expect(scoreLabel.fontName).to(equal(expectedFont))
+                    expect(scoreLabel.fontColor).to(beSameUIColor(expectedFontColor))
                     expect(scoreLabel.fontSize).to(equal(70))
                 }
                 
                 it("has the correct position") {
                     expect(scoreLabel.position).to(equal(CGPoint(x: -300, y: 420)))
+                }
+            }
+            
+            context("timer label") {
+                
+                var timerLabel: SKLabelNode!
+                
+                beforeEach {
+                    timerLabel = underTest.childNodeWithName("timer") as! SKLabelNode
+                }
+                
+                it("has the correct text") {
+                    expect(timerLabel.text).to(equal("60"))
+                }
+                
+                it("has the correct font settings") {
+                    expect(timerLabel.fontName).to(equal(expectedFont))
+                    expect(timerLabel.fontColor).to(beSameUIColor(expectedFontColor))
+                    expect(timerLabel.fontSize).to(equal(120))
+                }
+                
+                it("has the correct position") {
+                    expect(timerLabel.position).to(equal(CGPoint(x: 210, y: -430)))
                 }
             }
             
