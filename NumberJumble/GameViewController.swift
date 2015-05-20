@@ -14,7 +14,7 @@ public class GameViewController: UIViewController {
     // probably shouldn't be exposing these as public, but rather injecting them, but not sure how with the way this is initialized
     public var level: Level!
     public var scene: GameScene!
-    private var timer: NSTimer!
+    public var timer: NSTimer!
     
     public override func prefersStatusBarHidden() -> Bool {
         return true
@@ -30,7 +30,14 @@ public class GameViewController: UIViewController {
 
     public override func viewDidLoad() {
         super.viewDidLoad()
-
+        
+        let foo = presentedViewController
+        if (view is SKView) {
+            resetGame()
+        }
+    }
+    
+    private func resetGame() {
         let skView = configureView()
         setupGame(skView)
         
@@ -44,7 +51,7 @@ public class GameViewController: UIViewController {
         self.scene = createGameScene(view, level: level)
     }
     
-    private func startGame() {
+    public func startGame() {
         timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("timerFire"), userInfo: nil, repeats: true)
     }
     
@@ -52,6 +59,17 @@ public class GameViewController: UIViewController {
     public func timerFire() {
         level.timerFire()
         scene.updateTimer(level.getTimeRemaining())
+        
+        if (level.getTimeRemaining() == 0) {
+            timer.invalidate()
+            let gameOverAlert = UIAlertController(title: "Game Over", message: "Final Score: \(level.getScore())", preferredStyle: UIAlertControllerStyle.Alert)
+            gameOverAlert.addAction(UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: { action in self.playAgainTouchHandler() }))
+            presentViewController(gameOverAlert, animated: true, completion: nil)
+        }
+    }
+    
+    public func playAgainTouchHandler() {
+        self.resetGame()
     }
     
     private func configureView() -> SKView {
