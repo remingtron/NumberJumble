@@ -1,20 +1,76 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6751" systemVersion="14C1514" targetRuntime="iOS.CocoaTouch.iPad" propertyAccessControl="none" initialViewController="BV1-FR-VrT">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gZF-3l-bRO">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6736"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
     </dependencies>
     <scenes>
-        <!--Game View Controller-->
-        <scene sceneID="tXr-a1-R10">
+        <!--StartViewController-->
+        <scene sceneID="6tT-kW-nxX">
             <objects>
-                <viewController id="BV1-FR-VrT" customClass="GameViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" customClass="SKView">
-                        <rect key="frame" x="0.0" y="0.0" width="768" height="1024"/>
+                <viewController id="gZF-3l-bRO" userLabel="StartViewController" customClass="StartViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="LGi-US-E5s"/>
+                        <viewControllerLayoutGuide type="bottom" id="5XI-CQ-Vsm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="t3B-cU-3EB" userLabel="StartView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="nzd-02-Kkh">
-                                <rect key="frame" x="138" y="868" width="237" height="67"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Welcome to Number Jumble!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-Hl-rwP">
+                                <rect key="frame" x="42" y="39" width="517" height="311"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="311" id="V35-55-7ah"/>
+                                    <constraint firstAttribute="width" constant="517" id="VH2-nr-kun"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dBW-pF-wiP">
+                                <rect key="frame" x="182" y="433" width="237" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="pJV-9k-KX0"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
+                                <state key="normal" title="Start">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="W06-0J-cNL"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.4941176471" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="gKH-Hl-rwP" firstAttribute="centerX" secondItem="t3B-cU-3EB" secondAttribute="centerX" id="3PX-18-lhc"/>
+                            <constraint firstItem="5XI-CQ-Vsm" firstAttribute="top" secondItem="dBW-pF-wiP" secondAttribute="bottom" constant="214" id="FqA-z0-r0X"/>
+                            <constraint firstItem="dBW-pF-wiP" firstAttribute="centerX" secondItem="gKH-Hl-rwP" secondAttribute="centerX" id="Mdf-ie-mvi"/>
+                            <constraint firstItem="gKH-Hl-rwP" firstAttribute="top" secondItem="LGi-US-E5s" secondAttribute="bottom" constant="175" id="Ove-S0-qNx"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3oP-kE-mcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="116" y="172"/>
+        </scene>
+        <!--GameViewController-->
+        <scene sceneID="tXr-a1-R10">
+            <objects>
+                <viewController id="BV1-FR-VrT" userLabel="GameViewController" customClass="GameViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="fyb-My-Prq"/>
+                        <viewControllerLayoutGuide type="bottom" id="8WD-JI-kOR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3se-qz-xqx" userLabel="LevelView" customClass="SKView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzd-02-Kkh">
+                                <rect key="frame" x="138" y="417" width="237" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="cF4-ql-Hx6"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
                                 <state key="normal" title="Clear">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -25,17 +81,18 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.13725490200000001" green="0.4941176471" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                        <constraints>
+                            <constraint firstItem="nzd-02-Kkh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="138" id="Kau-J9-F7i"/>
+                            <constraint firstItem="8WD-JI-kOR" firstAttribute="top" secondItem="nzd-02-Kkh" secondAttribute="bottom" constant="89" id="TZ7-wR-Qe6"/>
+                            <constraint firstItem="nzd-02-Kkh" firstAttribute="top" secondItem="fyb-My-Prq" secondAttribute="bottom" constant="848" id="sHs-5D-6TG"/>
+                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="x5M-yu-IZu"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="441" y="640"/>
+            <point key="canvasLocation" x="793.75" y="172.8515625"/>
         </scene>
     </scenes>
-    <simulatedMetricsContainer key="defaultSimulatedMetrics">
-        <simulatedStatusBarMetrics key="statusBar"/>
-        <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
-    </simulatedMetricsContainer>
 </document>

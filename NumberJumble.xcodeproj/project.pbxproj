@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		30D5F1615FD6A6EA3217802E /* Pods_NumberJumbleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D112BCE61D621939F71B5E /* Pods_NumberJumbleTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		3A1159A979EC2891E9E83EE3 /* libPods-NumberJumble.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A47F2E6134179BD3E0A3F523 /* libPods-NumberJumble.a */; };
+		C01EBB581B23C5FC006C4131 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01EBB571B23C5FC006C4131 /* StartViewController.swift */; };
 		C02F71D71A8C497600798A56 /* LevelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F71D61A8C497600798A56 /* LevelSpec.swift */; };
 		C02F71DC1A8C4A3400798A56 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F71DB1A8C4A3400798A56 /* Level.swift */; };
 		C055E3A51A8C4BB00081BC63 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3A41A8C4BB00081BC63 /* Tile.swift */; };
@@ -27,6 +27,7 @@
 		C06EA4711A8A8DB000977F03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4701A8A8DB000977F03 /* Images.xcassets */; };
 		C06EA4741A8A8DB000977F03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4721A8A8DB000977F03 /* LaunchScreen.xib */; };
 		C0AF7E9C1A8AE89D00E21313 /* GameSceneSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */; };
+		FC23A5ADAA40C7A1FD89EFF9 /* Pods_NumberJumble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2AB73A8F9DF9A50124DC /* Pods_NumberJumble.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -41,10 +42,11 @@
 
 /* Begin PBXFileReference section */
 		00520348CB9331D8CEE316D7 /* Pods-NumberJumbleTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberJumbleTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NumberJumbleTests/Pods-NumberJumbleTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1D3E2AB73A8F9DF9A50124DC /* Pods_NumberJumble.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumberJumble.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		695DA6DCE39F779F0635ECC1 /* Pods-NumberJumble.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberJumble.debug.xcconfig"; path = "Pods/Target Support Files/Pods-NumberJumble/Pods-NumberJumble.debug.xcconfig"; sourceTree = "<group>"; };
 		78D112BCE61D621939F71B5E /* Pods_NumberJumbleTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_NumberJumbleTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E7D0B664FB90D2BE8E672E7 /* Pods-NumberJumbleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberJumbleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NumberJumbleTests/Pods-NumberJumbleTests.release.xcconfig"; sourceTree = "<group>"; };
-		A47F2E6134179BD3E0A3F523 /* libPods-NumberJumble.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-NumberJumble.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		C01EBB571B23C5FC006C4131 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
 		C02F71D61A8C497600798A56 /* LevelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSpec.swift; sourceTree = "<group>"; };
 		C02F71DB1A8C4A3400798A56 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		C055E3A41A8C4BB00081BC63 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
@@ -76,7 +78,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3A1159A979EC2891E9E83EE3 /* libPods-NumberJumble.a in Frameworks */,
+				FC23A5ADAA40C7A1FD89EFF9 /* Pods_NumberJumble.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,8 +107,8 @@
 		AA6488AE46325A8221FBDD69 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A47F2E6134179BD3E0A3F523 /* libPods-NumberJumble.a */,
 				78D112BCE61D621939F71B5E /* Pods_NumberJumbleTests.framework */,
+				1D3E2AB73A8F9DF9A50124DC /* Pods_NumberJumble.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -147,6 +149,7 @@
 				C06EA4631A8A8DB000977F03 /* Supporting Files */,
 				C055E3A41A8C4BB00081BC63 /* Tile.swift */,
 				C055E3AE1A8E96650081BC63 /* TileSprite.swift */,
+				C01EBB571B23C5FC006C4131 /* StartViewController.swift */,
 			);
 			path = NumberJumble;
 			sourceTree = "<group>";
@@ -194,6 +197,7 @@
 				C06EA45D1A8A8DB000977F03 /* Frameworks */,
 				C06EA45E1A8A8DB000977F03 /* Resources */,
 				50EA185FFC700D17976C8E5A /* Copy Pods Resources */,
+				39435A479AE0C8F145BD0EF8 /* Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -283,6 +287,21 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		39435A479AE0C8F145BD0EF8 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-NumberJumble/Pods-NumberJumble-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		50EA185FFC700D17976C8E5A /* Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -370,6 +389,7 @@
 				C055E3A71A8C4FF50081BC63 /* Array2D.swift in Sources */,
 				C06EA46C1A8A8DB000977F03 /* GameViewController.swift in Sources */,
 				C055E3A51A8C4BB00081BC63 /* Tile.swift in Sources */,
+				C01EBB581B23C5FC006C4131 /* StartViewController.swift in Sources */,
 				C055E3B31A910EB20081BC63 /* GridLayer.swift in Sources */,
 				C02F71DC1A8C4A3400798A56 /* Level.swift in Sources */,
 				C06EA4661A8A8DB000977F03 /* AppDelegate.swift in Sources */,
