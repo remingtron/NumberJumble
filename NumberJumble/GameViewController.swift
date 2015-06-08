@@ -32,9 +32,7 @@ public class GameViewController: UIViewController {
         super.viewDidLoad()
         
         let foo = presentedViewController
-        if (view is SKView) {
-            resetGame()
-        }
+        resetGame()
     }
     
     private func resetGame() {
@@ -62,10 +60,13 @@ public class GameViewController: UIViewController {
         
         if (level.getTimeRemaining() == 0) {
             timer.invalidate()
-            let gameOverAlert = UIAlertController(title: "Game Over", message: "Final Score: \(level.getScore())", preferredStyle: UIAlertControllerStyle.Alert)
-            gameOverAlert.addAction(UIAlertAction(title: "Play Again", style: UIAlertActionStyle.Default, handler: { action in self.playAgainTouchHandler() }))
-            presentViewController(gameOverAlert, animated: true, completion: nil)
+            showEndScreen()
         }
+    }
+    
+    public func showEndScreen() {
+        let endController = storyboard?.instantiateViewControllerWithIdentifier("endController") as! UIViewController
+        presentViewController(endController, animated: true, completion: nil)
     }
     
     public func playAgainTouchHandler() {

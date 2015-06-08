@@ -21,15 +21,9 @@ class GameViewControllerSpec: QuickSpec {
         describe("game view controller") {
             
             class GameViewControllerForTest: GameViewController {
-                
-                var capturedAlertController: UIAlertController?
-                
-                override private func presentViewController(viewControllerToPresent: UIViewController, animated flag: Bool, completion: (() -> Void)?) {
-                    
-                    capturedAlertController = viewControllerToPresent as? UIAlertController
-                    
+                private func showEndScreen() {
+                    // do nothing
                 }
-                
             }
             
             let underTest = GameViewControllerForTest()
@@ -167,6 +161,7 @@ class GameViewControllerSpec: QuickSpec {
                 
                 beforeEach {
                     underTest.startGame()
+                    
                     for i in 1...60 {
                         underTest.timerFire()
                     }
@@ -174,34 +169,6 @@ class GameViewControllerSpec: QuickSpec {
                 
                 it("invalidates the current timer") {
                     expect(underTest.timer.valid).to(beFalse())
-                }
-                
-                context("game over alert appears") {
-                    
-                    beforeEach {
-                        expect(underTest.capturedAlertController).toNot(beNil())
-                    }
-                 
-                    it("game over alert has correct message and style") {
-                        let controller = underTest.capturedAlertController!
-                        expect(controller.title).to(equal("Game Over"))
-                        expect(controller.message).to(equal("Final Score: 0"))
-                        expect(controller.preferredStyle).to(equal(UIAlertControllerStyle.Alert))
-                    }
-                    
-                    it("game over alert has play again button") {
-                        expect(underTest.capturedAlertController!.actions).toNot(beEmpty())
-                        let action = underTest.capturedAlertController!.actions.first! as! UIAlertAction
-                        expect(action.title).to(equal("Play Again"))
-                        expect(action.style).to(equal(UIAlertActionStyle.Default))
-                    }
-                    
-                    it("restarts the game when button is pressed") {
-                        underTest.playAgainTouchHandler()
-                        expect(underTest.level.getTimeRemaining()).to(equal(60))
-                        expect(underTest.timer.valid).to(beTrue())
-                    }
-                    
                 }
                 
             }
