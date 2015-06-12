@@ -21,7 +21,7 @@ public class Level {
     private var selectedTiles = Array<Tile>()
     private var lastTargetTiles = Array<Tile>()
     private var score = 0
-    private var timeRemaining = 5
+    private var timeRemaining = 60
     
     public init(gridSize: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)

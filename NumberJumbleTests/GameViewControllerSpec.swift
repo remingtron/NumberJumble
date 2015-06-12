@@ -20,13 +20,7 @@ class GameViewControllerSpec: QuickSpec {
     override func spec() {
         describe("game view controller") {
             
-            class GameViewControllerForTest: GameViewController {
-                private func showEndScreen() {
-                    // do nothing
-                }
-            }
-            
-            let underTest = GameViewControllerForTest()
+            let underTest = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("gameViewController") as! GameViewController
             
             beforeEach {
                 underTest.view = SKView()

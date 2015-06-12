@@ -58,7 +58,7 @@
         <!--GameViewController-->
         <scene sceneID="tXr-a1-R10">
             <objects>
-                <viewController id="BV1-FR-VrT" userLabel="GameViewController" customClass="GameViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="gameViewController" id="BV1-FR-VrT" userLabel="GameViewController" customClass="GameViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fyb-My-Prq"/>
                         <viewControllerLayoutGuide type="bottom" id="8WD-JI-kOR"/>
