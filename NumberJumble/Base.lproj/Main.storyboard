@@ -97,7 +97,7 @@
         <!--EndViewController-->
         <scene sceneID="wZF-5X-IzW">
             <objects>
-                <viewController storyboardIdentifier="endController" id="SjQ-YW-nW5" userLabel="EndViewController" customClass="EndViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="endController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SjQ-YW-nW5" userLabel="EndViewController" customClass="EndViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pcS-XV-8qK"/>
                         <viewControllerLayoutGuide type="bottom" id="Zvj-un-v6S"/>

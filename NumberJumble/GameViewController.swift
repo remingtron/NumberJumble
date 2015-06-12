@@ -65,7 +65,7 @@ public class GameViewController: UIViewController {
     }
     
     public func showEndScreen() {
-        let endController = storyboard?.instantiateViewControllerWithIdentifier("endController") as! UIViewController
+        let endController = storyboard!.instantiateViewControllerWithIdentifier("endController") as! UIViewController
         presentViewController(endController, animated: true, completion: nil)
     }
     

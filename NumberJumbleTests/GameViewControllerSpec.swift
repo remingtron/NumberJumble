@@ -21,8 +21,12 @@ class GameViewControllerSpec: QuickSpec {
         describe("game view controller") {
             
             let underTest = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("gameViewController") as! GameViewController
+            let window = UIWindow(frame: UIScreen().bounds)
             
             beforeEach {
+                window.rootViewController = underTest
+                window.makeKeyAndVisible()
+                
                 underTest.view = SKView()
                 underTest.setupGame(SKView())
                 underTest.tileTouched(2, row: 3)
@@ -163,6 +167,10 @@ class GameViewControllerSpec: QuickSpec {
                 
                 it("invalidates the current timer") {
                     expect(underTest.timer.valid).to(beFalse())
+                }
+                
+                it("presents the game over screen") {
+                    expect(underTest.presentedViewController?.restorationIdentifier).to(equal("endController"))
                 }
                 
             }
