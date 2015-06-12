@@ -23,6 +23,15 @@ class GameViewControllerSpec: QuickSpec {
             let underTest = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("gameViewController") as! GameViewController
             let window = UIWindow(frame: UIScreen().bounds)
             
+            let hitTargetScore = { () -> () in
+                let nextTarget = underTest.level.tiles[2, 3]!.value + underTest.level.tiles[3, 3]!.value + 1
+                underTest.level.newTargetSelector = {
+                    return nextTarget
+                }
+                underTest.level.targetValue = underTest.level.tiles[2, 3]!.value + underTest.level.tiles[3, 3]!.value
+                underTest.tileTouched(3, row: 3)
+            }
+            
             beforeEach {
                 window.rootViewController = underTest
                 window.makeKeyAndVisible()
@@ -56,14 +65,9 @@ class GameViewControllerSpec: QuickSpec {
                 var firstTile, secondTile: TileSprite!
                 
                 beforeEach {
-                    let nextTarget = underTest.level.tiles[2, 3]!.value + underTest.level.tiles[3, 3]!.value + 1
-                    underTest.level.newTargetSelector = {
-                        return nextTarget
-                    }
                     firstTile = underTest.scene.gridLayer.tileSprites[2, 3]!
                     secondTile = underTest.scene.gridLayer.tileSprites[3, 3]!
-                    underTest.level.targetValue = underTest.level.tiles[2, 3]!.value + underTest.level.tiles[3, 3]!.value
-                    underTest.tileTouched(3, row: 3)
+                    hitTargetScore()
                 }
                 
                 it("updates the score") {
@@ -159,6 +163,7 @@ class GameViewControllerSpec: QuickSpec {
                 
                 beforeEach {
                     underTest.startGame()
+                    hitTargetScore()
                     
                     for i in 1...60 {
                         underTest.timerFire()
@@ -171,6 +176,11 @@ class GameViewControllerSpec: QuickSpec {
                 
                 it("presents the game over screen") {
                     expect(underTest.presentedViewController?.restorationIdentifier).to(equal("endController"))
+                }
+                
+                it("updates final score on end screen") {
+                    let endController = underTest.presentedViewController as! EndViewController
+                    expect(endController.finalScoreLabel.text).to(equal("Final Score: 1"))
                 }
                 
             }

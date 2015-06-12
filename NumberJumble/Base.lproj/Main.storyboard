@@ -2,6 +2,7 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14D136" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gZF-3l-bRO">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--StartViewController-->
@@ -97,7 +98,7 @@
         <!--EndViewController-->
         <scene sceneID="wZF-5X-IzW">
             <objects>
-                <viewController storyboardIdentifier="endController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SjQ-YW-nW5" userLabel="EndViewController" customClass="EndViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="endController" useStoryboardIdentifierAsRestorationIdentifier="YES" id="SjQ-YW-nW5" userLabel="EndViewController" customClass="EndViewController" customModule="NumberJumble" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pcS-XV-8qK"/>
                         <viewControllerLayoutGuide type="bottom" id="Zvj-un-v6S"/>
@@ -107,7 +108,19 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P0-Ll-7OA">
-                                <rect key="frame" x="98.5" y="259" width="404.5" height="81.5"/>
+                                <rect key="frame" x="97.5" y="400" width="405" height="81.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="405" id="efb-18-oPB"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-OO-XPD">
+                                <rect key="frame" x="64" y="500" width="471" height="81.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="471" id="xB1-hv-mlm"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
@@ -116,10 +129,15 @@
                         <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="centerX" secondItem="8P0-Ll-7OA" secondAttribute="centerX" id="A5w-q6-c55"/>
-                            <constraint firstAttribute="centerY" secondItem="8P0-Ll-7OA" secondAttribute="centerY" id="tg3-4W-UFu"/>
+                            <constraint firstItem="mZU-OO-XPD" firstAttribute="top" secondItem="3B9-Yf-bbQ" secondAttribute="topMargin" constant="500" id="QRB-LM-0BJ"/>
+                            <constraint firstAttribute="centerX" secondItem="mZU-OO-XPD" secondAttribute="centerX" id="U0R-mH-1fB"/>
+                            <constraint firstItem="8P0-Ll-7OA" firstAttribute="top" secondItem="3B9-Yf-bbQ" secondAttribute="topMargin" constant="400" id="a82-6A-2us"/>
+                            <constraint firstAttribute="centerX" secondItem="8P0-Ll-7OA" secondAttribute="centerX" id="vmJ-Vs-1Dp"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="finalScoreLabel" destination="mZU-OO-XPD" id="dFP-Av-AdE"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dv-3H-BC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

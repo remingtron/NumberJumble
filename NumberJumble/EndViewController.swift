@@ -9,4 +9,16 @@
 import UIKit
 
 public class EndViewController: UIViewController {
+    
+    @IBOutlet public weak var finalScoreLabel: UILabel!
+    private var finalScore = 0
+    
+    public func setFinalScore(score: Int) {
+        finalScore = score
+    }
+    
+    public override func viewDidLoad() {
+        finalScoreLabel.text = "Final Score: \(finalScore)"
+    }
+    
 }
