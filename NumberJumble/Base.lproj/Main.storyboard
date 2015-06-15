@@ -125,13 +125,26 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzK-k0-cbp">
+                                <rect key="frame" x="165" y="600" width="270" height="70"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="50"/>
+                                <state key="normal" title="Play Again">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="puh-1s-XZv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="nzK-k0-cbp" secondAttribute="centerX" id="I4C-wR-2pR"/>
                             <constraint firstItem="mZU-OO-XPD" firstAttribute="top" secondItem="3B9-Yf-bbQ" secondAttribute="topMargin" constant="500" id="QRB-LM-0BJ"/>
                             <constraint firstAttribute="centerX" secondItem="mZU-OO-XPD" secondAttribute="centerX" id="U0R-mH-1fB"/>
                             <constraint firstItem="8P0-Ll-7OA" firstAttribute="top" secondItem="3B9-Yf-bbQ" secondAttribute="topMargin" constant="400" id="a82-6A-2us"/>
+                            <constraint firstItem="nzK-k0-cbp" firstAttribute="top" secondItem="3B9-Yf-bbQ" secondAttribute="topMargin" constant="600" id="dsD-fU-xPu"/>
                             <constraint firstAttribute="centerX" secondItem="8P0-Ll-7OA" secondAttribute="centerX" id="vmJ-Vs-1Dp"/>
                         </constraints>
                     </view>
@@ -144,4 +157,7 @@
             <point key="canvasLocation" x="1474" y="172"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="W06-0J-cNL"/>
+    </inferredMetricsTieBreakers>
 </document>
