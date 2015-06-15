@@ -27,7 +27,9 @@
 		C06EA46F1A8A8DB000977F03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06EA46D1A8A8DB000977F03 /* Main.storyboard */; };
 		C06EA4711A8A8DB000977F03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4701A8A8DB000977F03 /* Images.xcassets */; };
 		C06EA4741A8A8DB000977F03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4721A8A8DB000977F03 /* LaunchScreen.xib */; };
+		C0A9FD0B1B2F073700438F94 /* EndViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9FD0A1B2F073700438F94 /* EndViewControllerSpec.swift */; };
 		C0AF7E9C1A8AE89D00E21313 /* GameSceneSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */; };
+		C0E23D2D1B2F393B0057831F /* StartViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E23D2C1B2F393B0057831F /* StartViewControllerSpec.swift */; };
 		FC23A5ADAA40C7A1FD89EFF9 /* Pods_NumberJumble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2AB73A8F9DF9A50124DC /* Pods_NumberJumble.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 /* End PBXBuildFile section */
 
@@ -71,7 +73,9 @@
 		C06EA4731A8A8DB000977F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C06EA4791A8A8DB000977F03 /* NumberJumbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberJumbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06EA47E1A8A8DB000977F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C0A9FD0A1B2F073700438F94 /* EndViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewControllerSpec.swift; sourceTree = "<group>"; };
 		C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneSpec.swift; sourceTree = "<group>"; };
+		C0E23D2C1B2F393B0057831F /* StartViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewControllerSpec.swift; sourceTree = "<group>"; };
 		E092579E01B623F46DFAC72F /* Pods-NumberJumble.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberJumble.release.xcconfig"; path = "Pods/Target Support Files/Pods-NumberJumble/Pods-NumberJumble.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -169,6 +173,7 @@
 			isa = PBXGroup;
 			children = (
 				C055E3A81A8C51570081BC63 /* Array2DSpec.swift */,
+				C0A9FD0A1B2F073700438F94 /* EndViewControllerSpec.swift */,
 				C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */,
 				C02F71D61A8C497600798A56 /* LevelSpec.swift */,
 				C06EA47D1A8A8DB000977F03 /* Supporting Files */,
@@ -176,6 +181,7 @@
 				C055E3B01A8E977E0081BC63 /* TileSpriteSpec.swift */,
 				C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */,
 				C055E3B51A91285A0081BC63 /* GameViewControllerSpec.swift */,
+				C0E23D2C1B2F393B0057831F /* StartViewControllerSpec.swift */,
 			);
 			path = NumberJumbleTests;
 			sourceTree = "<group>";
@@ -409,8 +415,10 @@
 				C055E3AD1A8CD9C00081BC63 /* UIColorTestHelpers.swift in Sources */,
 				C055E3AB1A8C55E00081BC63 /* TileSpec.swift in Sources */,
 				C02F71D71A8C497600798A56 /* LevelSpec.swift in Sources */,
+				C0E23D2D1B2F393B0057831F /* StartViewControllerSpec.swift in Sources */,
 				C055E3B61A91285A0081BC63 /* GameViewControllerSpec.swift in Sources */,
 				C055E3B11A8E977E0081BC63 /* TileSpriteSpec.swift in Sources */,
+				C0A9FD0B1B2F073700438F94 /* EndViewControllerSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

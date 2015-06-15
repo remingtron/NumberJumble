@@ -9,4 +9,5 @@
 import UIKit
 
 public class StartViewController: UIViewController {
+    @IBOutlet public weak var startButton: UIButton!
 }

@@ -8,7 +8,7 @@
         <!--StartViewController-->
         <scene sceneID="6tT-kW-nxX">
             <objects>
-                <viewController id="gZF-3l-bRO" userLabel="StartViewController" customClass="StartViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="startController" id="gZF-3l-bRO" userLabel="StartViewController" customClass="StartViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="LGi-US-E5s"/>
                         <viewControllerLayoutGuide type="bottom" id="5XI-CQ-Vsm"/>
@@ -51,6 +51,9 @@
                             <constraint firstItem="gKH-Hl-rwP" firstAttribute="top" secondItem="LGi-US-E5s" secondAttribute="bottom" constant="175" id="Ove-S0-qNx"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="startButton" destination="dBW-pF-wiP" id="Ihe-nB-93z"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oP-kE-mcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -150,6 +153,7 @@
                     </view>
                     <connections>
                         <outlet property="finalScoreLabel" destination="mZU-OO-XPD" id="dFP-Av-AdE"/>
+                        <outlet property="playAgainButton" destination="nzK-k0-cbp" id="ncl-bC-grk"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dv-3H-BC4" userLabel="First Responder" sceneMemberID="firstResponder"/>

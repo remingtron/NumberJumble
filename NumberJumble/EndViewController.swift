@@ -11,6 +11,8 @@ import UIKit
 public class EndViewController: UIViewController {
     
     @IBOutlet public weak var finalScoreLabel: UILabel!
+    @IBOutlet public weak var playAgainButton: UIButton!
+    
     private var finalScore = 0
     
     public func setFinalScore(score: Int) {
