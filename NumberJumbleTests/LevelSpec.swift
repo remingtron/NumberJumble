@@ -13,6 +13,7 @@ import NumberJumble
 class LevelSpec: QuickSpec {
     
     override func spec() {
+        
         describe("level") {
 
             var underTest: Level!
@@ -109,7 +110,7 @@ class LevelSpec: QuickSpec {
                 expect(result.touchSuccess).to(beFalse())
             }
             
-            context("when target value is reached") {
+            context("when target value is reached and chain length scoring is disabled") {
                 
                 var result = (touchSuccess: false, targetHit: false)
                 var firstTile, secondTile: Tile!
@@ -172,6 +173,49 @@ class LevelSpec: QuickSpec {
                 
                 it("sets target value to new random value") {
                     expect(underTest.targetValue).to(equal(17))
+                }
+            }
+            
+            context("chain length scoring") {
+                
+                beforeEach {
+                    underTest = Level(gridSize: 6, length: 60, useChainLengthScoring: true)
+                }
+                
+                let hitTargetWithChainOfLength = { (length: Int) -> Void in
+                    underTest.targetValue = Array(0..<length).reduce(0) { (total, index) in total + underTest.tiles[0, index]!.value }
+                    Array(0..<length).map {index in underTest.tryTouchTileAt(0, row: index)}
+                }
+                
+                it("increments score by 1 if chain length is 2") {
+                    hitTargetWithChainOfLength(2)
+                    expect(underTest.getScore()).to(equal(1))
+                }
+                
+                it("increments score by 2 if chain length is 3") {
+                    hitTargetWithChainOfLength(3)
+                    expect(underTest.getScore()).to(equal(2))
+                }
+                
+                it("increments score by 4 if chain length is 4") {
+                    hitTargetWithChainOfLength(4)
+                    expect(underTest.getScore()).to(equal(4))
+                }
+                
+                it("increments score by 8 if chain length is 5") {
+                    hitTargetWithChainOfLength(5)
+                    expect(underTest.getScore()).to(equal(8))
+                }
+                
+                it("increments score by 8 if chain length is 5 or more") {
+                    hitTargetWithChainOfLength(6)
+                    expect(underTest.getScore()).to(equal(8))
+                }
+                
+                it("increments score by 1 for any length chain if chain scoring disabled") {
+                    underTest = Level(gridSize: 5, length: 60, useChainLengthScoring: false)
+                    hitTargetWithChainOfLength(5)
+                    expect(underTest.getScore()).to(equal(1))
                 }
             }
         }

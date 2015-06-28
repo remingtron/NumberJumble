@@ -15,7 +15,8 @@ public class GameViewController: UIViewController {
     public var level: Level!
     public var scene: GameScene!
     public var timer: NSTimer!
-    public var gameLength: Int = 0
+    public var gameLength = 0
+    public var useChainLengthScoring = false
     
     public override func prefersStatusBarHidden() -> Bool {
         return true
@@ -46,7 +47,7 @@ public class GameViewController: UIViewController {
     
     // TODO: had to peel this out separately for testing.  should this really happen in an init anyway?
     public func setupGame(view: SKView) {
-        self.level = Level(gridSize: 6, length: gameLength)
+        self.level = Level(gridSize: 6, length: gameLength, useChainLengthScoring: useChainLengthScoring)
         self.scene = createGameScene(view, level: level)
     }
     

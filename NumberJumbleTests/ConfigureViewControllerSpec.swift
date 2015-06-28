@@ -37,6 +37,13 @@ class ConfigureViewControllerSpec: QuickSpec {
                 expect(gameViewController.gameLength).to(equal(120))
             }
             
+            it("sets the game scoring type when play button is pressed") {
+                underTest.chainLengthScoringSwitch.on = true
+                underTest.playButton.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
+                let gameViewController = underTest.presentedViewController as! GameViewController
+                expect(gameViewController.useChainLengthScoring).to(equal(true))
+            }
+            
             describe("game length stepper") {
                 
                 it("has minimum value of 10") {

@@ -14,6 +14,7 @@ import SpriteKit
 class GameSceneSpec: QuickSpec {
     
     override func spec() {
+        
         describe("game scene") {
             
             let expectedSize = CGSize(width: 200, height: 300)

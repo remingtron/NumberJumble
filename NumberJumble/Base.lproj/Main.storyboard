@@ -71,7 +71,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game length:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1t-18-fYq">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game length:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1t-18-fYq">
                                 <rect key="frame" x="46" y="250" width="340" height="58"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="340" id="Ciz-iT-Mpv"/>
@@ -111,21 +111,38 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Nma-2U-eyj">
+                                <rect key="frame" x="483" y="346" width="51" height="31"/>
+                            </switch>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chain length scoring" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tWz-FT-DXK">
+                                <rect key="frame" x="46" y="333" width="530" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="530" id="Eqd-UX-PYa"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZVf-pj-UZj" firstAttribute="leading" secondItem="d1t-18-fYq" secondAttribute="trailing" constant="30" id="5sV-lC-cXi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5D8-Fe-psD" secondAttribute="trailing" constant="30" id="CPN-FW-u6h"/>
+                            <constraint firstItem="Nma-2U-eyj" firstAttribute="centerY" secondItem="tWz-FT-DXK" secondAttribute="centerY" constant="-0.5" id="GWD-xu-382"/>
                             <constraint firstItem="d1t-18-fYq" firstAttribute="leading" secondItem="hNp-f4-MmN" secondAttribute="leadingMargin" constant="30" id="LwH-BZ-zmv"/>
+                            <constraint firstItem="tWz-FT-DXK" firstAttribute="top" secondItem="d1t-18-fYq" secondAttribute="bottom" constant="25" id="P7R-yz-fQk"/>
                             <constraint firstItem="TY8-To-bif" firstAttribute="top" secondItem="Uuz-Rn-Xls" secondAttribute="bottom" constant="200" id="Pfb-Pu-za9"/>
                             <constraint firstItem="ZVf-pj-UZj" firstAttribute="centerY" secondItem="d1t-18-fYq" secondAttribute="centerY" id="Pzy-mf-C72"/>
                             <constraint firstItem="5D8-Fe-psD" firstAttribute="centerY" secondItem="d1t-18-fYq" secondAttribute="centerY" id="Sui-r0-rHM"/>
+                            <constraint firstItem="tWz-FT-DXK" firstAttribute="leading" secondItem="d1t-18-fYq" secondAttribute="leading" id="eNO-8v-KTx"/>
                             <constraint firstItem="d1t-18-fYq" firstAttribute="top" secondItem="hNp-f4-MmN" secondAttribute="topMargin" constant="250" id="kkR-eW-Tn3"/>
                             <constraint firstAttribute="centerX" secondItem="Uuz-Rn-Xls" secondAttribute="centerX" id="oYp-ew-OBX"/>
+                            <constraint firstItem="Nma-2U-eyj" firstAttribute="centerX" secondItem="5D8-Fe-psD" secondAttribute="centerX" constant="0.5" id="x9I-Zi-5QS"/>
                         </constraints>
                     </view>
                     <connections>
+                        <outlet property="chainLengthScoringSwitch" destination="Nma-2U-eyj" id="YFo-xr-yW9"/>
                         <outlet property="gameLengthLabel" destination="ZVf-pj-UZj" id="DVw-VU-nPb"/>
                         <outlet property="gameLengthStepper" destination="5D8-Fe-psD" id="DXO-Db-sZl"/>
                         <outlet property="playButton" destination="Uuz-Rn-Xls" id="hbu-kO-qhu"/>

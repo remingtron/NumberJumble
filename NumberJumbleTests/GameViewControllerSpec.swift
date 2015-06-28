@@ -18,6 +18,7 @@ class GameViewControllerSpec: QuickSpec {
     }
     
     override func spec() {
+        
         describe("game view controller settings") {
             
             it("has configurable game length") {
@@ -26,6 +27,13 @@ class GameViewControllerSpec: QuickSpec {
                 underTest.setupGame(SKView())
                 expect(underTest.level.getTimeRemaining()).to(equal(120))
                 expect(underTest.scene.timerLabel.text).to(equal("2:00"))
+            }
+            
+            it("enables chain length scoring if enabled") {
+                let underTest = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("gameViewController") as! GameViewController
+                underTest.useChainLengthScoring = true
+                underTest.setupGame(SKView())
+                expect(underTest.level.isUsingChainLengthScoring()).to(equal(true))
             }
             
         }

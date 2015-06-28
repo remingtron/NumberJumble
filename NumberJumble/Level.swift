@@ -21,16 +21,18 @@ public class Level {
     private var selectedTiles = Array<Tile>()
     private var lastTargetTiles = Array<Tile>()
     private var score = 0
-    private var timeRemaining: Int?
+    private var timeRemaining: Int
+    private var useChainLengthScoring: Bool
     
-    public init(gridSize: Int, length: Int) {
+    public init(gridSize: Int, length: Int, useChainLengthScoring: Bool = false) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
         for column in 0..<gridSize {
             for row in 0..<gridSize {
                 tiles[column, row] = Tile(column: column, row: row)
             }
         }
-        timeRemaining = length
+        self.timeRemaining = length
+        self.useChainLengthScoring = useChainLengthScoring
     }
     
     public func tryTouchTileAt(column: Int, row: Int) -> (touchSuccess: Bool, targetHit: Bool) {
@@ -47,12 +49,17 @@ public class Level {
     private func checkForTargetValue() -> Bool {
         let targetHit = (currentTotal == targetValue)
         if targetHit {
-            score++
+            score += chainValue(selectedTiles.count)
             moveSelectedTilesToLastTargetTiles()
             currentTotal = 0
             targetValue = newTargetSelector()
         }
         return targetHit
+    }
+    
+    private func chainValue(length: Int) -> Int {
+        if !useChainLengthScoring { return 1 }
+        return Int(pow(Double(2), Double(min(3, length - 2))))
     }
     
     private func moveSelectedTilesToLastTargetTiles() {
@@ -83,7 +90,7 @@ public class Level {
     }
     
     public func getTimeRemaining() -> Int {
-        return timeRemaining!
+        return timeRemaining
     }
     
     public func setTimeRemaining(timeRemaining: Int) {
@@ -111,6 +118,10 @@ public class Level {
     }
     
     public func timerFire() {
-        timeRemaining!--
+        timeRemaining--
+    }
+    
+    public func isUsingChainLengthScoring() -> Bool {
+        return useChainLengthScoring
     }
 }
