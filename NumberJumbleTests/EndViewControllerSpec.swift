@@ -24,9 +24,9 @@ class EndViewControllerSpec: QuickSpec {
                 window.makeKeyAndVisible()
             }
             
-            it("starts a new game when play again is touched") {
+            it("returns to configure screen when play again button is touched") {
                 underTest.playAgainButton.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
-                expect(underTest.presentedViewController).to(beAKindOf(GameViewController))
+                expect(underTest.presentedViewController).to(beAKindOf(ConfigureViewController))
             }
         }
         

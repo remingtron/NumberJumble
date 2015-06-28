@@ -10,6 +10,7 @@
 		30D5F1615FD6A6EA3217802E /* Pods_NumberJumbleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D112BCE61D621939F71B5E /* Pods_NumberJumbleTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
 		C014AD4F1B23E90A00CFA102 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C014AD4E1B23E90A00CFA102 /* EndViewController.swift */; };
 		C01EBB581B23C5FC006C4131 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01EBB571B23C5FC006C4131 /* StartViewController.swift */; };
+		C028BE3F1B4070E000F9F3FE /* ConfigureViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C028BE3E1B4070E000F9F3FE /* ConfigureViewController.swift */; };
 		C02F71D71A8C497600798A56 /* LevelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F71D61A8C497600798A56 /* LevelSpec.swift */; };
 		C02F71DC1A8C4A3400798A56 /* Level.swift in Sources */ = {isa = PBXBuildFile; fileRef = C02F71DB1A8C4A3400798A56 /* Level.swift */; };
 		C055E3A51A8C4BB00081BC63 /* Tile.swift in Sources */ = {isa = PBXBuildFile; fileRef = C055E3A41A8C4BB00081BC63 /* Tile.swift */; };
@@ -51,6 +52,7 @@
 		8E7D0B664FB90D2BE8E672E7 /* Pods-NumberJumbleTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-NumberJumbleTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-NumberJumbleTests/Pods-NumberJumbleTests.release.xcconfig"; sourceTree = "<group>"; };
 		C014AD4E1B23E90A00CFA102 /* EndViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewController.swift; sourceTree = "<group>"; };
 		C01EBB571B23C5FC006C4131 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		C028BE3E1B4070E000F9F3FE /* ConfigureViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureViewController.swift; sourceTree = "<group>"; };
 		C02F71D61A8C497600798A56 /* LevelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LevelSpec.swift; sourceTree = "<group>"; };
 		C02F71DB1A8C4A3400798A56 /* Level.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Level.swift; sourceTree = "<group>"; };
 		C055E3A41A8C4BB00081BC63 /* Tile.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Tile.swift; sourceTree = "<group>"; };
@@ -157,6 +159,7 @@
 				C055E3AE1A8E96650081BC63 /* TileSprite.swift */,
 				C01EBB571B23C5FC006C4131 /* StartViewController.swift */,
 				C014AD4E1B23E90A00CFA102 /* EndViewController.swift */,
+				C028BE3E1B4070E000F9F3FE /* ConfigureViewController.swift */,
 			);
 			path = NumberJumble;
 			sourceTree = "<group>";
@@ -393,6 +396,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C028BE3F1B4070E000F9F3FE /* ConfigureViewController.swift in Sources */,
 				C055E3AF1A8E96650081BC63 /* TileSprite.swift in Sources */,
 				C06EA46A1A8A8DB000977F03 /* GameScene.swift in Sources */,
 				C055E3A71A8C4FF50081BC63 /* Array2D.swift in Sources */,

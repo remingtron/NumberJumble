@@ -24,9 +24,9 @@ class StartViewControllerSpec: QuickSpec {
                 window.makeKeyAndVisible()
             }
             
-            it("starts a new game when play again is touched") {
+            it("takes player to configure screen when start is pressed") {
                 underTest.startButton.sendActionsForControlEvents(UIControlEvents.TouchUpInside)
-                expect(underTest.presentedViewController).to(beAKindOf(GameViewController))
+                expect(underTest.presentedViewController).to(beAKindOf(ConfigureViewController))
             }
         }
         

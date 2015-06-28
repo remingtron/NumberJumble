@@ -28,7 +28,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="W06-0J-cNL"/>
+                                    <segue destination="o5Q-RB-SF1" kind="show" id="b6g-iv-h5j"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Number Jumble!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-Hl-rwP">
@@ -57,7 +57,46 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oP-kE-mcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="172"/>
+            <point key="canvasLocation" x="-748" y="152"/>
+        </scene>
+        <!--ConfigureViewController-->
+        <scene sceneID="DYi-DE-h5T">
+            <objects>
+                <viewController storyboardIdentifier="configureController" id="o5Q-RB-SF1" userLabel="ConfigureViewController" customClass="ConfigureViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="agS-yk-SNs"/>
+                        <viewControllerLayoutGuide type="bottom" id="TY8-To-bif"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="hNp-f4-MmN" userLabel="ConfigureView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuz-Rn-Xls">
+                                <rect key="frame" x="182" y="306" width="237" height="94"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="bJ5-hp-TqU"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
+                                <state key="normal" title="Play!">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="BV1-FR-VrT" kind="show" id="5gv-cB-L11"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="TY8-To-bif" firstAttribute="top" secondItem="Uuz-Rn-Xls" secondAttribute="bottom" constant="200" id="Pfb-Pu-za9"/>
+                            <constraint firstAttribute="centerX" secondItem="Uuz-Rn-Xls" secondAttribute="centerX" id="oYp-ew-OBX"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8is-5b-s4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="20" y="152"/>
         </scene>
         <!--GameViewController-->
         <scene sceneID="tXr-a1-R10">
@@ -96,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SZV-WD-TEh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="793" y="172"/>
+            <point key="canvasLocation" x="797" y="152"/>
         </scene>
         <!--EndViewController-->
         <scene sceneID="wZF-5X-IzW">
@@ -136,7 +175,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="puh-1s-XZv"/>
+                                    <segue destination="o5Q-RB-SF1" kind="show" id="D8M-am-UyA"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -158,10 +197,10 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="0dv-3H-BC4" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1474" y="172"/>
+            <point key="canvasLocation" x="1584" y="152"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="W06-0J-cNL"/>
+        <segue reference="b6g-iv-h5j"/>
     </inferredMetricsTieBreakers>
 </document>
