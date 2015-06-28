@@ -64,6 +64,12 @@ class ConfigureViewControllerSpec: QuickSpec {
                 underTest.gameLengthValueChange("")
                 expect(underTest.gameLengthLabel.text).to(equal("4:00"))
             }
+            
+            it("shows 0 minutes") {
+                underTest.gameLengthStepper.value = 40
+                underTest.gameLengthValueChange("")
+                expect(underTest.gameLengthLabel.text).to(equal("0:40"))
+            }
         }
         
     }

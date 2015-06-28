@@ -138,8 +138,9 @@ class GameSceneSpec: QuickSpec {
                     timerLabel = underTest.childNodeWithName("timer") as! SKLabelNode
                 }
                 
-                it("has the correct text") {
-                    expect(timerLabel.text).to(equal("\(gameLength)"))
+                it("has the correct text, without a zero for minutes") {
+                    let gameLengthAsString = ":40"
+                    expect(timerLabel.text).to(equal(gameLengthAsString))
                 }
                 
                 it("has the correct font settings") {
@@ -149,7 +150,7 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 it("has the correct position") {
-                    expect(timerLabel.position).to(equal(CGPoint(x: 210, y: -430)))
+                    expect(timerLabel.position).to(equal(CGPoint(x: 170, y: -430)))
                 }
             }
             

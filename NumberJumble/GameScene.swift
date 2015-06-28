@@ -41,12 +41,13 @@ public class GameScene: SKScene {
     }
     
     func buildTimerLabel(level: Level) {
-        timerLabel = SKLabelNode(text: "\(level.getTimeRemaining())")
+        timerLabel = SKLabelNode(text: "")
         timerLabel.name = "timer"
         timerLabel.fontName = mainGameFont
         timerLabel.fontSize = 120
-        timerLabel.position = CGPoint(x: 210, y: -430)
+        timerLabel.position = CGPoint(x: 170, y: -430)
         addChild(timerLabel)
+        updateTimer(level.getTimeRemaining())
     }
     
     func buildCurrentTotalLabel() {
@@ -120,7 +121,7 @@ public class GameScene: SKScene {
     }
     
     public func updateTimer(timer: Int) {
-        timerLabel.text = String(timer)
+        timerLabel.text = SecondsToTimeFormatter.convert(timer, showZeroMinutes: false)
     }
     
     public func clearSelectedTiles() {

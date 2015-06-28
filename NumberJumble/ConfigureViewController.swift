@@ -16,10 +16,7 @@ public class ConfigureViewController: UIViewController {
     
     @IBAction public func gameLengthValueChange(sender: AnyObject) {
         let currentValue = Int(gameLengthStepper.value)
-        let seconds = currentValue % 60
-        let secondsString = seconds == 0 ? "00" : "\(seconds)"
-        let minutes = (currentValue-seconds) / 60
-        gameLengthLabel.text = "\(minutes):\(secondsString)"
+        gameLengthLabel.text = SecondsToTimeFormatter.convert(currentValue)
     }
     
     @IBAction func touchUpInsidePlayButton(sender: AnyObject) {

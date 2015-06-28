@@ -25,7 +25,7 @@ class GameViewControllerSpec: QuickSpec {
                 underTest.gameLength = 120
                 underTest.setupGame(SKView())
                 expect(underTest.level.getTimeRemaining()).to(equal(120))
-                expect(underTest.scene.timerLabel.text).to(equal("120"))
+                expect(underTest.scene.timerLabel.text).to(equal("2:00"))
             }
             
         }
@@ -167,7 +167,7 @@ class GameViewControllerSpec: QuickSpec {
                 }
                 
                 it("updates timer label with time remaining") {
-                    expect(underTest.scene.timerLabel.text).to(equal(String(underTest.level.getTimeRemaining())))
+                    expect(underTest.scene.timerLabel.text).to(equal(":59"))
                 }
                 
             }
