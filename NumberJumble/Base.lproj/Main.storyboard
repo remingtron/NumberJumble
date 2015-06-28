@@ -123,6 +123,30 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ua1-sB-6Cp">
+                                <rect key="frame" x="116.5" y="467.5" width="367" height="93"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="367" id="iC8-Mw-7DP"/>
+                                </constraints>
+                                <string key="text">2 number chains = 1 point
+3 number chains = 2 points
+4 number chains = 4 points
+5 or more number chains = 8 points</string>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OPN-0X-Gvd">
+                                <rect key="frame" x="27.5" y="398" width="545" height="69.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="545" id="Aoi-fY-h4o"/>
+                                </constraints>
+                                <string key="text">If disabled, all chains are worth 1 point.
+If enabled, different length chains are worth different points:</string>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="20"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -130,15 +154,19 @@
                             <constraint firstItem="ZVf-pj-UZj" firstAttribute="leading" secondItem="d1t-18-fYq" secondAttribute="trailing" constant="30" id="5sV-lC-cXi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5D8-Fe-psD" secondAttribute="trailing" constant="30" id="CPN-FW-u6h"/>
                             <constraint firstItem="Nma-2U-eyj" firstAttribute="centerY" secondItem="tWz-FT-DXK" secondAttribute="centerY" constant="-0.5" id="GWD-xu-382"/>
+                            <constraint firstAttribute="centerX" secondItem="OPN-0X-Gvd" secondAttribute="centerX" id="LIN-Vl-45p"/>
                             <constraint firstItem="d1t-18-fYq" firstAttribute="leading" secondItem="hNp-f4-MmN" secondAttribute="leadingMargin" constant="30" id="LwH-BZ-zmv"/>
                             <constraint firstItem="tWz-FT-DXK" firstAttribute="top" secondItem="d1t-18-fYq" secondAttribute="bottom" constant="25" id="P7R-yz-fQk"/>
                             <constraint firstItem="TY8-To-bif" firstAttribute="top" secondItem="Uuz-Rn-Xls" secondAttribute="bottom" constant="200" id="Pfb-Pu-za9"/>
                             <constraint firstItem="ZVf-pj-UZj" firstAttribute="centerY" secondItem="d1t-18-fYq" secondAttribute="centerY" id="Pzy-mf-C72"/>
+                            <constraint firstItem="Ua1-sB-6Cp" firstAttribute="top" secondItem="OPN-0X-Gvd" secondAttribute="bottom" id="RTl-kB-IZk"/>
                             <constraint firstItem="5D8-Fe-psD" firstAttribute="centerY" secondItem="d1t-18-fYq" secondAttribute="centerY" id="Sui-r0-rHM"/>
                             <constraint firstItem="tWz-FT-DXK" firstAttribute="leading" secondItem="d1t-18-fYq" secondAttribute="leading" id="eNO-8v-KTx"/>
+                            <constraint firstItem="OPN-0X-Gvd" firstAttribute="top" secondItem="tWz-FT-DXK" secondAttribute="bottom" constant="7" id="fhh-Rp-scI"/>
                             <constraint firstItem="d1t-18-fYq" firstAttribute="top" secondItem="hNp-f4-MmN" secondAttribute="topMargin" constant="250" id="kkR-eW-Tn3"/>
                             <constraint firstAttribute="centerX" secondItem="Uuz-Rn-Xls" secondAttribute="centerX" id="oYp-ew-OBX"/>
                             <constraint firstItem="Nma-2U-eyj" firstAttribute="centerX" secondItem="5D8-Fe-psD" secondAttribute="centerX" constant="0.5" id="x9I-Zi-5QS"/>
+                            <constraint firstAttribute="centerX" secondItem="Ua1-sB-6Cp" secondAttribute="centerX" id="zm6-Kf-xDs"/>
                         </constraints>
                     </view>
                     <connections>
@@ -165,7 +193,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzd-02-Kkh">
-                                <rect key="frame" x="138" y="417" width="237" height="94"/>
+                                <rect key="frame" x="120" y="431" width="237" height="94"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="237" id="cF4-ql-Hx6"/>
                                 </constraints>
@@ -181,8 +209,8 @@
                         </subviews>
                         <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="nzd-02-Kkh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="138" id="Kau-J9-F7i"/>
-                            <constraint firstItem="8WD-JI-kOR" firstAttribute="top" secondItem="nzd-02-Kkh" secondAttribute="bottom" constant="89" id="TZ7-wR-Qe6"/>
+                            <constraint firstItem="nzd-02-Kkh" firstAttribute="leading" secondItem="3se-qz-xqx" secondAttribute="leading" constant="120" id="Kau-J9-F7i"/>
+                            <constraint firstItem="8WD-JI-kOR" firstAttribute="top" secondItem="nzd-02-Kkh" secondAttribute="bottom" constant="75" id="TZ7-wR-Qe6"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="x5M-yu-IZu"/>
