@@ -21,15 +21,16 @@ public class Level {
     private var selectedTiles = Array<Tile>()
     private var lastTargetTiles = Array<Tile>()
     private var score = 0
-    private var timeRemaining = 60
+    private var timeRemaining: Int?
     
-    public init(gridSize: Int) {
+    public init(gridSize: Int, length: Int) {
         tiles = Array2D<Tile>(columns: gridSize, rows: gridSize)
         for column in 0..<gridSize {
             for row in 0..<gridSize {
                 tiles[column, row] = Tile(column: column, row: row)
             }
         }
+        timeRemaining = length
     }
     
     public func tryTouchTileAt(column: Int, row: Int) -> (touchSuccess: Bool, targetHit: Bool) {
@@ -82,7 +83,11 @@ public class Level {
     }
     
     public func getTimeRemaining() -> Int {
-        return timeRemaining
+        return timeRemaining!
+    }
+    
+    public func setTimeRemaining(timeRemaining: Int) {
+        self.timeRemaining = timeRemaining
     }
     
     public func getCurrentTotal() -> Int {
@@ -106,6 +111,6 @@ public class Level {
     }
     
     public func timerFire() {
-        timeRemaining--
+        timeRemaining!--
     }
 }

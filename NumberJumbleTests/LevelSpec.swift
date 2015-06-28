@@ -18,7 +18,7 @@ class LevelSpec: QuickSpec {
             var underTest: Level!
             
             beforeEach {
-                underTest = Level(gridSize: 5)
+                underTest = Level(gridSize: 5, length: 60)
             }
             
             it("has a target value that defaults to 15") {

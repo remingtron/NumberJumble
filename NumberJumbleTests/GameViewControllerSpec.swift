@@ -18,6 +18,18 @@ class GameViewControllerSpec: QuickSpec {
     }
     
     override func spec() {
+        describe("game view controller settings") {
+            
+            it("has configurable game length") {
+                let underTest = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("gameViewController") as! GameViewController
+                underTest.gameLength = 120
+                underTest.setupGame(SKView())
+                expect(underTest.level.getTimeRemaining()).to(equal(120))
+                expect(underTest.scene.timerLabel.text).to(equal("120"))
+            }
+            
+        }
+        
         describe("game view controller") {
             
             let underTest = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("gameViewController") as! GameViewController
@@ -37,6 +49,7 @@ class GameViewControllerSpec: QuickSpec {
                 window.makeKeyAndVisible()
                 
                 underTest.view = SKView()
+                underTest.gameLength = 60
                 underTest.setupGame(SKView())
                 underTest.tileTouched(2, row: 3)
             }

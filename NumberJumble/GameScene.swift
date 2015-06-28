@@ -37,11 +37,11 @@ public class GameScene: SKScene {
         buildCurrentTotalLabel()
         buildTargetTotalLabel(level)
         buildScoreLabel(level)
-        buildTimerLabel()
+        buildTimerLabel(level)
     }
     
-    func buildTimerLabel() {
-        timerLabel = SKLabelNode(text: "60")
+    func buildTimerLabel(level: Level) {
+        timerLabel = SKLabelNode(text: "\(level.getTimeRemaining())")
         timerLabel.name = "timer"
         timerLabel.fontName = mainGameFont
         timerLabel.fontSize = 120

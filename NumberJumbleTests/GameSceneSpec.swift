@@ -19,8 +19,9 @@ class GameSceneSpec: QuickSpec {
             let expectedSize = CGSize(width: 200, height: 300)
             let expectedFont = "GillSans-Bold"
             let expectedFontColor = UIColor.whiteColor()
+            let gameLength = 40
             
-            var level = Level(gridSize: 6)
+            var level = Level(gridSize: 6, length: gameLength)
             level.targetValue = 18
             
             var underTest: GameScene!
@@ -138,7 +139,7 @@ class GameSceneSpec: QuickSpec {
                 }
                 
                 it("has the correct text") {
-                    expect(timerLabel.text).to(equal("60"))
+                    expect(timerLabel.text).to(equal("\(gameLength)"))
                 }
                 
                 it("has the correct font settings") {

@@ -28,6 +28,7 @@
 		C06EA46F1A8A8DB000977F03 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06EA46D1A8A8DB000977F03 /* Main.storyboard */; };
 		C06EA4711A8A8DB000977F03 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4701A8A8DB000977F03 /* Images.xcassets */; };
 		C06EA4741A8A8DB000977F03 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C06EA4721A8A8DB000977F03 /* LaunchScreen.xib */; };
+		C07833331B40807400A5DFD1 /* ConfigureViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07833321B40807400A5DFD1 /* ConfigureViewControllerSpec.swift */; };
 		C0A9FD0B1B2F073700438F94 /* EndViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9FD0A1B2F073700438F94 /* EndViewControllerSpec.swift */; };
 		C0AF7E9C1A8AE89D00E21313 /* GameSceneSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */; };
 		C0E23D2D1B2F393B0057831F /* StartViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E23D2C1B2F393B0057831F /* StartViewControllerSpec.swift */; };
@@ -75,6 +76,7 @@
 		C06EA4731A8A8DB000977F03 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C06EA4791A8A8DB000977F03 /* NumberJumbleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NumberJumbleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C06EA47E1A8A8DB000977F03 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C07833321B40807400A5DFD1 /* ConfigureViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConfigureViewControllerSpec.swift; sourceTree = "<group>"; };
 		C0A9FD0A1B2F073700438F94 /* EndViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndViewControllerSpec.swift; sourceTree = "<group>"; };
 		C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GameSceneSpec.swift; sourceTree = "<group>"; };
 		C0E23D2C1B2F393B0057831F /* StartViewControllerSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewControllerSpec.swift; sourceTree = "<group>"; };
@@ -185,6 +187,7 @@
 				C055E3AC1A8CD9C00081BC63 /* UIColorTestHelpers.swift */,
 				C055E3B51A91285A0081BC63 /* GameViewControllerSpec.swift */,
 				C0E23D2C1B2F393B0057831F /* StartViewControllerSpec.swift */,
+				C07833321B40807400A5DFD1 /* ConfigureViewControllerSpec.swift */,
 			);
 			path = NumberJumbleTests;
 			sourceTree = "<group>";
@@ -415,6 +418,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C055E3A91A8C51570081BC63 /* Array2DSpec.swift in Sources */,
+				C07833331B40807400A5DFD1 /* ConfigureViewControllerSpec.swift in Sources */,
 				C0AF7E9C1A8AE89D00E21313 /* GameSceneSpec.swift in Sources */,
 				C055E3AD1A8CD9C00081BC63 /* UIColorTestHelpers.swift in Sources */,
 				C055E3AB1A8C55E00081BC63 /* TileSpec.swift in Sources */,

@@ -71,6 +71,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game length:" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d1t-18-fYq">
+                                <rect key="frame" x="46" y="250" width="340" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="340" id="Ciz-iT-Mpv"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Uuz-Rn-Xls">
                                 <rect key="frame" x="182" y="306" width="237" height="94"/>
                                 <constraints>
@@ -82,17 +91,45 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="BV1-FR-VrT" kind="show" id="5gv-cB-L11"/>
+                                    <action selector="touchUpInsidePlayButton:" destination="o5Q-RB-SF1" eventType="touchUpInside" id="hoR-Hu-AwA"/>
                                 </connections>
                             </button>
+                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="60" minimumValue="10" maximumValue="300" stepValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="5D8-Fe-psD">
+                                <rect key="frame" x="460" y="265" width="94" height="29"/>
+                                <color key="backgroundColor" red="0.13725490200000001" green="0.4941176471" blue="0.80392156859999997" alpha="1" colorSpace="calibratedRGB"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <action selector="gameLengthValueChange:" destination="o5Q-RB-SF1" eventType="valueChanged" id="xOh-YL-v00"/>
+                                </connections>
+                            </stepper>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZVf-pj-UZj">
+                                <rect key="frame" x="416" y="250" width="120" height="58"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="120" id="ivw-4Z-bK5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="50"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="ZVf-pj-UZj" firstAttribute="leading" secondItem="d1t-18-fYq" secondAttribute="trailing" constant="30" id="5sV-lC-cXi"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="5D8-Fe-psD" secondAttribute="trailing" constant="30" id="CPN-FW-u6h"/>
+                            <constraint firstItem="d1t-18-fYq" firstAttribute="leading" secondItem="hNp-f4-MmN" secondAttribute="leadingMargin" constant="30" id="LwH-BZ-zmv"/>
                             <constraint firstItem="TY8-To-bif" firstAttribute="top" secondItem="Uuz-Rn-Xls" secondAttribute="bottom" constant="200" id="Pfb-Pu-za9"/>
+                            <constraint firstItem="ZVf-pj-UZj" firstAttribute="centerY" secondItem="d1t-18-fYq" secondAttribute="centerY" id="Pzy-mf-C72"/>
+                            <constraint firstItem="5D8-Fe-psD" firstAttribute="centerY" secondItem="d1t-18-fYq" secondAttribute="centerY" id="Sui-r0-rHM"/>
+                            <constraint firstItem="d1t-18-fYq" firstAttribute="top" secondItem="hNp-f4-MmN" secondAttribute="topMargin" constant="250" id="kkR-eW-Tn3"/>
                             <constraint firstAttribute="centerX" secondItem="Uuz-Rn-Xls" secondAttribute="centerX" id="oYp-ew-OBX"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="gameLengthLabel" destination="ZVf-pj-UZj" id="DVw-VU-nPb"/>
+                        <outlet property="gameLengthStepper" destination="5D8-Fe-psD" id="DXO-Db-sZl"/>
+                        <outlet property="playButton" destination="Uuz-Rn-Xls" id="hbu-kO-qhu"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8is-5b-s4s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -168,7 +205,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nzK-k0-cbp">
-                                <rect key="frame" x="165" y="600" width="270" height="70"/>
+                                <rect key="frame" x="165" y="330" width="270" height="70"/>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="50"/>
                                 <state key="normal" title="Play Again">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -183,10 +220,10 @@
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="nzK-k0-cbp" secondAttribute="centerX" id="I4C-wR-2pR"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="nzK-k0-cbp" secondAttribute="bottom" constant="200" id="IT9-XG-81W"/>
                             <constraint firstItem="mZU-OO-XPD" firstAttribute="top" secondItem="3B9-Yf-bbQ" secondAttribute="topMargin" constant="500" id="QRB-LM-0BJ"/>
                             <constraint firstAttribute="centerX" secondItem="mZU-OO-XPD" secondAttribute="centerX" id="U0R-mH-1fB"/>
                             <constraint firstItem="8P0-Ll-7OA" firstAttribute="top" secondItem="3B9-Yf-bbQ" secondAttribute="topMargin" constant="400" id="a82-6A-2us"/>
-                            <constraint firstItem="nzK-k0-cbp" firstAttribute="top" secondItem="3B9-Yf-bbQ" secondAttribute="topMargin" constant="600" id="dsD-fU-xPu"/>
                             <constraint firstAttribute="centerX" secondItem="8P0-Ll-7OA" secondAttribute="centerX" id="vmJ-Vs-1Dp"/>
                         </constraints>
                     </view>
