@@ -31,24 +31,17 @@
                                     <segue destination="o5Q-RB-SF1" kind="show" id="b6g-iv-h5j"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to Number Jumble!" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gKH-Hl-rwP">
-                                <rect key="frame" x="42" y="195" width="517" height="311"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="311" id="V35-55-7ah"/>
-                                    <constraint firstAttribute="width" constant="517" id="VH2-nr-kun"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="DzL-HH-ofd">
+                                <rect key="frame" x="25" y="220" width="550" height="250"/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529411764706" green="0.58039215686274503" blue="0.83137254901960778" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="gKH-Hl-rwP" firstAttribute="centerX" secondItem="t3B-cU-3EB" secondAttribute="centerX" id="3PX-18-lhc"/>
+                            <constraint firstAttribute="centerX" secondItem="dBW-pF-wiP" secondAttribute="centerX" id="37L-cJ-Hne"/>
                             <constraint firstItem="5XI-CQ-Vsm" firstAttribute="top" secondItem="dBW-pF-wiP" secondAttribute="bottom" constant="200" id="FqA-z0-r0X"/>
-                            <constraint firstItem="dBW-pF-wiP" firstAttribute="centerX" secondItem="gKH-Hl-rwP" secondAttribute="centerX" id="Mdf-ie-mvi"/>
-                            <constraint firstItem="gKH-Hl-rwP" firstAttribute="top" secondItem="LGi-US-E5s" secondAttribute="bottom" constant="175" id="Ove-S0-qNx"/>
+                            <constraint firstItem="DzL-HH-ofd" firstAttribute="top" secondItem="LGi-US-E5s" secondAttribute="bottom" constant="200" id="llt-cu-qiH"/>
+                            <constraint firstAttribute="centerX" secondItem="DzL-HH-ofd" secondAttribute="centerX" id="oJD-Mc-0Pw"/>
                         </constraints>
                     </view>
                     <connections>
@@ -282,4 +275,7 @@ If enabled, different length chains are worth different points:</string>
             <point key="canvasLocation" x="1584" y="152"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="title" width="550" height="250"/>
+    </resources>
 </document>
