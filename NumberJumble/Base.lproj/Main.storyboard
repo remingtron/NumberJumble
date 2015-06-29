@@ -31,6 +31,20 @@
                                     <segue destination="o5Q-RB-SF1" kind="show" id="b6g-iv-h5j"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AxW-ce-MlG">
+                                <rect key="frame" x="181" y="405" width="237" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="Lp7-kP-rdw"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="55"/>
+                                <state key="normal" title="Help">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="2Cd-o8-QKY" kind="show" id="X1M-Sv-ac4"/>
+                                </connections>
+                            </button>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="title" translatesAutoresizingMaskIntoConstraints="NO" id="DzL-HH-ofd">
                                 <rect key="frame" x="25" y="220" width="550" height="250"/>
                             </imageView>
@@ -40,8 +54,10 @@
                         <constraints>
                             <constraint firstAttribute="centerX" secondItem="dBW-pF-wiP" secondAttribute="centerX" id="37L-cJ-Hne"/>
                             <constraint firstItem="5XI-CQ-Vsm" firstAttribute="top" secondItem="dBW-pF-wiP" secondAttribute="bottom" constant="200" id="FqA-z0-r0X"/>
+                            <constraint firstItem="AxW-ce-MlG" firstAttribute="top" secondItem="dBW-pF-wiP" secondAttribute="bottom" constant="5" id="afi-U7-ZVn"/>
                             <constraint firstItem="DzL-HH-ofd" firstAttribute="top" secondItem="LGi-US-E5s" secondAttribute="bottom" constant="200" id="llt-cu-qiH"/>
                             <constraint firstAttribute="centerX" secondItem="DzL-HH-ofd" secondAttribute="centerX" id="oJD-Mc-0Pw"/>
+                            <constraint firstAttribute="centerX" secondItem="AxW-ce-MlG" secondAttribute="centerX" id="qXf-0t-CQr"/>
                         </constraints>
                     </view>
                     <connections>
@@ -51,6 +67,44 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3oP-kE-mcB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-748" y="152"/>
+        </scene>
+        <!--HelpViewController-->
+        <scene sceneID="Zey-EA-rf4">
+            <objects>
+                <viewController storyboardIdentifier="helpController" modalTransitionStyle="crossDissolve" id="2Cd-o8-QKY" userLabel="HelpViewController" customClass="HelpViewController" customModule="NumberJumble" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="V64-xN-Y7Y"/>
+                        <viewControllerLayoutGuide type="bottom" id="ZYB-D2-xQ5"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Khs-cc-lHe" userLabel="HelpView">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Zc-p3-BFL">
+                                <rect key="frame" x="181" y="504" width="237" height="76"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="ZII-W2-2Qx"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="55"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTouchUpInside:" destination="2Cd-o8-QKY" eventType="touchUpInside" id="gYm-Pg-aOF"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="centerX" secondItem="7Zc-p3-BFL" secondAttribute="centerX" id="jit-AU-enj"/>
+                            <constraint firstItem="ZYB-D2-xQ5" firstAttribute="top" secondItem="7Zc-p3-BFL" secondAttribute="bottom" constant="20" id="nsd-s7-iCS"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="nTG-34-3DY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-520" y="868"/>
         </scene>
         <!--ConfigureViewController-->
         <scene sceneID="DYi-DE-h5T">
@@ -140,12 +194,27 @@ If enabled, different length chains are worth different points:</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gYl-mw-aIf">
+                                <rect key="frame" x="181.5" y="400" width="237" height="70"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="237" id="AB3-SG-xmA"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="50"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButtonTouchUpInside:" destination="o5Q-RB-SF1" eventType="touchUpInside" id="PIP-wF-mec"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <color key="tintColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ZVf-pj-UZj" firstAttribute="leading" secondItem="d1t-18-fYq" secondAttribute="trailing" constant="30" id="5sV-lC-cXi"/>
                             <constraint firstAttribute="trailingMargin" secondItem="5D8-Fe-psD" secondAttribute="trailing" constant="30" id="CPN-FW-u6h"/>
+                            <constraint firstAttribute="centerX" secondItem="gYl-mw-aIf" secondAttribute="centerX" id="GQK-28-zuG"/>
                             <constraint firstItem="Nma-2U-eyj" firstAttribute="centerY" secondItem="tWz-FT-DXK" secondAttribute="centerY" constant="-0.5" id="GWD-xu-382"/>
                             <constraint firstAttribute="centerX" secondItem="OPN-0X-Gvd" secondAttribute="centerX" id="LIN-Vl-45p"/>
                             <constraint firstItem="d1t-18-fYq" firstAttribute="leading" secondItem="hNp-f4-MmN" secondAttribute="leadingMargin" constant="30" id="LwH-BZ-zmv"/>
@@ -157,6 +226,7 @@ If enabled, different length chains are worth different points:</string>
                             <constraint firstItem="tWz-FT-DXK" firstAttribute="leading" secondItem="d1t-18-fYq" secondAttribute="leading" id="eNO-8v-KTx"/>
                             <constraint firstItem="OPN-0X-Gvd" firstAttribute="top" secondItem="tWz-FT-DXK" secondAttribute="bottom" constant="7" id="fhh-Rp-scI"/>
                             <constraint firstItem="d1t-18-fYq" firstAttribute="top" secondItem="hNp-f4-MmN" secondAttribute="topMargin" constant="250" id="kkR-eW-Tn3"/>
+                            <constraint firstItem="gYl-mw-aIf" firstAttribute="top" secondItem="Uuz-Rn-Xls" secondAttribute="bottom" id="mW3-Sa-Qq3"/>
                             <constraint firstAttribute="centerX" secondItem="Uuz-Rn-Xls" secondAttribute="centerX" id="oYp-ew-OBX"/>
                             <constraint firstItem="Nma-2U-eyj" firstAttribute="centerX" secondItem="5D8-Fe-psD" secondAttribute="centerX" constant="0.5" id="x9I-Zi-5QS"/>
                             <constraint firstAttribute="centerX" secondItem="Ua1-sB-6Cp" secondAttribute="centerX" id="zm6-Kf-xDs"/>
@@ -220,7 +290,7 @@ If enabled, different length chains are worth different points:</string>
                         <viewControllerLayoutGuide type="top" id="pcS-XV-8qK"/>
                         <viewControllerLayoutGuide type="bottom" id="Zvj-un-v6S"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3B9-Yf-bbQ">
+                    <view key="view" contentMode="scaleToFill" id="3B9-Yf-bbQ" userLabel="EndView">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>

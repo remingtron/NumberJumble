@@ -26,4 +26,8 @@ public class ConfigureViewController: UIViewController {
         gameController.useChainLengthScoring = chainLengthScoringSwitch.on
         presentViewController(gameController, animated: true, completion: nil)
     }
+    
+    @IBAction func backButtonTouchUpInside(sender: AnyObject) {
+        self.presentingViewController!.dismissViewControllerAnimated(true, completion: nil)
+    }
 }
