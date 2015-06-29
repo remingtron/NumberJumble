@@ -94,9 +94,18 @@
                                     <action selector="backButtonTouchUpInside:" destination="2Cd-o8-QKY" eventType="touchUpInside" id="gYm-Pg-aOF"/>
                                 </connections>
                             </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="screenshot" translatesAutoresizingMaskIntoConstraints="NO" id="9sP-4e-oOy">
+                                <rect key="frame" x="120" y="60" width="360" height="480"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="480" id="69x-De-UF4"/>
+                                    <constraint firstAttribute="width" constant="360" id="SIz-cJ-mVd"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="centerX" secondItem="9sP-4e-oOy" secondAttribute="centerX" id="Bc0-GV-nK7"/>
+                            <constraint firstAttribute="centerY" secondItem="9sP-4e-oOy" secondAttribute="centerY" id="Bw0-0Y-C2m"/>
                             <constraint firstAttribute="centerX" secondItem="7Zc-p3-BFL" secondAttribute="centerX" id="jit-AU-enj"/>
                             <constraint firstItem="ZYB-D2-xQ5" firstAttribute="top" secondItem="7Zc-p3-BFL" secondAttribute="bottom" constant="20" id="nsd-s7-iCS"/>
                         </constraints>
@@ -346,6 +355,7 @@ If enabled, different length chains are worth different points:</string>
         </scene>
     </scenes>
     <resources>
+        <image name="screenshot" width="768" height="1024"/>
         <image name="title" width="550" height="250"/>
     </resources>
 </document>
