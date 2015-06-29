@@ -23,4 +23,10 @@ public class EndViewController: UIViewController {
         finalScoreLabel.text = "Final Score: \(finalScore)"
     }
     
+    @IBAction func playAgainButtonTouchUpInside(sender: AnyObject) {
+        let gameViewControlller = self.presentingViewController!
+        let configureViewController = gameViewControlller.presentingViewController!
+        configureViewController.dismissViewControllerAnimated(false, completion: nil)
+    }
+    
 }
