@@ -304,7 +304,7 @@ If enabled, different length chains are worth different points:</string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Game Over" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8P0-Ll-7OA">
-                                <rect key="frame" x="97.5" y="400" width="405" height="81.5"/>
+                                <rect key="frame" x="97" y="400" width="405" height="81.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="405" id="efb-18-oPB"/>
                                 </constraints>
@@ -312,10 +312,10 @@ If enabled, different length chains are worth different points:</string>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score: 0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-OO-XPD">
-                                <rect key="frame" x="64" y="500" width="471" height="81.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score: 100" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mZU-OO-XPD">
+                                <rect key="frame" x="14" y="500" width="572" height="81.5"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="471" id="xB1-hv-mlm"/>
+                                    <constraint firstAttribute="width" constant="572" id="xB1-hv-mlm"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="70"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
