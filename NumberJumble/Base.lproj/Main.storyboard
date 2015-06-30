@@ -101,13 +101,54 @@
                                     <constraint firstAttribute="width" constant="360" id="SIz-cJ-mVd"/>
                                 </constraints>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The objective of the game is to make chains of touching numbers that add up to the target total." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="8" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YMi-Js-MPA">
+                                <rect key="frame" x="27" y="75" width="545" height="104.5"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="545" id="k8X-lC-Tg8"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="The left part of the top section shows your score and the current target that you're trying to hit." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="79g-em-v4r">
+                                <rect key="frame" x="26" y="30" width="84" height="417"/>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="20" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zHb-FC-AF5">
+                                <rect key="frame" x="490" y="30" width="104" height="556"/>
+                                <string key="text">The right part of the top section shows the total of your currently selected tiles. Orange and yellow tiles are tiles you've selected. Yellow is the last tile you've selected. You can only select tiles next to the last tile, so currently, you could touch 5, 1, and 6.</string>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="15" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="txU-XE-P7C">
+                                <rect key="frame" x="56" y="555" width="404" height="139"/>
+                                <string key="text">The bottom section contains a clear button, which will clear the selected tiles, and the timer showing how much time you have left. Better hurry!</string>
+                                <fontDescription key="fontDescription" name="GillSans-Bold" family="Gill Sans" pointSize="24"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.18823529410000001" green="0.58039215690000001" blue="0.83137254900000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="79g-em-v4r" firstAttribute="top" secondItem="9sP-4e-oOy" secondAttribute="top" constant="-30" id="1aw-dY-tIJ"/>
+                            <constraint firstItem="zHb-FC-AF5" firstAttribute="trailing" secondItem="Khs-cc-lHe" secondAttribute="trailingMargin" constant="10" id="2vj-TY-mdy"/>
                             <constraint firstAttribute="centerX" secondItem="9sP-4e-oOy" secondAttribute="centerX" id="Bc0-GV-nK7"/>
+                            <constraint firstItem="YMi-Js-MPA" firstAttribute="top" secondItem="Khs-cc-lHe" secondAttribute="topMargin" constant="75" id="Bg6-Hx-G6E"/>
                             <constraint firstAttribute="centerY" secondItem="9sP-4e-oOy" secondAttribute="centerY" id="Bw0-0Y-C2m"/>
+                            <constraint firstItem="txU-XE-P7C" firstAttribute="top" secondItem="9sP-4e-oOy" secondAttribute="bottom" constant="15" id="Iup-LY-ROW"/>
+                            <constraint firstItem="txU-XE-P7C" firstAttribute="leading" secondItem="Khs-cc-lHe" secondAttribute="leadingMargin" constant="40" id="ORS-G7-zdC"/>
+                            <constraint firstItem="79g-em-v4r" firstAttribute="leading" secondItem="Khs-cc-lHe" secondAttribute="leadingMargin" constant="10" id="QXI-Bd-GIX"/>
+                            <constraint firstItem="9sP-4e-oOy" firstAttribute="leading" secondItem="79g-em-v4r" secondAttribute="trailing" constant="10" id="RJJ-DG-KzS"/>
+                            <constraint firstAttribute="centerX" secondItem="YMi-Js-MPA" secondAttribute="centerX" id="RQ7-9X-5Jx"/>
+                            <constraint firstItem="zHb-FC-AF5" firstAttribute="leading" secondItem="9sP-4e-oOy" secondAttribute="trailing" constant="10" id="ZWn-Y0-JiI"/>
+                            <constraint firstItem="txU-XE-P7C" firstAttribute="top" secondItem="9sP-4e-oOy" secondAttribute="bottom" constant="15" id="dkF-eS-6vK"/>
+                            <constraint firstItem="zHb-FC-AF5" firstAttribute="leading" secondItem="txU-XE-P7C" secondAttribute="trailing" constant="30" id="fMu-PZ-ymp"/>
                             <constraint firstAttribute="centerX" secondItem="7Zc-p3-BFL" secondAttribute="centerX" id="jit-AU-enj"/>
                             <constraint firstItem="ZYB-D2-xQ5" firstAttribute="top" secondItem="7Zc-p3-BFL" secondAttribute="bottom" constant="20" id="nsd-s7-iCS"/>
+                            <constraint firstItem="zHb-FC-AF5" firstAttribute="top" secondItem="9sP-4e-oOy" secondAttribute="top" constant="-30" id="za7-i9-wzk"/>
                         </constraints>
                     </view>
                 </viewController>
