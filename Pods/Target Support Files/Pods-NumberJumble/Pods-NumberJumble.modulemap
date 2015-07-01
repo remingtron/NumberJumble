@@ -1,6 +1,0 @@
-framework module Pods_NumberJumble {
-  umbrella header "Pods-NumberJumble-umbrella.h"
-
-  export *
-  module * { export * }
-}
