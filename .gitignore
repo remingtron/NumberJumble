@@ -16,3 +16,5 @@ DerivedData
 *.ipa
 *.xcuserstate
 .irb-history
+Pods/
+*.xcworkspace/
