@@ -11,3 +11,5 @@ Once installed, navigate to project root and run:
   pod install
 ```
 This will pull down necessary pod dependencies and generate an XCode workspace including these pods along with the project.
+
+Available on app store [here](https://itunes.apple.com/us/app/number-jumble-math-game/id1014845130?mt=8).
