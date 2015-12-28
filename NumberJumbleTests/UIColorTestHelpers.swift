@@ -19,18 +19,22 @@ extension UIColor {
 
 public func beSameUIColor(expected: UIColor) -> NonNilMatcherFunc<UIColor> {
     return NonNilMatcherFunc<UIColor> { actualExpression, failureMessage in
-        let actualColorComponents = actualExpression.evaluate()!.getColorComponents()
-        let expectedColorComponents = expected.getColorComponents()
-        
-        func closeTo(lhs: CGFloat, rhs: CGFloat) -> Bool {
-            let delta = 0.01
-            return Double(abs(lhs - rhs)) < delta
+        do {
+            let actualColorComponents = try actualExpression.evaluate()!.getColorComponents()
+            let expectedColorComponents = expected.getColorComponents()
+            
+            func closeTo(lhs: CGFloat, rhs: CGFloat) -> Bool {
+                let delta = 0.01
+                return Double(abs(lhs - rhs)) < delta
+            }
+            
+            return closeTo(actualColorComponents.red, rhs: expectedColorComponents.red) &&
+                closeTo(actualColorComponents.green, rhs: expectedColorComponents.green) &&
+                closeTo(actualColorComponents.blue, rhs: expectedColorComponents.blue) &&
+                closeTo(actualColorComponents.alpha, rhs: expectedColorComponents.alpha)
+        } catch {
+            return false
         }
-        
-        return closeTo(actualColorComponents.red, expectedColorComponents.red) &&
-                closeTo(actualColorComponents.green, expectedColorComponents.green) &&
-                closeTo(actualColorComponents.blue, expectedColorComponents.blue) &&
-                closeTo(actualColorComponents.alpha, expectedColorComponents.alpha)
     }
 }
 

@@ -36,7 +36,7 @@ public class Level {
     }
     
     public func tryTouchTileAt(column: Int, row: Int) -> (touchSuccess: Bool, targetHit: Bool) {
-        var targetTile = tiles[column, row]!
+        let targetTile = tiles[column, row]!
         if noTilesAreSelected() || (!tiles[column, row]!.isSelected && adjacentToMostRecentlySelectedTile(column, row: row)) {
             currentTotal += targetTile.value
             targetTile.isSelected = true

@@ -87,8 +87,8 @@ public class GameScene: SKScene {
         addChild(gridLayer)
     }
     
-    public override func touchesBegan(touches: Set<NSObject>, withEvent event: UIEvent) {
-        let touch = touches.first as! UITouch
+    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        let touch = touches.first! as UITouch
         touchHandler(touch.locationInNode(gridLayer))
     }
     

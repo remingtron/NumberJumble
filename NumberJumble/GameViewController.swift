@@ -26,8 +26,8 @@ public class GameViewController: UIViewController {
         return true
     }
     
-    public override func supportedInterfaceOrientations() -> Int {
-        return Int(UIInterfaceOrientationMask.Portrait.rawValue)
+    public override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
 
     public override func viewDidLoad() {
@@ -83,7 +83,7 @@ public class GameViewController: UIViewController {
     }
     
     private func createGameScene(view: SKView, level: Level) -> GameScene {
-        var scene = GameScene(size: view.bounds.size, level: level)
+        let scene = GameScene(size: view.bounds.size, level: level)
         scene.scaleMode = .AspectFill
         scene.tileTouchedHandler = tileTouched
         return scene

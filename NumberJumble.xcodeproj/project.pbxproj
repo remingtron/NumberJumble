@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		30D5F1615FD6A6EA3217802E /* Pods_NumberJumbleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D112BCE61D621939F71B5E /* Pods_NumberJumbleTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		30D5F1615FD6A6EA3217802E /* Pods_NumberJumbleTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 78D112BCE61D621939F71B5E /* Pods_NumberJumbleTests.framework */; };
 		C0117B0E1B40E46100B45FCD /* HelpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0117B0D1B40E46100B45FCD /* HelpViewController.swift */; };
 		C014AD4F1B23E90A00CFA102 /* EndViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C014AD4E1B23E90A00CFA102 /* EndViewController.swift */; };
 		C01EBB581B23C5FC006C4131 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C01EBB571B23C5FC006C4131 /* StartViewController.swift */; };
@@ -34,7 +34,7 @@
 		C0A9FD0B1B2F073700438F94 /* EndViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0A9FD0A1B2F073700438F94 /* EndViewControllerSpec.swift */; };
 		C0AF7E9C1A8AE89D00E21313 /* GameSceneSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0AF7E9B1A8AE89D00E21313 /* GameSceneSpec.swift */; };
 		C0E23D2D1B2F393B0057831F /* StartViewControllerSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0E23D2C1B2F393B0057831F /* StartViewControllerSpec.swift */; };
-		FC23A5ADAA40C7A1FD89EFF9 /* Pods_NumberJumble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2AB73A8F9DF9A50124DC /* Pods_NumberJumble.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		FC23A5ADAA40C7A1FD89EFF9 /* Pods_NumberJumble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D3E2AB73A8F9DF9A50124DC /* Pods_NumberJumble.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -256,6 +256,8 @@
 		C06EA4581A8A8DB000977F03 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftMigration = 0720;
+				LastSwiftUpdateCheck = 0720;
 				LastUpgradeCheck = 0610;
 				ORGANIZATIONNAME = "Remington Davenport";
 				TargetAttributes = {
